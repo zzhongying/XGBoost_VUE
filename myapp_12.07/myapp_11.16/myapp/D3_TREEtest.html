@@ -1,0 +1,202 @@
+<!DOCTYPE html style="height:100%;width:100%">
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test</title>
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+        }
+    </style>
+</head>
+<script src="//d3js.org/d3.v3.min.js"></script>
+<script src="public/js/jquery-1.11.3.min.js"></script>
+
+<body style="height:100%;width:100%">
+    <div id="main" style="height:100%;width:100%;"></div >
+</body>
+<script>
+    function node_view(type_name) {
+
+        var width = $('#main').width()
+        var height = $('#main').height()
+        var root;
+
+        // var zoom = d3.behavior.zoom()
+        //     .scaleExtent([0.5, 5])
+        //     .on("zoom", zoomed);
+        //
+        // function zoomed() {
+        //     svg.attr("transform",
+        //         "translate(" + d3.event.translate + ")scale(" + d3.event.scale + ")");
+        // }
+        var svg = d3.select("#main").append("svg")
+            .attr("width", width)
+            .attr("height", height)
+        //     .call(zoom);
+        //
+        // svg.call(zoom).on("dblclick.zoom", null); //去除双击放大
+
+        let i;
+
+        draw(type_name[0]);
+
+
+        function draw(file_name) {
+            var force = d3.layout.force()
+                .size([width, height])
+                .on("tick", tick);
+
+            var link = svg.selectAll(".link"),
+                node = svg.selectAll(".node");
+
+            d3.json("./public/Data/center_layout_json/Bank_malware.json", function(error, json) {
+                if (error) throw error;
+                root = json;
+                update();
+            });
+
+            function update() {
+                var nodes = flatten(root),
+                    links = d3.layout.tree().links(nodes);
+
+                // Restart the force layout.
+                force
+                    .nodes(nodes)
+                    .links(links)
+                    .start();
+
+                function drag(){//拖拽函数
+                    return force.drag()
+                        .on("dragstart",function(d){
+                            d3.event.sourceEvent.stopPropagation(); //取消默认事件
+                            d.fixed = true;    //拖拽开始后设定被拖拽对象为固定
+                        });
+                }
+
+                // Update the links…
+                link = link.data(links, function(d) { return d.target.id; });
+
+                // Exit any old links.
+                link.exit().remove();
+
+                // Enter any new links.
+                link.enter().insert("line", ".node")
+                    .attr("class", "link")
+                    .attr("x1", function(d) { return d.source.x; })
+                    .attr("y1", function(d) { return d.source.y; })
+                    .attr("x2", function(d) { return d.target.x; })
+                    .attr("y2", function(d) { return d.target.y; })
+                    .style("stroke","#CCDDDF")
+                    .style("stroke-width","1.5px")
+
+                // Update the nodes…
+                node = node.data(nodes, function(d) { return d.id; }).style("fill", color);
+
+                // Exit any old nodes.
+                node.exit().remove();
+
+                // Enter any new nodes.
+                node.enter()
+                    .append("circle")
+                    .attr("class", "node")
+                    .attr("id",function (d) {
+                        return d.name;
+                    })
+                    .attr("cx", function(d) { return d.x ; })
+                    .attr("cy", function(d) { return d.y ; })
+                    .attr("r", function(d) {
+                        if (d.name.substr(0,4) == 'tree') {
+                            return Math.sqrt(d.size) || 10 ;
+                        }
+                        else if(d.name== 'flare'){
+                            return Math.sqrt(d.size) || 20 ;
+                        }
+                        else {
+                            return Math.sqrt(d.size)  || 15;
+                        }
+                    })
+                    .style("fill", color)
+                    .style("stroke","#8db8bb")
+                    .style("stroke-width","1.5px")
+                    // .on("click", click)   //因单击操作冲突，暂时取消节点的收起功能
+                    .on('click', function (d) {  //单击节点
+                        // d3.select(this).style('stroke-width', 4)//被选中的圆圈边框
+                        // if (d.name.substr(0,4) == 'tree') {
+                        //    // treeview(file_name,this.id)
+                        // }
+                    })
+                    .call(drag());//使顶点可以被拖动
+                //.call(force.drag)   //使顶不可以被拖动
+            }
+            function tick() {
+                link.attr("x1", function(d) { return d.source.x; })
+                    .attr("y1", function(d) { return d.source.y; })
+                    .attr("x2", function(d) { return d.target.x; })
+                    .attr("y2", function(d) { return d.target.y; })
+                node.attr("cx", function(d) { return d.x; })
+                    .attr("cy", function(d) { return d.y; })
+            }
+
+            // Color leaf nodes orange, and packages white or blue.
+            function color(d) {
+                return d._children ? "#CF8590" : d.children ? "#f1d5d8" : "#CCDDDF";
+            }
+
+            // Toggle children on click.
+            function click(d) {
+                if (!d3.event.defaultPrevented) {
+                    if (d.children) {
+                        d._children = d.children;
+                        d.children = null;
+                    } else {
+                        d.children = d._children;
+                        d._children = null;
+                    }
+                    update();
+                }
+            }
+
+            // Returns a list of all nodes under the root.
+            function flatten(root) {
+                var nodes = [], i = 0;
+
+                function recurse(node) {
+                    if (node.children) node.children.forEach(recurse);
+                    if (!node.id) node.id = ++i;
+                    nodes.push(node);
+                }
+                recurse(root);
+                return nodes;
+            }
+    }
+
+
+    }
+
+    node_view('Bank_malware')
+</script>
+
+</html>
+
+
+<!--var forces =svg.selectAll("g")-->
+<!--.data(circle_data)-->
+<!--.enter()-->
+<!--.append("g")-->
+<!--.append("circle")-->
+<!--.attr("id","circle")-->
+<!--.attr("cx", function (d) {-->
+<!--return d.cx-->
+<!--})-->
+
+<!--//内半径坐标轴-->
+<!--var gr_inner = svg.append("g")-->
+<!--.attr("class", "r axis inner")-->
+<!--.selectAll("g")-->
+<!--.data(r.ticks(1).slice(1))-->
+<!--.enter().append("g")-->
+<!--.attr("transform", "translate(" + width / 4 + "," + height / 4 + ")");-->

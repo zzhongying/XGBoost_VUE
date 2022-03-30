@@ -1,0 +1,151 @@
+<!DOCTYPE html style="height:100%;width:100%">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!--引入echarts文件-->
+    <script src="public/js/echarts.js"></script>
+    <title>柱状图</title>
+</head>
+<style>
+
+</style>
+<body style="height:100%;width:100%">
+
+<div id="mains" style="width:20%;height:35%">
+    <div id="one_five" style="width:50%;height:100%;float: left"></div>
+    <div id="six_ten" style="width:50%;height:100%;float: left"></div>
+</div>
+<script type="text/javascript">
+  var myChart1 = echarts.init(document.getElementById('one_five'))
+  var myChart2 = echarts.init(document.getElementById('six_ten'))
+  let option1 = {
+      title: {
+          text: '世界人口总量',
+          subtext: '数据来自网络'
+      },
+      grid: {
+          //right: '3%',
+          //height: '80%',
+          left: '8%',
+          //top: '12%',
+          containLabel: true
+      },
+      xAxis: {
+          type: 'value',
+          splitLine:{show:  false }, //去除网格线
+          axisTick: {show: false},   //去除坐标分格线
+          axisLine: {
+              lineStyle: {
+                  type:  'solid' ,
+                  color:  '#rgba(255,255,255,0)' , //左边线的颜色
+                  width: '0' //坐标线的宽度
+              }
+          },
+          axisLabel: {
+              textStyle: {
+                  color:  'rgba(255,255,255,0)' , //坐标值得具体的颜色
+              }
+          }
+      },
+      yAxis: {
+          type: 'category',
+          data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'],
+          axisTick: {show: false},   //去除坐标分格线
+          axisLine: {
+              lineStyle: {
+                  type:  'solid' ,
+                  color:  '#rgba(255,255,255,0)' , //左边线的颜色
+                  width: '0' //坐标线的宽度
+              }
+          },
+      },
+      series: [
+          {
+              data: [120, 200, 150, 80, 70],
+              barWidth:25,
+              type: 'bar',
+              itemStyle: {
+                  normal: {
+                      //这里是重点
+                      color: function(params) {
+                          //注意，如果颜色太少的话，后面颜色不会自动循环，最好多定义几个颜色
+                          var colorList = ['#c23531','#2f4554', '#61a0a8', '#d48265', '#91c7ae','#749f83', '#ca8622'];
+                          return colorList[params.dataIndex]
+                      }
+                  }
+              },
+              showBackground: true,
+              backgroundStyle: {
+                  color: 'rgba(180,180,180,0.2)'
+              }
+          }
+      ]
+  }
+  let option2 = {
+      grid: {
+          //right: '3%',
+          //height: '80%',
+          left: '2%',
+          //top: '12%',
+          containLabel: true
+      },
+      xAxis: {
+          type: 'value',
+          splitLine:{show:  false }, //去除网格线
+          axisTick: {show: false},   //去除坐标分格线
+          axisLine: {
+              lineStyle: {
+                  type:  'solid' ,
+                  color:  '#rgba(255,255,255,0)' , //左边线的颜色
+                  width: '0' //坐标线的宽度
+              }
+          },
+          axisLabel: {
+              textStyle: {
+                  color:  'rgba(255,255,255,0)' , //坐标值得具体的颜色
+              }
+          }
+      },
+      yAxis: {
+          type: 'category',
+          data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'],
+          axisTick: {show: false},   //去除坐标分格线
+          axisLine: {
+              lineStyle: {
+                  type:  'solid' ,
+                  color:  '#rgba(255,255,255,0)' , //左边线的颜色
+                  width: '0' //坐标线的宽度
+              }
+          },
+      },
+      series: [
+          {
+              data: [120, 200, 150, 80, 70],
+              type: 'bar',
+              barWidth:25,
+              itemStyle: {
+                  normal: {
+                      //这里是重点
+                      color: function(params) {
+                          //注意，如果颜色太少的话，后面颜色不会自动循环，最好多定义几个颜色
+                          var colorList = ['#c23531','#2f4554', '#61a0a8', '#d48265', '#91c7ae','#749f83', '#ca8622'];
+                          return colorList[params.dataIndex]
+                      }
+                  }
+              },
+              showBackground: true,
+              backgroundStyle: {
+                  color: 'rgba(180,180,180,0.2)'
+              }
+        }
+      ]
+  }
+
+
+  myChart1.setOption(option1)
+  myChart2.setOption(option2)
+
+
+</script>
+</body>
+</html>

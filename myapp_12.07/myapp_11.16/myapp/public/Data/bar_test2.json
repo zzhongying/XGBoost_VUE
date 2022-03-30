@@ -1,0 +1,23 @@
+{
+  "API": {
+    "API_se": 3,
+    "API_Dev": 42,
+    "API_File": 10
+  },
+  "Memory": {
+    "Me_PssTotal": 100,
+    "Me_HeapFree": 3
+  },
+  "Network": {
+    "Net_Totals": 52
+  },
+  "Battery": {
+    "Battery_service": 61
+  },
+  "Logcat": {
+    "Log_error": 35
+  },
+  "Process": {
+    "Pro_total": 45
+  }
+}

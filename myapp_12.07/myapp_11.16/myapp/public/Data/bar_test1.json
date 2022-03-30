@@ -1,0 +1,38 @@
+{
+  "API": {
+    "API_sessions": 23,
+    "API_DeviceData_android": 45,
+    "API_FileIO_android": 13
+  },
+  "Memory": {
+    "Memory_PssTotal": 44,
+    "Memory_HeapFree": 9
+  },
+  "Network": {
+    "Network_TotalReceivedPackets": 21
+  },
+  "Battery": {
+    "Battery_service": 28
+  },
+  "Logcat": {
+    "Logcat_error": 33
+  },
+  "Process": {
+    "Process_total": 19
+  },
+  "series_data": {"main_data":[[23, 0, 0, 0, 0, 0],
+                  [45, 0, 0, 0, 0, 0],
+                  [13, 0, 0, 0, 0, 0],
+                  [0, 44, 0, 0, 0, 0],
+                  [0, 9, 0, 0, 0, 0],
+                  [0, 0, 21, 0, 0, 0],
+                  [0, 0, 0, 28, 0, 0],
+                  [0, 0, 0, 0, 33, 0],
+                  [0, 0, 0, 0, 0, 19]
+  ],
+    "key_data": ["API_sessions", "API_DeviceData_android",
+      "API_FileIO_android", "Memory_PssTotal",
+      "Memory_HeapFree", "Network_TotalReceivedPackets",
+      "Battery_service", "Logcat_error", "Process_total"]
+  }
+}

@@ -1,0 +1,64 @@
+<template>
+    <div >
+      <div_titles></div_titles>
+      <div class="div1">
+      <div_left></div_left>
+      <div_center></div_center>
+      <div_right></div_right>
+      </div>
+      <div class="div2">
+        <bottom_1></bottom_1>
+        <bottom_2></bottom_2>
+      </div>
+    </div>
+<!--  <exchange></exchange>-->
+</template>
+<script>
+
+  import div_left from './components/controls_sample';
+  import div_center from './components/constellation_based on_iteration';
+  import div_titles from './components/Title';
+  import div_right from './components/performance_featurer';
+  import bottom_1 from './components/Parameter_distribution';
+  import bottom_2 from './components/confusion_matrix&sunrain';
+  import exchange from "./components/exchange";
+  import * as d4 from '../public/d3'
+  export default {
+    components: {
+      div_center,
+      div_left,
+      div_titles,
+      div_right,
+      bottom_1,
+      bottom_2,
+      // exchange
+
+    },
+    mounted() {
+      console.log(d4,'sss')
+    }
+
+  }
+</script>
+<style lang="scss">
+  .div1 {
+    display: flex;
+    flex-wrap: nowrap;
+    height: 62vh;
+  }
+
+  .div2 {
+    height: 32vh;
+    display: flex;
+    flex-wrap: nowrap;
+    /*margin: 0.2% 0 0 0;*/
+  }
+
+  .bottom_1 h4{
+      margin: 0;
+  }
+
+  /*.div1,.div2{*/
+  /*  background-color: #f5f5f5;*/
+  /*}*/
+</style>

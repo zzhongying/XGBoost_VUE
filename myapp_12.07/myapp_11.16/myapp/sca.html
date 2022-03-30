@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="public/js/echarts.js"></script>
+</head>
+<body>
+<div id="divs" style="height: 700px;width: 800px">
+
+</div>
+<script>
+  let myChart = echarts.init(document.getElementById('divs'))
+ option = {
+    tooltip: {
+        trigger: 'axis',
+        axisPointer: {            // 坐标轴指示器，坐标轴触发有效
+            type: 'line'        // 默认为直线，可选为：'line' | 'shadow'
+        }
+    },
+    legend: {
+        data: ['利润', '支出', '收入']
+    },
+    grid: {
+        left: '3%',
+        right: '4%',
+        bottom: '3%',
+        containLabel: true
+    },
+    xAxis: [
+        {
+            type: 'value'
+        }
+    ],
+    visualMap: {
+              type: 'continuous',
+
+              seriesIndex:'all',
+              hoverLink: true,
+              text: ['High', 'Low'],
+              inverse: true,
+              itemHeight: 100,
+              calculable: true,
+              min: 10,
+              max: 500,
+              top: 50,
+              right: 0,
+              inRange: {
+                colorLightness: [0.7, 0.4]
+              },
+              outOfRange: {
+                color: '#bbb'
+              },
+              controller: {
+                inRange: {
+                  color: '#7f9eb2'
+                }
+              },
+              formatter: function (value) { //标签的格式化工具。
+                return value
+              }
+            },
+    yAxis: [
+        {
+            type: 'category',
+            axisTick: {
+                show: false
+            },
+            data: ['周一', '周二', '周三', '周四', '周五', '周六', '周日']
+        }
+    ],
+    series: [
+        {
+            name: '利润',
+            type: 'scatter',
+            label: {
+                show: true,
+                position: 'inside'
+            },
+            emphasis: {
+                focus: 'series'
+            },
+            data: [32, 30, 34, 74, 90, 45, 20]
+        },
+        {
+            name: '收入',
+            type: 'scatter',
+            stack: '总量',
+            label: {
+                show: true
+            },
+            emphasis: {
+                focus: 'self'
+            },
+            data: [320, 302, 341, 374, 390, 450, 420]
+        },
+        {
+            name: '支出',
+            type: 'scatter',
+            stack: '总量',
+            label: {
+                show: true,
+                position: 'left'
+            },
+            emphasis: {
+                focus: 'series'
+            },
+            data: [-120, -132, -101, -134, -190, -230, -210]
+        }
+    ]
+};
+option.series.push({
+        color:'red',
+            name: '支出',
+            type: 'scatter',
+            stack: '总量',
+            label: {
+                show: true,
+                position: 'left'
+            },
+            emphasis: {
+                focus: 'series'
+            },
+            data: [-12, -13, -10, -13, -19, -23, -21]
+
+})
+  myChart.setOption(option)
+</script>
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!--引入echarts文件-->
+   <script src="public/js/echarts.js"></script>
+    <title>柱状图</title>
+</head>
+<body>
+<!--准备一个dom容器-->
+<div id="main" style="width:600px;height:400px"></div>
+<script type="text/javascript">
+    // 基于准备好的dom，初始化echarts
+    var myChart = echarts.init(document.getElementById('main'));
+    option = {
+        tooltip: {//提示框，可以在全局也可以在
+            trigger: 'item',  //提示框的样式
+            formatter: "{a} <br/>{b}: {c} ({d}%)",
+            color:'#000', //提示框的背景色
+            textStyle:{ //提示的字体样式
+                color:"red",
+            }
+        },
+        legend: {  //图例
+            orient: 'vertical',  //图例的布局，竖直    horizontal为水平
+            x: 'right',//图例显示在右边
+            data:['直接访问','邮件营销','联盟广告','视频广告','搜索引擎'],
+            textStyle:{    //图例文字的样式
+                color:'#333',  //文字颜色
+                fontSize:12    //文字大小
+            }
+        },
+        series: [
+            {
+                name:'访问来源',
+                type:'pie', //环形图的type和饼图相同
+                radius: ['50%', '70%'],//饼图的半径，第一个为内半径，第二个为外半径
+                avoidLabelOverlap: false,
+                color:['#D1FBEF','#F9D858','#4CD0DD','#DF86F0','#F5A7C1'],
+                // label: {
+                //     normal: {  //正常的样式
+                //         show: true,
+                //         position: 'left'
+                //     },
+                //     emphasis:
+                //       {
+                //         show: false,
+                //         position:'center',
+                //         color: '#000',
+                //         fontSize: 16,
+                //         fontWeight: 'bold',
+                //         formatter: function (param) {
+                //           return param.value;
+                //         }
+                //       }
+                //
+                //
+                // },
+              label: {
+              normal: {
+                show: false, // 标签不显示，鼠标滑过才显示
+                position: 'center', // 高亮时标签显示在中间，不写默认显示侧边
+                formatter:'当前占比为：'+'\n'+'{d}'+"%",
+              },
+              // 高亮图区的标签样式
+              emphasis: {
+                show: true,
+                // 修改环形中间字体样式
+                textStyle: {
+                  fontSize: '32',
+                  fontWeight: 'bold',
+                  color: "red"
+                }
+              }
+            },
+
+              //提示文字
+                labelLine: {
+                    normal: {
+                        show: true
+                    }
+                },
+                data:[
+                    {value:335, name:'直接访问'},
+                    {value:310, name:'邮件营销'},
+                    {value:234, name:'联盟广告'},
+                    {value:135, name:'视频广告'},
+                    {value:1548, name:'搜索引擎'}
+                ]
+            }
+        ]
+    };
+    myChart.setOption(option);
+</script>
+</body>
+</html>

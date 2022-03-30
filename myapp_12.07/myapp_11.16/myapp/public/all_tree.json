@@ -1,0 +1,709 @@
+{
+  "data": [
+    {
+      "nodeid": 0,
+      "children": [
+        {
+          "nodeid": 1,
+          "lineStyle": {
+            "opacity": 0
+          },
+          "itemStyle": {
+            "opacity": 0
+          }
+        },
+        {
+          "nodeid": 2,
+          "children": [
+            {
+              "nodeid": 2,
+              "lineStyle": {
+                "opacity": 0
+              },
+              "itemStyle": {
+                "opacity": 0
+              }
+            },
+            {
+              "nodeid": 3,
+              "children": [
+                {
+                  "symbolSize": 22,
+                  "nodeid": 999,
+                  "itemStyle": {
+                    "color": "red"
+                  }
+                },
+                {
+                  "symbolSize": 19,
+                  "nodeid": 999,
+                  "itemStyle": {
+                    "color": "blue"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "nodeid": 0,
+      "children": [
+        {
+          "nodeid": 1,
+          "children": [
+            {
+              "nodeid": 2,
+              "lineStyle": {
+                "opacity": 0
+              },
+              "itemStyle": {
+                "opacity": 0
+              }
+            },
+            {
+              "nodeid": 3,
+              "children": [
+                {
+                  "symbolSize": 18,
+                  "nodeid": 999,
+                  "itemStyle": {
+                    "color": "blue"
+                  }
+                },
+                {
+                  "symbolSize": 18,
+                  "nodeid": 999,
+                  "itemStyle": {
+                    "color": "red"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nodeid": 2,
+          "itemStyle": {
+            "opacity": 0
+          },
+          "lineStyle": {
+            "opacity": 0
+          }
+        }
+      ]
+    },
+    {
+      "nodeid": 0,
+      "children": [
+        {
+          "nodeid": 1,
+          "lineStyle": {
+            "opacity": 0
+          },
+          "itemStyle": {
+            "opacity": 0
+          }
+        },
+        {
+          "nodeid": 2,
+          "children": [
+            {
+              "nodeid": 2,
+              "lineStyle": {
+                "opacity": 0
+              },
+              "itemStyle": {
+                "opacity": 0
+              }
+            },
+            {
+              "nodeid": 3,
+              "children": [
+                {
+                  "symbolSize": 15,
+                  "nodeid": 999,
+                  "itemStyle": {
+                    "color": "blue"
+                  }
+                },
+                {
+                  "symbolSize": 13,
+                  "nodeid": 999,
+                  "itemStyle": {
+                    "color": "red"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "nodeid": 0,
+      "children": [
+        {
+          "nodeid": 1,
+          "children": [
+            {
+              "nodeid": 2,
+              "lineStyle": {
+                "opacity": 0
+              },
+              "itemStyle": {
+                "opacity": 0
+              }
+            },
+            {
+              "nodeid": 3,
+              "children": [
+                {
+                  "symbolSize": 20,
+                  "nodeid": 999,
+                  "itemStyle": {
+                    "color": "red"
+                  }
+                },
+                {
+                  "symbolSize": 20,
+                  "nodeid": 999,
+                  "itemStyle": {
+                    "color": "blue"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nodeid": 2,
+          "itemStyle": {
+            "opacity": 0
+          },
+          "lineStyle": {
+            "opacity": 0
+          }
+        }
+      ]
+    },
+    {
+      "nodeid": 0,
+      "children": [
+        {
+          "nodeid": 1,
+          "children": [
+            {
+              "nodeid": 2,
+              "lineStyle": {
+                "opacity": 0
+              },
+              "itemStyle": {
+                "opacity": 0
+              }
+            },
+            {
+              "nodeid": 3,
+              "children": [
+                {
+                  "symbolSize": 16,
+                  "nodeid": 999,
+                  "itemStyle": {
+                    "color": "red"
+                  }
+                },
+                {
+                  "symbolSize": 19,
+                  "nodeid": 999,
+                  "itemStyle": {
+                    "color": "blue"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nodeid": 2,
+          "itemStyle": {
+            "opacity": 0
+          },
+          "lineStyle": {
+            "opacity": 0
+          }
+        }
+      ]
+    },
+    {
+      "nodeid": 0,
+      "children": [
+        {
+          "nodeid": 1,
+          "children": [
+            {
+              "nodeid": 2,
+              "lineStyle": {
+                "opacity": 0
+              },
+              "itemStyle": {
+                "opacity": 0
+              }
+            },
+            {
+              "nodeid": 3,
+              "children": [
+                {
+                  "symbolSize": 20,
+                  "nodeid": 999,
+                  "itemStyle": {
+                    "color": "red"
+                  }
+                },
+                {
+                  "symbolSize": 15,
+                  "nodeid": 999,
+                  "itemStyle": {
+                    "color": "blue"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nodeid": 2,
+          "itemStyle": {
+            "opacity": 0
+          },
+          "lineStyle": {
+            "opacity": 0
+          }
+        }
+      ]
+    },
+    {
+      "nodeid": 0,
+      "children": [
+        {
+          "nodeid": 1,
+          "children": [
+            {
+              "nodeid": 2,
+              "lineStyle": {
+                "opacity": 0
+              },
+              "itemStyle": {
+                "opacity": 0
+              }
+            },
+            {
+              "nodeid": 3,
+              "children": [
+                {
+                  "symbolSize": 20,
+                  "nodeid": 999,
+                  "itemStyle": {
+                    "color": "blue"
+                  }
+                },
+                {
+                  "symbolSize": 15,
+                  "nodeid": 999,
+                  "itemStyle": {
+                    "color": "red"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nodeid": 2,
+          "itemStyle": {
+            "opacity": 0
+          },
+          "lineStyle": {
+            "opacity": 0
+          }
+        }
+      ]
+    },
+    {
+      "nodeid": 0,
+      "children": [
+        {
+          "nodeid": 1,
+          "children": [
+            {
+              "nodeid": 2,
+              "lineStyle": {
+                "opacity": 0
+              },
+              "itemStyle": {
+                "opacity": 0
+              }
+            },
+            {
+              "nodeid": 3,
+              "children": [
+                {
+                  "symbolSize": 11,
+                  "nodeid": 999,
+                  "itemStyle": {
+                    "color": "red"
+                  }
+                },
+                {
+                  "symbolSize": 12,
+                  "nodeid": 999,
+                  "itemStyle": {
+                    "color": "blue"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nodeid": 2,
+          "itemStyle": {
+            "opacity": 0
+          },
+          "lineStyle": {
+            "opacity": 0
+          }
+        }
+      ]
+    },
+    {
+      "nodeid": 0,
+      "children": [
+        {
+          "nodeid": 1,
+          "children": [
+            {
+              "nodeid": 2,
+              "children": [
+                {
+                  "symbolSize": 14,
+                  "nodeid": 999,
+                  "itemStyle": {
+                    "color": "red"
+                  }
+                },
+                {
+                  "symbolSize": 20,
+                  "nodeid": 999,
+                  "itemStyle": {
+                    "color": "blue"
+                  }
+                }
+              ]
+            },
+            {
+              "nodeid": 3,
+              "itemStyle": {
+                "opacity": 0
+              },
+              "lineStyle": {
+                "opacity": 0
+              }
+            }
+          ]
+        },
+        {
+          "nodeid": 2,
+          "itemStyle": {
+            "opacity": 0
+          },
+          "lineStyle": {
+            "opacity": 0
+          }
+        }
+      ]
+    },
+    {
+      "nodeid": 0,
+      "children": [
+        {
+          "nodeid": 1,
+          "children": [
+            {
+              "nodeid": 2,
+              "lineStyle": {
+                "opacity": 0
+              },
+              "itemStyle": {
+                "opacity": 0
+              }
+            },
+            {
+              "nodeid": 3,
+              "children": [
+                {
+                  "symbolSize": 14,
+                  "nodeid": 999,
+                  "itemStyle": {
+                    "color": "red"
+                  }
+                },
+                {
+                  "symbolSize": 7,
+                  "nodeid": 999,
+                  "itemStyle": {
+                    "color": "blue"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nodeid": 2,
+          "itemStyle": {
+            "opacity": 0
+          },
+          "lineStyle": {
+            "opacity": 0
+          }
+        }
+      ]
+    },
+    {
+      "nodeid": 0,
+      "children": [
+        {
+          "nodeid": 1,
+          "children": [
+            {
+              "nodeid": 2,
+              "lineStyle": {
+                "opacity": 0
+              },
+              "itemStyle": {
+                "opacity": 0
+              }
+            },
+            {
+              "nodeid": 3,
+              "children": [
+                {
+                  "symbolSize": 9,
+                  "nodeid": 999,
+                  "itemStyle": {
+                    "color": "red"
+                  }
+                },
+                {
+                  "symbolSize": 9,
+                  "nodeid": 999,
+                  "itemStyle": {
+                    "color": "blue"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nodeid": 2,
+          "itemStyle": {
+            "opacity": 0
+          },
+          "lineStyle": {
+            "opacity": 0
+          }
+        }
+      ]
+    },
+    {
+      "nodeid": 0,
+      "children": [
+        {
+          "nodeid": 1,
+          "children": [
+            {
+              "nodeid": 2,
+              "children": [
+                {
+                  "symbolSize": 14,
+                  "nodeid": 999,
+                  "itemStyle": {
+                    "color": "red"
+                  }
+                },
+                {
+                  "symbolSize": 16,
+                  "nodeid": 999,
+                  "itemStyle": {
+                    "color": "blue"
+                  }
+                }
+              ]
+            },
+            {
+              "nodeid": 3,
+              "itemStyle": {
+                "opacity": 0
+              },
+              "lineStyle": {
+                "opacity": 0
+              }
+            }
+          ]
+        },
+        {
+          "nodeid": 2,
+          "itemStyle": {
+            "opacity": 0
+          },
+          "lineStyle": {
+            "opacity": 0
+          }
+        }
+      ]
+    },
+    {
+      "nodeid": 0,
+      "children": [
+        {
+          "nodeid": 1,
+          "children": [
+            {
+              "nodeid": 2,
+              "lineStyle": {
+                "opacity": 0
+              },
+              "itemStyle": {
+                "opacity": 0
+              }
+            },
+            {
+              "nodeid": 3,
+              "children": [
+                {
+                  "symbolSize": 6,
+                  "nodeid": 999,
+                  "itemStyle": {
+                    "color": "red"
+                  }
+                },
+                {
+                  "symbolSize": 8,
+                  "nodeid": 999,
+                  "itemStyle": {
+                    "color": "blue"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nodeid": 2,
+          "itemStyle": {
+            "opacity": 0
+          },
+          "lineStyle": {
+            "opacity": 0
+          }
+        }
+      ]
+    },
+    {
+      "nodeid": 0,
+      "children": [
+        {
+          "nodeid": 1,
+          "children": [
+            {
+              "nodeid": 2,
+              "children": [
+                {
+                  "symbolSize": 12,
+                  "nodeid": 999,
+                  "itemStyle": {
+                    "color": "red"
+                  }
+                },
+                {
+                  "symbolSize": 16,
+                  "nodeid": 999,
+                  "itemStyle": {
+                    "color": "blue"
+                  }
+                }
+              ]
+            },
+            {
+              "nodeid": 3,
+              "itemStyle": {
+                "opacity": 0
+              },
+              "lineStyle": {
+                "opacity": 0
+              }
+            }
+          ]
+        },
+        {
+          "nodeid": 2,
+          "itemStyle": {
+            "opacity": 0
+          },
+          "lineStyle": {
+            "opacity": 0
+          }
+        }
+      ]
+    },
+    {
+      "nodeid": 0,
+      "children": [
+        {
+          "nodeid": 1,
+          "children": [
+            {
+              "nodeid": 2,
+              "lineStyle": {
+                "opacity": 0
+              },
+              "itemStyle": {
+                "opacity": 0
+              }
+            },
+            {
+              "nodeid": 3,
+              "children": [
+                {
+                  "symbolSize": 11,
+                  "nodeid": 999,
+                  "itemStyle": {
+                    "color": "blue"
+                  }
+                },
+                {
+                  "symbolSize": 8,
+                  "nodeid": 999,
+                  "itemStyle": {
+                    "color": "red"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nodeid": 2,
+          "itemStyle": {
+            "opacity": 0
+          },
+          "lineStyle": {
+            "opacity": 0
+          }
+        }
+      ]
+    }
+  ]
+}

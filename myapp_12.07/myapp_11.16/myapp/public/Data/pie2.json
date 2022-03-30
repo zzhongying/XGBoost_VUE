@@ -1,0 +1,31 @@
+[
+          {
+            "value": 235,
+            "name": "直接访问"
+          },
+          {
+            "value": 210,
+            "name": "邮件营销"
+          },
+          {
+            "value": 134,
+            "name": "联盟广告"
+          },
+          {
+            "value": 135,
+            "name": "视频广告"
+          },
+          {
+            "value": 94,
+            "name": "搜索引擎"
+          },
+          {
+            "value": 113,
+            "name": "Google"
+          },
+          {
+            "value": 123,
+            "name": "Baidu"
+          }
+
+        ]

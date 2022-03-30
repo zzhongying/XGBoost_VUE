@@ -1,0 +1,1752 @@
+{
+"name": "flare",
+"children": [
+{
+"name": "tree0",
+"children": [
+{ "nodeid": 0, "depth": 0, "name": "flock", "size": 4, "yes": 1, "no": 2, "missing": 1 , "children": [
+    { "nodeid": 1, "depth": 1, "name": "pread64", "size": 9, "yes": 3, "no": 4, "missing": 3 , "children": [
+      { "nodeid": 3, "depth": 2, "name": "ACCESS_PERSONAL_INFO___", "size": 1, "yes": 7, "no": 8, "missing": 7 , "children": [
+        { "nodeid": 7, "depth": 3, "name": "bind", "size": 1, "yes": 15, "no": 16, "missing": 15 , "children": [
+          { "nodeid": 15, "depth": 4, "name": "ftruncate", "size": 1, "yes": 29, "no": 30, "missing": 29 , "children": [
+            { "nodeid": 29, "depth": 5, "name": "madvise", "size": 34, "yes": 57, "no": 58, "missing": 57 , "children": [
+              { "nodeid": 57, "leaf": 0.472610265 },
+              { "nodeid": 58, "leaf": -0.13842918 }
+            ]},
+            { "nodeid": 30, "leaf": 1.39049423 }
+          ]},
+          { "nodeid": 16, "depth": 4, "name": "fsync", "size": 1, "yes": 31, "no": 32, "missing": 31 , "children": [
+            { "nodeid": 31, "depth": 5, "name": "CREATE_FOLDER_____", "size": 2, "yes": 59, "no": 60, "missing": 59 , "children": [
+              { "nodeid": 59, "leaf": 0.337499976 },
+              { "nodeid": 60, "leaf": 1.4661895 }
+            ]},
+            { "nodeid": 32, "depth": 5, "name": "CREATE_THREAD_____", "size": 16, "yes": 61, "no": 62, "missing": 61 , "children": [
+              { "nodeid": 61, "leaf": 0.0315789394 },
+              { "nodeid": 62, "leaf": -0.164150938 }
+            ]}
+          ]}
+        ]},
+        { "nodeid": 8, "depth": 3, "name": "getSubscriberId", "size": 2, "yes": 17, "no": 18, "missing": 17 , "children": [
+          { "nodeid": 17, "depth": 4, "name": "pipe", "size": 4, "yes": 33, "no": 34, "missing": 33 , "children": [
+            { "nodeid": 33, "depth": 5, "name": "read", "size": 27, "yes": 63, "no": 64, "missing": 63 , "children": [
+              { "nodeid": 63, "leaf": 0.319354802 },
+              { "nodeid": 64, "leaf": -0.291009635 }
+            ]},
+            { "nodeid": 34, "depth": 5, "name": "FS_ACCESS(CREATE)____", "size": 4, "yes": 65, "no": 66, "missing": 65 , "children": [
+              { "nodeid": 65, "leaf": 1.0224489 },
+              { "nodeid": 66, "leaf": -0.150000006 }
+            ]}
+          ]},
+          { "nodeid": 18, "depth": 4, "name": "read", "size": 528, "yes": 35, "no": 36, "missing": 35 , "children": [
+            { "nodeid": 35, "leaf": 1.19032252 },
+            { "nodeid": 36, "leaf": -0.150000006 }
+          ]}
+        ]}
+      ]},
+      { "nodeid": 4, "depth": 2, "name": "writev", "size": 206, "yes": 9, "no": 10, "missing": 9 , "children": [
+        { "nodeid": 9, "depth": 3, "name": "getNightMode", "size": 2, "yes": 19, "no": 20, "missing": 19 , "children": [
+          { "nodeid": 19, "depth": 4, "name": "getCurrentSpellCheckerSubtype", "size": 4, "yes": 37, "no": 38, "missing": 37 , "children": [
+            { "nodeid": 37, "depth": 5, "name": "cancelAllNotifications", "size": 1, "yes": 67, "no": 68, "missing": 67 , "children": [
+              { "nodeid": 67, "leaf": -0.233883619 },
+              { "nodeid": 68, "leaf": 0.449488014 }
+            ]},
+            { "nodeid": 38, "depth": 5, "name": "close", "size": 62, "yes": 69, "no": 70, "missing": 69 , "children": [
+              { "nodeid": 69, "leaf": 1.06317985 },
+              { "nodeid": 70, "leaf": -0.225127339 }
+            ]}
+          ]},
+          { "nodeid": 20, "depth": 4, "name": "fsync", "size": 1, "yes": 39, "no": 40, "missing": 39 , "children": [
+            { "nodeid": 39, "depth": 5, "name": "nanosleep", "size": 58, "yes": 71, "no": 72, "missing": 71 , "children": [
+              { "nodeid": 71, "leaf": 1.37085187 },
+              { "nodeid": 72, "leaf": 0.268421024 }
+            ]},
+            { "nodeid": 40, "leaf": -0.233333334 }
+          ]}
+        ]},
+        { "nodeid": 10, "depth": 3, "name": "TERMINATE_THREAD", "size": 2, "yes": 21, "no": 22, "missing": 21 , "children": [
+          { "nodeid": 21, "depth": 4, "name": "FS_ACCESS(WRITE)____", "size": 7, "yes": 41, "no": 42, "missing": 41 , "children": [
+            { "nodeid": 41, "depth": 5, "name": "windowGainedFocus", "size": 2, "yes": 73, "no": 74, "missing": 73 , "children": [
+              { "nodeid": 73, "leaf": 1.38648641 },
+              { "nodeid": 74, "leaf": 0.0315789394 }
+            ]},
+            { "nodeid": 42, "leaf": -0.175862074 }
+          ]},
+          { "nodeid": 22, "depth": 4, "name": "_newselect", "size": 6, "yes": 43, "no": 44, "missing": 43 , "children": [
+            { "nodeid": 43, "depth": 5, "name": "relayout", "size": 24, "yes": 75, "no": 76, "missing": 75 , "children": [
+              { "nodeid": 75, "leaf": 0.115044951 },
+              { "nodeid": 76, "leaf": 0.997402549 }
+            ]},
+            { "nodeid": 44, "depth": 5, "name": "CREATE_PROCESS`_____", "size": 16, "yes": 77, "no": 78, "missing": 77 , "children": [
+              { "nodeid": 77, "leaf": -0.273134321 },
+              { "nodeid": 78, "leaf": 0.268421024 }
+            ]}
+          ]}
+        ]}
+      ]}
+    ]},
+    { "nodeid": 2, "depth": 1, "name": "getInstallerPackageName", "size": 1, "yes": 5, "no": 6, "missing": 5 , "children": [
+      { "nodeid": 5, "depth": 2, "name": "socketpair", "size": 10, "yes": 11, "no": 12, "missing": 11 , "children": [
+        { "nodeid": 11, "depth": 3, "name": "registerContentObserver", "size": 1, "yes": 23, "no": 24, "missing": 23 , "children": [
+          { "nodeid": 23, "depth": 4, "name": "getdents64", "size": 3, "yes": 45, "no": 46, "missing": 45 , "children": [
+            { "nodeid": 45, "depth": 5, "name": "epoll_ctl", "size": 3, "yes": 79, "no": 80, "missing": 79 , "children": [
+              { "nodeid": 79, "leaf": 1.08045101 },
+              { "nodeid": 80, "leaf": -0.206695467 }
+            ]},
+            { "nodeid": 46, "depth": 5, "name": "TERMINATE_THREAD", "size": 11, "yes": 81, "no": 82, "missing": 81 , "children": [
+              { "nodeid": 81, "leaf": 1.24962401 },
+              { "nodeid": 82, "leaf": 0.246889919 }
+            ]}
+          ]},
+          { "nodeid": 24, "depth": 4, "name": "resolveIntent", "size": 3, "yes": 47, "no": 48, "missing": 47 , "children": [
+            { "nodeid": 47, "depth": 5, "name": "setpriority", "size": 218, "yes": 83, "no": 84, "missing": 83 , "children": [
+              { "nodeid": 83, "leaf": 1.45226812 },
+              { "nodeid": 84, "leaf": 0.149999991 }
+            ]},
+            { "nodeid": 48, "leaf": -0.19411765 }
+          ]}
+        ]},
+        { "nodeid": 12, "depth": 3, "name": "getpriority", "size": 133, "yes": 25, "no": 26, "missing": 25 , "children": [
+          { "nodeid": 25, "depth": 4, "name": "getDisplayInfo", "size": 9, "yes": 49, "no": 50, "missing": 49 , "children": [
+            { "nodeid": 49, "leaf": 0.202325568 },
+            { "nodeid": 50, "leaf": -0.282978714 }
+          ]},
+          { "nodeid": 26, "depth": 4, "name": "windowGainedFocus", "size": 5, "yes": 51, "no": 52, "missing": 51 , "children": [
+            { "nodeid": 51, "depth": 5, "name": "getPackageInfo", "size": 36, "yes": 85, "no": 86, "missing": 85 , "children": [
+              { "nodeid": 85, "leaf": 0.95825237 },
+              { "nodeid": 86, "leaf": -0.110526316 }
+            ]},
+            { "nodeid": 52, "depth": 5, "name": "ACCESS_PERSONAL_INFO___", "size": 25, "yes": 87, "no": 88, "missing": 87 , "children": [
+              { "nodeid": 87, "leaf": -0.164150938 },
+              { "nodeid": 88, "leaf": 0.0315789394 }
+            ]}
+          ]}
+        ]}
+      ]},
+      { "nodeid": 6, "depth": 2, "name": "FS_ACCESS(CREATE__WRITE)__", "size": 6, "yes": 13, "no": 14, "missing": 13 , "children": [
+        { "nodeid": 13, "leaf": 0.50526315 },
+        { "nodeid": 14, "depth": 3, "name": "stat64", "size": 2330, "yes": 27, "no": 28, "missing": 27 , "children": [
+          { "nodeid": 27, "depth": 4, "name": "getIccSerialNumber", "size": 1, "yes": 53, "no": 54, "missing": 53 , "children": [
+            { "nodeid": 53, "depth": 5, "name": "clock_gettime", "size": 730, "yes": 89, "no": 90, "missing": 89 , "children": [
+              { "nodeid": 89, "leaf": -0 },
+              { "nodeid": 90, "leaf": -0.294775039 }
+            ]},
+            { "nodeid": 54, "depth": 5, "name": "FS_ACCESS(CREATE__READ__WRITE)", "size": 7, "yes": 91, "no": 92, "missing": 91 , "children": [
+              { "nodeid": 91, "leaf": -0.175862074 },
+              { "nodeid": 92, "leaf": 0.268421024 }
+            ]}
+          ]},
+          { "nodeid": 28, "depth": 4, "name": "CREATE_PROCESS`_____", "size": 2, "yes": 55, "no": 56, "missing": 55 , "children": [
+            { "nodeid": 55, "leaf": -0.110526316 },
+            { "nodeid": 56, "leaf": 0.50526315 }
+          ]}
+        ]}
+      ]}
+    ]}
+  ]}
+]},
+{
+"name": "tree1",
+"children": [
+{ "nodeid": 0, "depth": 0, "name": "flock", "size": 3, "yes": 1, "no": 2, "missing": 1 , "children": [
+    { "nodeid": 1, "depth": 1, "name": "epoll_ctl", "size": 53, "yes": 3, "no": 4, "missing": 3 , "children": [
+      { "nodeid": 3, "depth": 2, "name": "munmap", "size": 6, "yes": 7, "no": 8, "missing": 7 , "children": [
+        { "nodeid": 7, "depth": 3, "name": "lseek", "size": 9, "yes": 15, "no": 16, "missing": 15 , "children": [
+          { "nodeid": 15, "depth": 4, "name": "writev", "size": 5, "yes": 31, "no": 32, "missing": 31 , "children": [
+            { "nodeid": 31, "depth": 5, "name": "gettimeofday", "size": 7, "yes": 53, "no": 54, "missing": 53 , "children": [
+              { "nodeid": 53, "leaf": -0.181491226 },
+              { "nodeid": 54, "leaf": 0.580050528 }
+            ]},
+            { "nodeid": 32, "depth": 5, "name": "mkdir", "size": 1, "yes": 55, "no": 56, "missing": 55 , "children": [
+              { "nodeid": 55, "leaf": 0.109998889 },
+              { "nodeid": 56, "leaf": 0.507592499 }
+            ]}
+          ]},
+          { "nodeid": 16, "leaf": -0.265777767 }
+        ]},
+        { "nodeid": 8, "depth": 3, "name": "getDisplayInfo", "size": 9, "yes": 17, "no": 18, "missing": 17 , "children": [
+          { "nodeid": 17, "depth": 4, "name": "mkdir", "size": 8, "yes": 33, "no": 34, "missing": 33 , "children": [
+            { "nodeid": 33, "depth": 5, "name": "getApplicationInfo", "size": 2, "yes": 57, "no": 58, "missing": 57 , "children": [
+              { "nodeid": 57, "leaf": -0.240298077 },
+              { "nodeid": 58, "leaf": 0.00513258297 }
+            ]},
+            { "nodeid": 34, "depth": 5, "name": "fsync", "size": 2, "yes": 59, "no": 60, "missing": 59 , "children": [
+              { "nodeid": 59, "leaf": 0.5178321 },
+              { "nodeid": 60, "leaf": -0.111757427 }
+            ]}
+          ]},
+          { "nodeid": 18, "depth": 4, "name": "gettimeofday", "size": 21, "yes": 35, "no": 36, "missing": 35 , "children": [
+            { "nodeid": 35, "depth": 5, "name": "writev", "size": 42, "yes": 61, "no": 62, "missing": 61 , "children": [
+              { "nodeid": 61, "leaf": -0.000491481507 },
+              { "nodeid": 62, "leaf": 0.649345636 }
+            ]},
+            { "nodeid": 36, "depth": 5, "name": "writev", "size": 285, "yes": 63, "no": 64, "missing": 63 , "children": [
+              { "nodeid": 63, "leaf": -0.149813756 },
+              { "nodeid": 64, "leaf": 0.205405265 }
+            ]}
+          ]}
+        ]}
+      ]},
+      { "nodeid": 4, "depth": 2, "name": "access", "size": 65, "yes": 9, "no": 10, "missing": 9 , "children": [
+        { "nodeid": 9, "depth": 3, "name": "getdents64", "size": 17, "yes": 19, "no": 20, "missing": 19 , "children": [
+          { "nodeid": 19, "leaf": -0.232840121 },
+          { "nodeid": 20, "depth": 4, "name": "sigprocmask", "size": 335, "yes": 37, "no": 38, "missing": 37 , "children": [
+            { "nodeid": 37, "depth": 5, "name": "prctl", "size": 161, "yes": 65, "no": 66, "missing": 65 , "children": [
+              { "nodeid": 65, "leaf": 0.834888339 },
+              { "nodeid": 66, "leaf": 0.479027092 }
+            ]},
+            { "nodeid": 38, "depth": 5, "name": "sigprocmask", "size": 545, "yes": 67, "no": 68, "missing": 67 , "children": [
+              { "nodeid": 67, "leaf": -0.222755224 },
+              { "nodeid": 68, "leaf": 0.515000403 }
+            ]}
+          ]}
+        ]},
+        { "nodeid": 10, "depth": 3, "name": "ioctl", "size": 1164, "yes": 21, "no": 22, "missing": 21 , "children": [
+          { "nodeid": 21, "depth": 4, "name": "ioctl", "size": 865, "yes": 39, "no": 40, "missing": 39 , "children": [
+            { "nodeid": 39, "depth": 5, "name": "getActiveNetworkInfo", "size": 2, "yes": 69, "no": 70, "missing": 69 , "children": [
+              { "nodeid": 69, "leaf": 0.227579966 },
+              { "nodeid": 70, "leaf": -0.217108369 }
+            ]},
+            { "nodeid": 40, "depth": 5, "name": "clock_gettime", "size": 61808, "yes": 71, "no": 72, "missing": 71 , "children": [
+              { "nodeid": 71, "leaf": 0.807582796 },
+              { "nodeid": 72, "leaf": -0 }
+            ]}
+          ]},
+          { "nodeid": 22, "depth": 4, "name": "getDisplayInfo", "size": 556, "yes": 41, "no": 42, "missing": 41 , "children": [
+            { "nodeid": 41, "leaf": -0.27686882 },
+            { "nodeid": 42, "leaf": 0.0508436933 }
+          ]}
+        ]}
+      ]}
+    ]},
+    { "nodeid": 2, "depth": 1, "name": "FS_ACCESS(CREATE__READ__WRITE)", "size": 3, "yes": 5, "no": 6, "missing": 5 , "children": [
+      { "nodeid": 5, "depth": 2, "name": "getReceiverInfo", "size": 1, "yes": 11, "no": 12, "missing": 11 , "children": [
+        { "nodeid": 11, "depth": 3, "name": "registerContentObserver", "size": 1, "yes": 23, "no": 24, "missing": 23 , "children": [
+          { "nodeid": 23, "depth": 4, "name": "fchmod", "size": 4, "yes": 43, "no": 44, "missing": 43 , "children": [
+            { "nodeid": 43, "depth": 5, "name": "getdents64", "size": 3, "yes": 73, "no": 74, "missing": 73 , "children": [
+              { "nodeid": 73, "leaf": 0.0651839599 },
+              { "nodeid": 74, "leaf": 0.426234365 }
+            ]},
+            { "nodeid": 44, "depth": 5, "name": "read", "size": 2320, "yes": 75, "no": 76, "missing": 75 , "children": [
+              { "nodeid": 75, "leaf": -0.18950361 },
+              { "nodeid": 76, "leaf": 0.623429537 }
+            ]}
+          ]},
+          { "nodeid": 24, "depth": 4, "name": "notifyChange", "size": 1, "yes": 45, "no": 46, "missing": 45 , "children": [
+            { "nodeid": 45, "depth": 5, "name": "getRingerMode", "size": 1, "yes": 77, "no": 78, "missing": 77 , "children": [
+              { "nodeid": 77, "leaf": 0.457828254 },
+              { "nodeid": 78, "leaf": -0.172950611 }
+            ]},
+            { "nodeid": 46, "leaf": -0.237488255 }
+          ]}
+        ]},
+        { "nodeid": 12, "depth": 3, "name": "sigprocmask", "size": 19, "yes": 25, "no": 26, "missing": 25 , "children": [
+          { "nodeid": 25, "leaf": 0.191085666 },
+          { "nodeid": 26, "leaf": -0.270486891 }
+        ]}
+      ]},
+      { "nodeid": 6, "depth": 2, "name": "setpgid", "size": 2, "yes": 13, "no": 14, "missing": 13 , "children": [
+        { "nodeid": 13, "depth": 3, "name": "munmap", "size": 125, "yes": 27, "no": 28, "missing": 27 , "children": [
+          { "nodeid": 27, "leaf": 0.242242917 },
+          { "nodeid": 28, "depth": 4, "name": "getSubscriberId", "size": 1, "yes": 47, "no": 48, "missing": 47 , "children": [
+            { "nodeid": 47, "leaf": -0.272991866 },
+            { "nodeid": 48, "depth": 5, "name": "ioctl", "size": 3527, "yes": 79, "no": 80, "missing": 79 , "children": [
+              { "nodeid": 79, "leaf": -0.221910089 },
+              { "nodeid": 80, "leaf": 0.537770867 }
+            ]}
+          ]}
+        ]},
+        { "nodeid": 14, "depth": 3, "name": "gettimeofday", "size": 1424, "yes": 29, "no": 30, "missing": 29 , "children": [
+          { "nodeid": 29, "depth": 4, "name": "FS_PIPE_ACCESS(READ__WRITE)_", "size": 9, "yes": 49, "no": 50, "missing": 49 , "children": [
+            { "nodeid": 49, "leaf": 0.508581579 },
+            { "nodeid": 50, "depth": 5, "name": "writev", "size": 247, "yes": 81, "no": 82, "missing": 81 , "children": [
+              { "nodeid": 81, "leaf": -0.129152223 },
+              { "nodeid": 82, "leaf": 0.217815936 }
+            ]}
+          ]},
+          { "nodeid": 30, "depth": 4, "name": "prctl", "size": 327, "yes": 51, "no": 52, "missing": 51 , "children": [
+            { "nodeid": 51, "leaf": -0.238543555 },
+            { "nodeid": 52, "leaf": 0.310454816 }
+          ]}
+        ]}
+      ]}
+    ]}
+  ]}
+]},
+{
+"name": "tree2",
+"children": [
+ { "nodeid": 0, "depth": 0, "name": "flock", "size": 3, "yes": 1, "no": 2, "missing": 1 , "children": [
+    { "nodeid": 1, "depth": 1, "name": "pread64", "size": 9, "yes": 3, "no": 4, "missing": 3 , "children": [
+      { "nodeid": 3, "depth": 2, "name": "getActivePhoneType", "size": 1, "yes": 7, "no": 8, "missing": 7 , "children": [
+        { "nodeid": 7, "depth": 3, "name": "close", "size": 20, "yes": 15, "no": 16, "missing": 15 , "children": [
+          { "nodeid": 15, "depth": 4, "name": "getpriority", "size": 42, "yes": 31, "no": 32, "missing": 31 , "children": [
+            { "nodeid": 31, "depth": 5, "name": "writev", "size": 5, "yes": 55, "no": 56, "missing": 55 , "children": [
+              { "nodeid": 55, "leaf": -0.136197254 },
+              { "nodeid": 56, "leaf": 0.169930831 }
+            ]},
+            { "nodeid": 32, "leaf": 0.479511887 }
+          ]},
+          { "nodeid": 16, "depth": 4, "name": "TERMINATE_THREAD", "size": 5, "yes": 33, "no": 34, "missing": 33 , "children": [
+            { "nodeid": 33, "depth": 5, "name": "CREATE_PROCESS`_____", "size": 1, "yes": 57, "no": 58, "missing": 57 , "children": [
+              { "nodeid": 57, "leaf": 0.341064632 },
+              { "nodeid": 58, "leaf": -0.0974927098 }
+            ]},
+            { "nodeid": 34, "depth": 5, "name": "access", "size": 51, "yes": 59, "no": 60, "missing": 59 , "children": [
+              { "nodeid": 59, "leaf": -0.196052343 },
+              { "nodeid": 60, "leaf": 0.176715419 }
+            ]}
+          ]}
+        ]},
+        { "nodeid": 8, "depth": 3, "name": "fcntl64", "size": 68, "yes": 17, "no": 18, "missing": 17 , "children": [
+          { "nodeid": 17, "depth": 4, "name": "getSubscriberId", "size": 3, "yes": 35, "no": 36, "missing": 35 , "children": [
+            { "nodeid": 35, "depth": 5, "name": "writev", "size": 4, "yes": 61, "no": 62, "missing": 61 , "children": [
+              { "nodeid": 61, "leaf": -0 },
+              { "nodeid": 62, "leaf": -0.261042506 }
+            ]},
+            { "nodeid": 36, "leaf": 0.193675995 }
+          ]},
+          { "nodeid": 18, "depth": 4, "name": "FS_ACCESS(READ)____", "size": 76, "yes": 37, "no": 38, "missing": 37 , "children": [
+            { "nodeid": 37, "leaf": 0.358064383 },
+            { "nodeid": 38, "leaf": -0.122189134 }
+          ]}
+        ]}
+      ]},
+      { "nodeid": 4, "depth": 2, "name": "getDisplayInfo", "size": 9, "yes": 9, "no": 10, "missing": 9 , "children": [
+        { "nodeid": 9, "depth": 3, "name": "mkdir", "size": 8, "yes": 19, "no": 20, "missing": 19 , "children": [
+          { "nodeid": 19, "depth": 4, "name": "epoll_ctl", "size": 51, "yes": 39, "no": 40, "missing": 39 , "children": [
+            { "nodeid": 39, "depth": 5, "name": "addToDisplayWithoutInputChannel", "size": 1, "yes": 63, "no": 64, "missing": 63 , "children": [
+              { "nodeid": 63, "leaf": -0.222502425 },
+              { "nodeid": 64, "leaf": 0.392055601 }
+            ]},
+            { "nodeid": 40, "depth": 5, "name": "close", "size": 1352, "yes": 65, "no": 66, "missing": 65 , "children": [
+              { "nodeid": 65, "leaf": 0.362162441 },
+              { "nodeid": 66, "leaf": -0.200825229 }
+            ]}
+          ]},
+          { "nodeid": 20, "depth": 4, "name": "pread64", "size": 32, "yes": 41, "no": 42, "missing": 41 , "children": [
+            { "nodeid": 41, "depth": 5, "name": "close", "size": 432, "yes": 67, "no": 68, "missing": 67 , "children": [
+              { "nodeid": 67, "leaf": 0.558611035 },
+              { "nodeid": 68, "leaf": -0.187897861 }
+            ]},
+            { "nodeid": 42, "depth": 5, "name": "getNightMode", "size": 1, "yes": 69, "no": 70, "missing": 69 , "children": [
+              { "nodeid": 69, "leaf": -0.158500463 },
+              { "nodeid": 70, "leaf": 0.301464915 }
+            ]}
+          ]}
+        ]},
+        { "nodeid": 10, "depth": 3, "name": "getApplicationInfo", "size": 2, "yes": 21, "no": 22, "missing": 21 , "children": [
+          { "nodeid": 21, "depth": 4, "name": "relayout", "size": 6, "yes": 43, "no": 44, "missing": 43 , "children": [
+            { "nodeid": 43, "depth": 5, "name": "registerContentObserver", "size": 1, "yes": 71, "no": 72, "missing": 71 , "children": [
+              { "nodeid": 71, "leaf": 0.0124682495 },
+              { "nodeid": 72, "leaf": 0.453050703 }
+            ]},
+            { "nodeid": 44, "depth": 5, "name": "getNetworkInfo", "size": 2, "yes": 73, "no": 74, "missing": 73 , "children": [
+              { "nodeid": 73, "leaf": -0.0905668661 },
+              { "nodeid": 74, "leaf": 0.503878713 }
+            ]}
+          ]},
+          { "nodeid": 22, "depth": 4, "name": "send", "size": 1, "yes": 45, "no": 46, "missing": 45 , "children": [
+            { "nodeid": 45, "depth": 5, "name": "writev", "size": 789, "yes": 75, "no": 76, "missing": 75 , "children": [
+              { "nodeid": 75, "leaf": -0.19951719 },
+              { "nodeid": 76, "leaf": 0.13796851 }
+            ]},
+            { "nodeid": 46, "depth": 5, "name": "getSubscriberId", "size": 2, "yes": 77, "no": 78, "missing": 77 , "children": [
+              { "nodeid": 77, "leaf": -0.11676117 },
+              { "nodeid": 78, "leaf": 0.401871294 }
+            ]}
+          ]}
+        ]}
+      ]}
+    ]},
+    { "nodeid": 2, "depth": 1, "name": "getInstallerPackageName", "size": 1, "yes": 5, "no": 6, "missing": 5 , "children": [
+      { "nodeid": 5, "depth": 2, "name": "send", "size": 1, "yes": 11, "no": 12, "missing": 11 , "children": [
+        { "nodeid": 11, "depth": 3, "name": "getDisplayInfo", "size": 9, "yes": 23, "no": 24, "missing": 23 , "children": [
+          { "nodeid": 23, "depth": 4, "name": "mprotect", "size": 290, "yes": 47, "no": 48, "missing": 47 , "children": [
+            { "nodeid": 47, "depth": 5, "name": "getInstalledPackages", "size": 1, "yes": 79, "no": 80, "missing": 79 , "children": [
+              { "nodeid": 79, "leaf": 0.362760097 },
+              { "nodeid": 80, "leaf": -0.0405488536 }
+            ]},
+            { "nodeid": 48, "depth": 5, "name": "FS_ACCESS____", "size": 33, "yes": 81, "no": 82, "missing": 81 , "children": [
+              { "nodeid": 81, "leaf": -0.214858621 },
+              { "nodeid": 82, "leaf": 0.275203258 }
+            ]}
+          ]},
+          { "nodeid": 24, "depth": 4, "name": "getdents64", "size": 76, "yes": 49, "no": 50, "missing": 49 , "children": [
+            { "nodeid": 49, "depth": 5, "name": "FS_ACCESS(CREATE)____", "size": 4, "yes": 83, "no": 84, "missing": 83 , "children": [
+              { "nodeid": 83, "leaf": 0.254807591 },
+              { "nodeid": 84, "leaf": -0.204325199 }
+            ]},
+            { "nodeid": 50, "depth": 5, "name": "getuid32", "size": 3350, "yes": 85, "no": 86, "missing": 85 , "children": [
+              { "nodeid": 85, "leaf": 0.43414247 },
+              { "nodeid": 86, "leaf": -0.133825243 }
+            ]}
+          ]}
+        ]},
+        { "nodeid": 12, "depth": 3, "name": "getPackageInfo", "size": 112, "yes": 25, "no": 26, "missing": 25 , "children": [
+          { "nodeid": 25, "depth": 4, "name": "inotify_init", "size": 4, "yes": 51, "no": 52, "missing": 51 , "children": [
+            { "nodeid": 51, "depth": 5, "name": "getBestProvider", "size": 4, "yes": 87, "no": 88, "missing": 87 , "children": [
+              { "nodeid": 87, "leaf": 0.357719719 },
+              { "nodeid": 88, "leaf": -0.145153716 }
+            ]},
+            { "nodeid": 52, "leaf": -0.212821737 }
+          ]},
+          { "nodeid": 26, "leaf": -0.205954432 }
+        ]}
+      ]},
+      { "nodeid": 6, "depth": 2, "name": "send", "size": 1, "yes": 13, "no": 14, "missing": 13 , "children": [
+        { "nodeid": 13, "depth": 3, "name": "getBestProvider", "size": 4, "yes": 27, "no": 28, "missing": 27 , "children": [
+          { "nodeid": 27, "leaf": -0.25765112 },
+          { "nodeid": 28, "leaf": 0.0370966494 }
+        ]},
+        { "nodeid": 14, "depth": 3, "name": "chmod", "size": 26, "yes": 29, "no": 30, "missing": 29 , "children": [
+          { "nodeid": 29, "leaf": 0.51139015 },
+          { "nodeid": 30, "depth": 4, "name": "getConnectionInfo", "size": 4, "yes": 53, "no": 54, "missing": 53 , "children": [
+            { "nodeid": 53, "leaf": -0.120529331 },
+            { "nodeid": 54, "leaf": 0.0359043144 }
+          ]}
+        ]}
+      ]}
+    ]}
+  ]}
+]},
+{
+"name": "tree3",
+"children": [
+ { "nodeid": 0, "depth": 0, "name": "flock", "size": 3, "yes": 1, "no": 2, "missing": 1 , "children": [
+    { "nodeid": 1, "depth": 1, "name": "pread64", "size": 9, "yes": 3, "no": 4, "missing": 3 , "children": [
+      { "nodeid": 3, "depth": 2, "name": "getActivePhoneType", "size": 1, "yes": 7, "no": 8, "missing": 7 , "children": [
+        { "nodeid": 7, "depth": 3, "name": "gettimeofday", "size": 48, "yes": 15, "no": 16, "missing": 15 , "children": [
+          { "nodeid": 15, "depth": 4, "name": "mmap2", "size": 37, "yes": 31, "no": 32, "missing": 31 , "children": [
+            { "nodeid": 31, "depth": 5, "name": "FS_ACCESS(READ)____", "size": 9, "yes": 59, "no": 60, "missing": 59 , "children": [
+              { "nodeid": 59, "leaf": 0.0933828577 },
+              { "nodeid": 60, "leaf": 0.310331583 }
+            ]},
+            { "nodeid": 32, "depth": 5, "name": "mprotect", "size": 118, "yes": 61, "no": 62, "missing": 61 , "children": [
+              { "nodeid": 61, "leaf": -0.194991395 },
+              { "nodeid": 62, "leaf": 0.0710574761 }
+            ]}
+          ]},
+          { "nodeid": 16, "depth": 4, "name": "finishDrawing", "size": 4, "yes": 33, "no": 34, "missing": 33 , "children": [
+            { "nodeid": 33, "depth": 5, "name": "FS_PIPE_ACCESS(READ__WRITE)_", "size": 1, "yes": 63, "no": 64, "missing": 63 , "children": [
+              { "nodeid": 63, "leaf": -0.108487397 },
+              { "nodeid": 64, "leaf": 0.329154223 }
+            ]},
+            { "nodeid": 34, "leaf": -0.141226232 }
+          ]}
+        ]},
+        { "nodeid": 8, "depth": 3, "name": "fcntl64", "size": 68, "yes": 17, "no": 18, "missing": 17 , "children": [
+          { "nodeid": 17, "depth": 4, "name": "getIccSerialNumber", "size": 1, "yes": 35, "no": 36, "missing": 35 , "children": [
+            { "nodeid": 35, "leaf": -0.239497602 },
+            { "nodeid": 36, "leaf": 0.101088345 }
+          ]},
+          { "nodeid": 18, "depth": 4, "name": "FS_ACCESS(READ)____", "size": 76, "yes": 37, "no": 38, "missing": 37 , "children": [
+            { "nodeid": 37, "leaf": 0.299908459 },
+            { "nodeid": 38, "leaf": -0.11507865 }
+          ]}
+        ]}
+      ]},
+      { "nodeid": 4, "depth": 2, "name": "FS_ACCESS(READ)____", "size": 15, "yes": 9, "no": 10, "missing": 9 , "children": [
+        { "nodeid": 9, "depth": 3, "name": "epoll_wait", "size": 1772, "yes": 19, "no": 20, "missing": 19 , "children": [
+          { "nodeid": 19, "depth": 4, "name": "getConnectionInfo", "size": 1, "yes": 39, "no": 40, "missing": 39 , "children": [
+            { "nodeid": 39, "depth": 5, "name": "CREATE_THREAD_____", "size": 9, "yes": 65, "no": 66, "missing": 65 , "children": [
+              { "nodeid": 65, "leaf": -0.0719649866 },
+              { "nodeid": 66, "leaf": -0.25077334 }
+            ]},
+            { "nodeid": 40, "depth": 5, "name": "write", "size": 97, "yes": 67, "no": 68, "missing": 67 , "children": [
+              { "nodeid": 67, "leaf": -0.10315524 },
+              { "nodeid": 68, "leaf": 0.48846975 }
+            ]}
+          ]},
+          { "nodeid": 20, "depth": 4, "name": "stat64", "size": 37, "yes": 41, "no": 42, "missing": 41 , "children": [
+            { "nodeid": 41, "depth": 5, "name": "getPackageInfo", "size": 2, "yes": 69, "no": 70, "missing": 69 , "children": [
+              { "nodeid": 69, "leaf": 0.168166026 },
+              { "nodeid": 70, "leaf": 0.783682346 }
+            ]},
+            { "nodeid": 42, "leaf": -0.163319752 }
+          ]}
+        ]},
+        { "nodeid": 10, "depth": 3, "name": "ACCESS_PERSONAL_INFO___", "size": 2, "yes": 21, "no": 22, "missing": 21 , "children": [
+          { "nodeid": 21, "depth": 4, "name": "chmod", "size": 3, "yes": 43, "no": 44, "missing": 43 , "children": [
+            { "nodeid": 43, "depth": 5, "name": "addAccessibilityInteractionConnection", "size": 2, "yes": 71, "no": 72, "missing": 71 , "children": [
+              { "nodeid": 71, "leaf": 0.357966483 },
+              { "nodeid": 72, "leaf": -0.111193217 }
+            ]},
+            { "nodeid": 44, "depth": 5, "name": "sigprocmask", "size": 97, "yes": 73, "no": 74, "missing": 73 , "children": [
+              { "nodeid": 73, "leaf": 0.348374039 },
+              { "nodeid": 74, "leaf": -0.113844119 }
+            ]}
+          ]},
+          { "nodeid": 22, "depth": 4, "name": "stat64", "size": 93, "yes": 45, "no": 46, "missing": 45 , "children": [
+            { "nodeid": 45, "depth": 5, "name": "getIccSerialNumber", "size": 1, "yes": 75, "no": 76, "missing": 75 , "children": [
+              { "nodeid": 75, "leaf": -0.203504339 },
+              { "nodeid": 76, "leaf": 0.174626663 }
+            ]},
+            { "nodeid": 46, "depth": 5, "name": "clock_gettime", "size": 580, "yes": 77, "no": 78, "missing": 77 , "children": [
+              { "nodeid": 77, "leaf": 0.683376908 },
+              { "nodeid": 78, "leaf": 0.00893382542 }
+            ]}
+          ]}
+        ]}
+      ]}
+    ]},
+    { "nodeid": 2, "depth": 1, "name": "getActivityInfo", "size": 3, "yes": 5, "no": 6, "missing": 5 , "children": [
+      { "nodeid": 5, "depth": 2, "name": "getIccSerialNumber", "size": 1, "yes": 11, "no": 12, "missing": 11 , "children": [
+        { "nodeid": 11, "depth": 3, "name": "getPackageInfo", "size": 6, "yes": 23, "no": 24, "missing": 23 , "children": [
+          { "nodeid": 23, "depth": 4, "name": "shutdown", "size": 1, "yes": 47, "no": 48, "missing": 47 , "children": [
+            { "nodeid": 47, "depth": 5, "name": "setsockopt", "size": 22, "yes": 79, "no": 80, "missing": 79 , "children": [
+              { "nodeid": 79, "leaf": 0.265016586 },
+              { "nodeid": 80, "leaf": -0.168950051 }
+            ]},
+            { "nodeid": 48, "depth": 5, "name": "fchown32", "size": 7, "yes": 81, "no": 82, "missing": 81 , "children": [
+              { "nodeid": 81, "leaf": -0.220505357 },
+              { "nodeid": 82, "leaf": 0.225077853 }
+            ]}
+          ]},
+          { "nodeid": 24, "depth": 4, "name": "performDeferredDestroy", "size": 6, "yes": 49, "no": 50, "missing": 49 , "children": [
+            { "nodeid": 49, "depth": 5, "name": "statfs64", "size": 4, "yes": 83, "no": 84, "missing": 83 , "children": [
+              { "nodeid": 83, "leaf": -0.189660713 },
+              { "nodeid": 84, "leaf": 0.0690355077 }
+            ]},
+            { "nodeid": 50, "leaf": 0.347052425 }
+          ]}
+        ]},
+        { "nodeid": 12, "depth": 3, "name": "setComponentEnabledSetting", "size": 1, "yes": 25, "no": 26, "missing": 25 , "children": [
+          { "nodeid": 25, "depth": 4, "name": "getDeviceSvn", "size": 1, "yes": 51, "no": 52, "missing": 51 , "children": [
+            { "nodeid": 51, "depth": 5, "name": "releaseWakeLock", "size": 1, "yes": 85, "no": 86, "missing": 85 , "children": [
+              { "nodeid": 85, "leaf": 0.30898723 },
+              { "nodeid": 86, "leaf": -0.0472366549 }
+            ]},
+            { "nodeid": 52, "depth": 5, "name": "addAccessibilityInteractionConnection", "size": 3, "yes": 87, "no": 88, "missing": 87 , "children": [
+              { "nodeid": 87, "leaf": -0.196179226 },
+              { "nodeid": 88, "leaf": 0.14982301 }
+            ]}
+          ]},
+          { "nodeid": 26, "leaf": -0.229266137 }
+        ]}
+      ]},
+      { "nodeid": 6, "depth": 2, "name": "FS_PIPE_ACCESS(READ)___", "size": 1, "yes": 13, "no": 14, "missing": 13 , "children": [
+        { "nodeid": 13, "depth": 3, "name": "brk", "size": 78, "yes": 27, "no": 28, "missing": 27 , "children": [
+          { "nodeid": 27, "leaf": 0.182476401 },
+          { "nodeid": 28, "depth": 4, "name": "getLine1Number", "size": 1, "yes": 53, "no": 54, "missing": 53 , "children": [
+            { "nodeid": 53, "leaf": -0.280355304 },
+            { "nodeid": 54, "leaf": 0.00360006001 }
+          ]}
+        ]},
+        { "nodeid": 14, "depth": 3, "name": "queryIntentServices", "size": 1, "yes": 29, "no": 30, "missing": 29 , "children": [
+          { "nodeid": 29, "depth": 4, "name": "ACCESS_PERSONAL_INFO___", "size": 7, "yes": 55, "no": 56, "missing": 55 , "children": [
+            { "nodeid": 55, "leaf": -0 },
+            { "nodeid": 56, "leaf": 0.357870519 }
+          ]},
+          { "nodeid": 30, "depth": 4, "name": "getNetworkInfo", "size": 19, "yes": 57, "no": 58, "missing": 57 , "children": [
+            { "nodeid": 57, "leaf": -0.144405842 },
+            { "nodeid": 58, "leaf": 0.136163458 }
+          ]}
+        ]}
+      ]}
+    ]}
+  ]}
+]},
+{
+"name": "tree4",
+"children": [
+ { "nodeid": 0, "depth": 0, "name": "send", "size": 1, "yes": 1, "no": 2, "missing": 1 , "children": [
+    { "nodeid": 1, "depth": 1, "name": "fsync", "size": 1, "yes": 3, "no": 4, "missing": 3 , "children": [
+      { "nodeid": 3, "depth": 2, "name": "getLine1Number", "size": 1, "yes": 7, "no": 8, "missing": 7 , "children": [
+        { "nodeid": 7, "depth": 3, "name": "_llseek", "size": 16, "yes": 15, "no": 16, "missing": 15 , "children": [
+          { "nodeid": 15, "depth": 4, "name": "lstat64", "size": 4, "yes": 31, "no": 32, "missing": 31 , "children": [
+            { "nodeid": 31, "depth": 5, "name": "mkdir", "size": 3, "yes": 55, "no": 56, "missing": 55 , "children": [
+              { "nodeid": 55, "leaf": -0.0276050754 },
+              { "nodeid": 56, "leaf": 0.206602126 }
+            ]},
+            { "nodeid": 32, "depth": 5, "name": "munmap", "size": 229, "yes": 57, "no": 58, "missing": 57 , "children": [
+              { "nodeid": 57, "leaf": 0.26669392 },
+              { "nodeid": 58, "leaf": -0.0554910265 }
+            ]}
+          ]},
+          { "nodeid": 16, "depth": 4, "name": "read", "size": 49, "yes": 33, "no": 34, "missing": 33 , "children": [
+            { "nodeid": 33, "leaf": 0.0550019108 },
+            { "nodeid": 34, "depth": 5, "name": "_llseek", "size": 214, "yes": 59, "no": 60, "missing": 59 , "children": [
+              { "nodeid": 59, "leaf": -0.27229628 },
+              { "nodeid": 60, "leaf": -0 }
+            ]}
+          ]}
+        ]},
+        { "nodeid": 8, "depth": 3, "name": "getDataNetworkType", "size": 1, "yes": 17, "no": 18, "missing": 17 , "children": [
+          { "nodeid": 17, "depth": 4, "name": "getDisplayInfo", "size": 10, "yes": 35, "no": 36, "missing": 35 , "children": [
+            { "nodeid": 35, "leaf": -0.25633654 },
+            { "nodeid": 36, "depth": 5, "name": "FS_PIPE_ACCESS___", "size": 2, "yes": 61, "no": 62, "missing": 61 , "children": [
+              { "nodeid": 61, "leaf": -0.128961101 },
+              { "nodeid": 62, "leaf": 0.252056837 }
+            ]}
+          ]},
+          { "nodeid": 18, "depth": 4, "name": "epoll_wait", "size": 474, "yes": 37, "no": 38, "missing": 37 , "children": [
+            { "nodeid": 37, "depth": 5, "name": "FS_ACCESS____", "size": 14, "yes": 63, "no": 64, "missing": 63 , "children": [
+              { "nodeid": 63, "leaf": 0.184114248 },
+              { "nodeid": 64, "leaf": -0.233567283 }
+            ]},
+            { "nodeid": 38, "leaf": 0.595769823 }
+          ]}
+        ]}
+      ]},
+      { "nodeid": 4, "depth": 2, "name": "prctl", "size": 101, "yes": 9, "no": 10, "missing": 9 , "children": [
+        { "nodeid": 9, "depth": 3, "name": "getActiveNetworkInfo", "size": 5, "yes": 19, "no": 20, "missing": 19 , "children": [
+          { "nodeid": 19, "depth": 4, "name": "recvfrom", "size": 12685, "yes": 39, "no": 40, "missing": 39 , "children": [
+            { "nodeid": 39, "depth": 5, "name": "getNetworkInfo", "size": 5, "yes": 65, "no": 66, "missing": 65 , "children": [
+              { "nodeid": 65, "leaf": -0.260726362 },
+              { "nodeid": 66, "leaf": 0.171821952 }
+            ]},
+            { "nodeid": 40, "leaf": 0.23606205 }
+          ]},
+          { "nodeid": 20, "depth": 4, "name": "set", "size": 1, "yes": 41, "no": 42, "missing": 41 , "children": [
+            { "nodeid": 41, "leaf": -0.111252144 },
+            { "nodeid": 42, "leaf": 0.387464255 }
+          ]}
+        ]},
+        { "nodeid": 10, "depth": 3, "name": "sigprocmask", "size": 89, "yes": 21, "no": 22, "missing": 21 , "children": [
+          { "nodeid": 21, "depth": 4, "name": "write", "size": 134, "yes": 43, "no": 44, "missing": 43 , "children": [
+            { "nodeid": 43, "depth": 5, "name": "getAllNetworkInfo", "size": 2, "yes": 67, "no": 68, "missing": 67 , "children": [
+              { "nodeid": 67, "leaf": -0.13604255 },
+              { "nodeid": 68, "leaf": 0.322270334 }
+            ]},
+            { "nodeid": 44, "depth": 5, "name": "gettimeofday", "size": 659, "yes": 69, "no": 70, "missing": 69 , "children": [
+              { "nodeid": 69, "leaf": 0.298597127 },
+              { "nodeid": 70, "leaf": -0.0310511179 }
+            ]}
+          ]},
+          { "nodeid": 22, "depth": 4, "name": "set", "size": 3, "yes": 45, "no": 46, "missing": 45 , "children": [
+            { "nodeid": 45, "depth": 5, "name": "_newselect", "size": 3, "yes": 71, "no": 72, "missing": 71 , "children": [
+              { "nodeid": 71, "leaf": 0.0195475575 },
+              { "nodeid": 72, "leaf": -0.178138882 }
+            ]},
+            { "nodeid": 46, "depth": 5, "name": "mprotect", "size": 234, "yes": 73, "no": 74, "missing": 73 , "children": [
+              { "nodeid": 73, "leaf": 0.0358425677 },
+              { "nodeid": 74, "leaf": -0.273232698 }
+            ]}
+          ]}
+        ]}
+      ]}
+    ]},
+    { "nodeid": 2, "depth": 1, "name": "NETWORK_ACCESS____", "size": 1, "yes": 5, "no": 6, "missing": 5 , "children": [
+      { "nodeid": 5, "depth": 2, "name": "epoll_wait", "size": 35, "yes": 11, "no": 12, "missing": 11 , "children": [
+        { "nodeid": 11, "depth": 3, "name": "getApplicationInfo", "size": 3, "yes": 23, "no": 24, "missing": 23 , "children": [
+          { "nodeid": 23, "leaf": -0 },
+          { "nodeid": 24, "leaf": 0.447548598 }
+        ]},
+        { "nodeid": 12, "depth": 3, "name": "getNetworkInfo", "size": 9, "yes": 25, "no": 26, "missing": 25 , "children": [
+          { "nodeid": 25, "depth": 4, "name": "getInputDeviceIds", "size": 1, "yes": 47, "no": 48, "missing": 47 , "children": [
+            { "nodeid": 47, "depth": 5, "name": "addToDisplay", "size": 1, "yes": 75, "no": 76, "missing": 75 , "children": [
+              { "nodeid": 75, "leaf": 0.0761039332 },
+              { "nodeid": 76, "leaf": -0.246440455 }
+            ]},
+            { "nodeid": 48, "depth": 5, "name": "getdents64", "size": 8, "yes": 77, "no": 78, "missing": 77 , "children": [
+              { "nodeid": 77, "leaf": -0.159674376 },
+              { "nodeid": 78, "leaf": 0.355618715 }
+            ]}
+          ]},
+          { "nodeid": 26, "depth": 4, "name": "pread64", "size": 67, "yes": 49, "no": 50, "missing": 49 , "children": [
+            { "nodeid": 49, "leaf": -0.106525041 },
+            { "nodeid": 50, "leaf": 0.532298684 }
+          ]}
+        ]}
+      ]},
+      { "nodeid": 6, "depth": 2, "name": "getPackageInfo", "size": 93, "yes": 13, "no": 14, "missing": 13 , "children": [
+        { "nodeid": 13, "depth": 3, "name": "recvmsg", "size": 7, "yes": 27, "no": 28, "missing": 27 , "children": [
+          { "nodeid": 27, "depth": 4, "name": "setStreamVolume", "size": 1, "yes": 51, "no": 52, "missing": 51 , "children": [
+            { "nodeid": 51, "depth": 5, "name": "checkPermission", "size": 47, "yes": 79, "no": 80, "missing": 79 , "children": [
+              { "nodeid": 79, "leaf": 0.30400914 },
+              { "nodeid": 80, "leaf": -0.157136172 }
+            ]},
+            { "nodeid": 52, "leaf": -0.239359558 }
+          ]},
+          { "nodeid": 28, "depth": 4, "name": "gettimeofday", "size": 2634, "yes": 53, "no": 54, "missing": 53 , "children": [
+            { "nodeid": 53, "depth": 5, "name": "sched_yield", "size": 9, "yes": 81, "no": 82, "missing": 81 , "children": [
+              { "nodeid": 81, "leaf": -0.226029783 },
+              { "nodeid": 82, "leaf": 0.0827508271 }
+            ]},
+            { "nodeid": 54, "depth": 5, "name": "fsync", "size": 9, "yes": 83, "no": 84, "missing": 83 , "children": [
+              { "nodeid": 83, "leaf": 0.403826684 },
+              { "nodeid": 84, "leaf": -0.03023028 }
+            ]}
+          ]}
+        ]},
+        { "nodeid": 14, "depth": 3, "name": "close", "size": 2329, "yes": 29, "no": 30, "missing": 29 , "children": [
+          { "nodeid": 29, "leaf": -0.278593153 },
+          { "nodeid": 30, "leaf": -0 }
+        ]}
+      ]}
+    ]}
+  ]}
+]},
+{
+"name": "tree5",
+"children": [
+ { "nodeid": 0, "depth": 0, "name": "getSubscriberId", "size": 11, "yes": 1, "no": 2, "missing": 1 , "children": [
+    { "nodeid": 1, "depth": 1, "name": "sigprocmask", "size": 24, "yes": 3, "no": 4, "missing": 3 , "children": [
+      { "nodeid": 3, "depth": 2, "name": "gettimeofday", "size": 84, "yes": 7, "no": 8, "missing": 7 , "children": [
+        { "nodeid": 7, "depth": 3, "name": "FS_ACCESS(CREATE)____", "size": 3, "yes": 13, "no": 14, "missing": 13 , "children": [
+          { "nodeid": 13, "depth": 4, "name": "access", "size": 4, "yes": 25, "no": 26, "missing": 25 , "children": [
+            { "nodeid": 25, "depth": 5, "name": "munmap", "size": 3, "yes": 43, "no": 44, "missing": 43 , "children": [
+              { "nodeid": 43, "leaf": -0.127601638 },
+              { "nodeid": 44, "leaf": 0.157889232 }
+            ]},
+            { "nodeid": 26, "depth": 5, "name": "exit", "size": 1, "yes": 45, "no": 46, "missing": 45 , "children": [
+              { "nodeid": 45, "leaf": 0.283568889 },
+              { "nodeid": 46, "leaf": 0.0144654401 }
+            ]}
+          ]},
+          { "nodeid": 14, "depth": 4, "name": "lseek", "size": 12, "yes": 27, "no": 28, "missing": 27 , "children": [
+            { "nodeid": 27, "depth": 5, "name": "set", "size": 3, "yes": 47, "no": 48, "missing": 47 , "children": [
+              { "nodeid": 47, "leaf": -0.243704602 },
+              { "nodeid": 48, "leaf": 0.162878782 }
+            ]},
+            { "nodeid": 28, "depth": 5, "name": "gettimeofday", "size": 72, "yes": 49, "no": 50, "missing": 49 , "children": [
+              { "nodeid": 49, "leaf": 0.182053864 },
+              { "nodeid": 50, "leaf": -0.338825792 }
+            ]}
+          ]}
+        ]},
+        { "nodeid": 8, "depth": 3, "name": "relayout", "size": 5, "yes": 15, "no": 16, "missing": 15 , "children": [
+          { "nodeid": 15, "depth": 4, "name": "poll", "size": 10, "yes": 29, "no": 30, "missing": 29 , "children": [
+            { "nodeid": 29, "depth": 5, "name": "FS_ACCESS(CREATE__WRITE)__", "size": 3, "yes": 51, "no": 52, "missing": 51 , "children": [
+              { "nodeid": 51, "leaf": 0.0380023122 },
+              { "nodeid": 52, "leaf": 0.270345777 }
+            ]},
+            { "nodeid": 30, "depth": 5, "name": "fchown32", "size": 23, "yes": 53, "no": 54, "missing": 53 , "children": [
+              { "nodeid": 53, "leaf": -0.144930974 },
+              { "nodeid": 54, "leaf": 0.00159244169 }
+            ]}
+          ]},
+          { "nodeid": 16, "leaf": -0.193003729 }
+        ]}
+      ]},
+      { "nodeid": 4, "depth": 2, "name": "getDisplayInfo", "size": 8, "yes": 9, "no": 10, "missing": 9 , "children": [
+        { "nodeid": 9, "depth": 3, "name": "getPackageInfo", "size": 2, "yes": 17, "no": 18, "missing": 17 , "children": [
+          { "nodeid": 17, "depth": 4, "name": "enqueueToast", "size": 1, "yes": 31, "no": 32, "missing": 31 , "children": [
+            { "nodeid": 31, "depth": 5, "name": "set", "size": 10, "yes": 55, "no": 56, "missing": 55 , "children": [
+              { "nodeid": 55, "leaf": -0.216072217 },
+              { "nodeid": 56, "leaf": 0.182435334 }
+            ]},
+            { "nodeid": 32, "depth": 5, "name": "mkdir", "size": 4, "yes": 57, "no": 58, "missing": 57 , "children": [
+              { "nodeid": 57, "leaf": -0.0873673037 },
+              { "nodeid": 58, "leaf": 0.308222681 }
+            ]}
+          ]},
+          { "nodeid": 18, "depth": 4, "name": "pread64", "size": 68, "yes": 33, "no": 34, "missing": 33 , "children": [
+            { "nodeid": 33, "depth": 5, "name": "ioctl", "size": 513, "yes": 59, "no": 60, "missing": 59 , "children": [
+              { "nodeid": 59, "leaf": 0.0189740807 },
+              { "nodeid": 60, "leaf": 0.280248851 }
+            ]},
+            { "nodeid": 34, "depth": 5, "name": "connect", "size": 45, "yes": 61, "no": 62, "missing": 61 , "children": [
+              { "nodeid": 61, "leaf": -0.187634259 },
+              { "nodeid": 62, "leaf": 0.227278486 }
+            ]}
+          ]}
+        ]},
+        { "nodeid": 10, "depth": 3, "name": "set", "size": 3, "yes": 19, "no": 20, "missing": 19 , "children": [
+          { "nodeid": 19, "depth": 4, "name": "gettimeofday", "size": 30, "yes": 35, "no": 36, "missing": 35 , "children": [
+            { "nodeid": 35, "depth": 5, "name": "epoll_wait", "size": 115, "yes": 63, "no": 64, "missing": 63 , "children": [
+              { "nodeid": 63, "leaf": -0 },
+              { "nodeid": 64, "leaf": 0.277900815 }
+            ]},
+            { "nodeid": 36, "depth": 5, "name": "connect", "size": 19, "yes": 65, "no": 66, "missing": 65 , "children": [
+              { "nodeid": 65, "leaf": -0.0287396889 },
+              { "nodeid": 66, "leaf": 0.114913523 }
+            ]}
+          ]},
+          { "nodeid": 20, "depth": 4, "name": "dup", "size": 8, "yes": 37, "no": 38, "missing": 37 , "children": [
+            { "nodeid": 37, "depth": 5, "name": "getWifiServiceMessenger", "size": 1, "yes": 67, "no": 68, "missing": 67 , "children": [
+              { "nodeid": 67, "leaf": -0.160553545 },
+              { "nodeid": 68, "leaf": 0.290322006 }
+            ]},
+            { "nodeid": 38, "depth": 5, "name": "getActivePhoneType", "size": 7, "yes": 69, "no": 70, "missing": 69 , "children": [
+              { "nodeid": 69, "leaf": -0.270878285 },
+              { "nodeid": 70, "leaf": -0 }
+            ]}
+          ]}
+        ]}
+      ]}
+    ]},
+    { "nodeid": 2, "depth": 1, "name": "checkPermission", "size": 50, "yes": 5, "no": 6, "missing": 5 , "children": [
+      { "nodeid": 5, "depth": 2, "name": "FS_ACCESS(CREATE__READ__WRITE)", "size": 6, "yes": 11, "no": 12, "missing": 11 , "children": [
+        { "nodeid": 11, "depth": 3, "name": "getLastLocation", "size": 8, "yes": 21, "no": 22, "missing": 21 , "children": [
+          { "nodeid": 21, "depth": 4, "name": "getDisplayInfo", "size": 33, "yes": 39, "no": 40, "missing": 39 , "children": [
+            { "nodeid": 39, "depth": 5, "name": "flock", "size": 3, "yes": 71, "no": 72, "missing": 71 , "children": [
+              { "nodeid": 71, "leaf": 0.451647311 },
+              { "nodeid": 72, "leaf": 0.270807296 }
+            ]},
+            { "nodeid": 40, "leaf": 0.0109403692 }
+          ]},
+          { "nodeid": 22, "depth": 4, "name": "DEVICE_ACCESS_____", "size": 107, "yes": 41, "no": 42, "missing": 41 , "children": [
+            { "nodeid": 41, "leaf": -0.137952268 },
+            { "nodeid": 42, "leaf": 0.125817597 }
+          ]}
+        ]},
+        { "nodeid": 12, "depth": 3, "name": "munmap", "size": 532, "yes": 23, "no": 24, "missing": 23 , "children": [
+          { "nodeid": 23, "leaf": -0.145760417 },
+          { "nodeid": 24, "leaf": 0.124328032 }
+        ]}
+      ]},
+      { "nodeid": 6, "leaf": -0.168237016 }
+    ]}
+  ]}
+]},
+{
+"name": "tree6",
+"children": [
+ { "nodeid": 0, "depth": 0, "name": "getSubscriberId", "size": 11, "yes": 1, "no": 2, "missing": 1 , "children": [
+    { "nodeid": 1, "depth": 1, "name": "TERMINATE_THREAD", "size": 1, "yes": 3, "no": 4, "missing": 3 , "children": [
+      { "nodeid": 3, "depth": 2, "name": "gettimeofday", "size": 6, "yes": 7, "no": 8, "missing": 7 , "children": [
+        { "nodeid": 7, "depth": 3, "name": "getuid32", "size": 19, "yes": 15, "no": 16, "missing": 15 , "children": [
+          { "nodeid": 15, "depth": 4, "name": "FS_ACCESS(READ)____", "size": 9, "yes": 27, "no": 28, "missing": 27 , "children": [
+            { "nodeid": 27, "depth": 5, "name": "futex", "size": 30, "yes": 45, "no": 46, "missing": 45 , "children": [
+              { "nodeid": 45, "leaf": 0.130346909 },
+              { "nodeid": 46, "leaf": -0.154423833 }
+            ]},
+            { "nodeid": 28, "leaf": 0.295095921 }
+          ]},
+          { "nodeid": 16, "depth": 4, "name": "munmap", "size": 29, "yes": 29, "no": 30, "missing": 29 , "children": [
+            { "nodeid": 29, "depth": 5, "name": "chmod", "size": 2, "yes": 47, "no": 48, "missing": 47 , "children": [
+              { "nodeid": 47, "leaf": -0.153938159 },
+              { "nodeid": 48, "leaf": 0.199272454 }
+            ]},
+            { "nodeid": 30, "depth": 5, "name": "prctl", "size": 91, "yes": 49, "no": 50, "missing": 49 , "children": [
+              { "nodeid": 49, "leaf": 0.545112133 },
+              { "nodeid": 50, "leaf": 0.118338935 }
+            ]}
+          ]}
+        ]},
+        { "nodeid": 8, "depth": 3, "name": "getpriority", "size": 57, "yes": 17, "no": 18, "missing": 17 , "children": [
+          { "nodeid": 17, "depth": 4, "name": "fcntl64", "size": 8, "yes": 31, "no": 32, "missing": 31 , "children": [
+            { "nodeid": 31, "depth": 5, "name": "setComponentEnabledSetting", "size": 1, "yes": 51, "no": 52, "missing": 51 , "children": [
+              { "nodeid": 51, "leaf": 0.334097952 },
+              { "nodeid": 52, "leaf": 0.625170112 }
+            ]},
+            { "nodeid": 32, "depth": 5, "name": "recvfrom", "size": 28, "yes": 53, "no": 54, "missing": 53 , "children": [
+              { "nodeid": 53, "leaf": 0.240774393 },
+              { "nodeid": 54, "leaf": -0.00800728984 }
+            ]}
+          ]},
+          { "nodeid": 18, "depth": 4, "name": "getpid", "size": 1223, "yes": 33, "no": 34, "missing": 33 , "children": [
+            { "nodeid": 33, "depth": 5, "name": "mkdir", "size": 7, "yes": 55, "no": 56, "missing": 55 , "children": [
+              { "nodeid": 55, "leaf": -0.235216573 },
+              { "nodeid": 56, "leaf": 0.0599235073 }
+            ]},
+            { "nodeid": 34, "leaf": 0.184470013 }
+          ]}
+        ]}
+      ]},
+      { "nodeid": 4, "depth": 2, "name": "lstat64", "size": 9, "yes": 9, "no": 10, "missing": 9 , "children": [
+        { "nodeid": 9, "depth": 3, "name": "NETWORK_ACCESS(READ__WRITE)__", "size": 5, "yes": 19, "no": 20, "missing": 19 , "children": [
+          { "nodeid": 19, "depth": 4, "name": "getIccSerialNumber", "size": 1, "yes": 35, "no": 36, "missing": 35 , "children": [
+            { "nodeid": 35, "depth": 5, "name": "mkdir", "size": 8, "yes": 57, "no": 58, "missing": 57 , "children": [
+              { "nodeid": 57, "leaf": -0.194213271 },
+              { "nodeid": 58, "leaf": 0.0387324356 }
+            ]},
+            { "nodeid": 36, "depth": 5, "name": "ACCESS_PERSONAL_INFO___", "size": 3, "yes": 59, "no": 60, "missing": 59 , "children": [
+              { "nodeid": 59, "leaf": 0.71663934 },
+              { "nodeid": 60, "leaf": -0.0423517004 }
+            ]}
+          ]},
+          { "nodeid": 20, "depth": 4, "name": "getsockname", "size": 2, "yes": 37, "no": 38, "missing": 37 , "children": [
+            { "nodeid": 37, "depth": 5, "name": "getpid", "size": 51, "yes": 61, "no": 62, "missing": 61 , "children": [
+              { "nodeid": 61, "leaf": 0.0041101668 },
+              { "nodeid": 62, "leaf": -0.213194743 }
+            ]},
+            { "nodeid": 38, "depth": 5, "name": "getWifiServiceMessenger", "size": 1, "yes": 63, "no": 64, "missing": 63 , "children": [
+              { "nodeid": 63, "leaf": 0.114419177 },
+              { "nodeid": 64, "leaf": 0.51089704 }
+            ]}
+          ]}
+        ]},
+        { "nodeid": 10, "depth": 3, "name": "getuid32", "size": 7189, "yes": 21, "no": 22, "missing": 21 , "children": [
+          { "nodeid": 21, "depth": 4, "name": "getActiveNetworkInfo", "size": 6, "yes": 39, "no": 40, "missing": 39 , "children": [
+            { "nodeid": 39, "depth": 5, "name": "_newselect", "size": 7, "yes": 65, "no": 66, "missing": 65 , "children": [
+              { "nodeid": 65, "leaf": 0.104459614 },
+              { "nodeid": 66, "leaf": -0.167708516 }
+            ]},
+            { "nodeid": 40, "depth": 5, "name": "getActivityInfo", "size": 2, "yes": 67, "no": 68, "missing": 67 , "children": [
+              { "nodeid": 67, "leaf": 0.0225979071 },
+              { "nodeid": 68, "leaf": -0.186550453 }
+            ]}
+          ]},
+          { "nodeid": 22, "depth": 4, "name": "getsockname", "size": 16, "yes": 41, "no": 42, "missing": 41 , "children": [
+            { "nodeid": 41, "depth": 5, "name": "recvfrom", "size": 11006, "yes": 69, "no": 70, "missing": 69 , "children": [
+              { "nodeid": 69, "leaf": -0.261317074 },
+              { "nodeid": 70, "leaf": 0.0969261751 }
+            ]},
+            { "nodeid": 42, "depth": 5, "name": "sigprocmask", "size": 279, "yes": 71, "no": 72, "missing": 71 , "children": [
+              { "nodeid": 71, "leaf": 0.232430339 },
+              { "nodeid": 72, "leaf": -0.21805419 }
+            ]}
+          ]}
+        ]}
+      ]}
+    ]},
+    { "nodeid": 2, "depth": 1, "name": "getActivityInfo", "size": 4, "yes": 5, "no": 6, "missing": 5 , "children": [
+      { "nodeid": 5, "depth": 2, "name": "NETWORK_ACCESS()____", "size": 58, "yes": 11, "no": 12, "missing": 11 , "children": [
+        { "nodeid": 11, "depth": 3, "name": "getDisplayInfo", "size": 34, "yes": 23, "no": 24, "missing": 23 , "children": [
+          { "nodeid": 23, "depth": 4, "name": "listen", "size": 2, "yes": 43, "no": 44, "missing": 43 , "children": [
+            { "nodeid": 43, "leaf": 0.273549914 },
+            { "nodeid": 44, "leaf": -0 }
+          ]},
+          { "nodeid": 24, "leaf": -0 }
+        ]},
+        { "nodeid": 12, "depth": 3, "name": "bind", "size": 52, "yes": 25, "no": 26, "missing": 25 , "children": [
+          { "nodeid": 25, "leaf": -0.158768594 },
+          { "nodeid": 26, "leaf": 0.0164937098 }
+        ]}
+      ]},
+      { "nodeid": 6, "depth": 2, "name": "sched_yield", "size": 9, "yes": 13, "no": 14, "missing": 13 , "children": [
+        { "nodeid": 13, "leaf": -0.205485463 },
+        { "nodeid": 14, "leaf": 0.0309578925 }
+      ]}
+    ]}
+  ]}
+]},
+{
+"name": "tree7",
+"children": [
+{ "nodeid": 0, "depth": 0, "name": "getActivePhoneType", "size": 8, "yes": 1, "no": 2, "missing": 1 , "children": [
+    { "nodeid": 1, "depth": 1, "name": "chmod", "size": 3, "yes": 3, "no": 4, "missing": 3 , "children": [
+      { "nodeid": 3, "depth": 2, "name": "getLine1Number", "size": 1, "yes": 7, "no": 8, "missing": 7 , "children": [
+        { "nodeid": 7, "depth": 3, "name": "getsockopt", "size": 4, "yes": 15, "no": 16, "missing": 15 , "children": [
+          { "nodeid": 15, "depth": 4, "name": "windowGainedFocus", "size": 2, "yes": 25, "no": 26, "missing": 25 , "children": [
+            { "nodeid": 25, "depth": 5, "name": "getuid32", "size": 43, "yes": 43, "no": 44, "missing": 43 , "children": [
+              { "nodeid": 43, "leaf": 0.0105282487 },
+              { "nodeid": 44, "leaf": 0.15206407 }
+            ]},
+            { "nodeid": 26, "depth": 5, "name": "recvfrom", "size": 31, "yes": 45, "no": 46, "missing": 45 , "children": [
+              { "nodeid": 45, "leaf": 0.170599863 },
+              { "nodeid": 46, "leaf": -0.226109207 }
+            ]}
+          ]},
+          { "nodeid": 16, "depth": 4, "name": "access", "size": 45, "yes": 27, "no": 28, "missing": 27 , "children": [
+            { "nodeid": 27, "depth": 5, "name": "getInTouchMode", "size": 3, "yes": 47, "no": 48, "missing": 47 , "children": [
+              { "nodeid": 47, "leaf": 0.264521271 },
+              { "nodeid": 48, "leaf": -0.0743197948 }
+            ]},
+            { "nodeid": 28, "depth": 5, "name": "writev", "size": 96, "yes": 49, "no": 50, "missing": 49 , "children": [
+              { "nodeid": 49, "leaf": -0.160157546 },
+              { "nodeid": 50, "leaf": 0.0994769707 }
+            ]}
+          ]}
+        ]},
+        { "nodeid": 8, "depth": 3, "name": "getDataNetworkType", "size": 1, "yes": 17, "no": 18, "missing": 17 , "children": [
+          { "nodeid": 17, "depth": 4, "name": "statfs64", "size": 1, "yes": 29, "no": 30, "missing": 29 , "children": [
+            { "nodeid": 29, "depth": 5, "name": "pipe", "size": 12, "yes": 51, "no": 52, "missing": 51 , "children": [
+              { "nodeid": 51, "leaf": -0.243697912 },
+              { "nodeid": 52, "leaf": -0 }
+            ]},
+            { "nodeid": 30, "depth": 5, "name": "lseek", "size": 111, "yes": 53, "no": 54, "missing": 53 , "children": [
+              { "nodeid": 53, "leaf": 0.291574061 },
+              { "nodeid": 54, "leaf": -0.116130352 }
+            ]}
+          ]},
+          { "nodeid": 18, "depth": 4, "name": "epoll_wait", "size": 474, "yes": 31, "no": 32, "missing": 31 , "children": [
+            { "nodeid": 31, "depth": 5, "name": "NETWORK_ACCESS____", "size": 2, "yes": 55, "no": 56, "missing": 55 , "children": [
+              { "nodeid": 55, "leaf": -0.204795048 },
+              { "nodeid": 56, "leaf": 0.156114534 }
+            ]},
+            { "nodeid": 32, "leaf": 0.462610066 }
+          ]}
+        ]}
+      ]},
+      { "nodeid": 4, "depth": 2, "name": "madvise", "size": 108, "yes": 9, "no": 10, "missing": 9 , "children": [
+        { "nodeid": 9, "depth": 3, "name": "getIccSerialNumber", "size": 1, "yes": 19, "no": 20, "missing": 19 , "children": [
+          { "nodeid": 19, "depth": 4, "name": "getNetworkInfo", "size": 3, "yes": 33, "no": 34, "missing": 33 , "children": [
+            { "nodeid": 33, "depth": 5, "name": "getActiveNetworkInfo", "size": 16, "yes": 57, "no": 58, "missing": 57 , "children": [
+              { "nodeid": 57, "leaf": -0.243339941 },
+              { "nodeid": 58, "leaf": 0.201294169 }
+            ]},
+            { "nodeid": 34, "leaf": 0.284933656 }
+          ]},
+          { "nodeid": 20, "depth": 4, "name": "munmap", "size": 38, "yes": 35, "no": 36, "missing": 35 , "children": [
+            { "nodeid": 35, "leaf": -0.10286139 },
+            { "nodeid": 36, "leaf": 0.466115683 }
+          ]}
+        ]},
+        { "nodeid": 10, "depth": 3, "name": "sigprocmask", "size": 105, "yes": 21, "no": 22, "missing": 21 , "children": [
+          { "nodeid": 21, "depth": 4, "name": "gettimeofday", "size": 659, "yes": 37, "no": 38, "missing": 37 , "children": [
+            { "nodeid": 37, "depth": 5, "name": "writev", "size": 27, "yes": 59, "no": 60, "missing": 59 , "children": [
+              { "nodeid": 59, "leaf": -0.105131321 },
+              { "nodeid": 60, "leaf": 0.179058194 }
+            ]},
+            { "nodeid": 38, "depth": 5, "name": "pipe", "size": 17, "yes": 61, "no": 62, "missing": 61 , "children": [
+              { "nodeid": 61, "leaf": -0.198022023 },
+              { "nodeid": 62, "leaf": 0.209083408 }
+            ]}
+          ]},
+          { "nodeid": 22, "depth": 4, "name": "recvfrom", "size": 738, "yes": 39, "no": 40, "missing": 39 , "children": [
+            { "nodeid": 39, "depth": 5, "name": "DEVICE_ACCESS_____", "size": 9, "yes": 63, "no": 64, "missing": 63 , "children": [
+              { "nodeid": 63, "leaf": 0.0120560927 },
+              { "nodeid": 64, "leaf": -0.165166289 }
+            ]},
+            { "nodeid": 40, "depth": 5, "name": "getDisplayInfo", "size": 10, "yes": 65, "no": 66, "missing": 65 , "children": [
+              { "nodeid": 65, "leaf": -0.120115519 },
+              { "nodeid": 66, "leaf": 0.129796326 }
+            ]}
+          ]}
+        ]}
+      ]}
+    ]},
+    { "nodeid": 2, "depth": 1, "name": "requestLocationUpdates", "size": 1, "yes": 5, "no": 6, "missing": 5 , "children": [
+      { "nodeid": 5, "depth": 2, "name": "writev", "size": 27, "yes": 11, "no": 12, "missing": 11 , "children": [
+        { "nodeid": 11, "leaf": -0.209857449 },
+        { "nodeid": 12, "depth": 3, "name": "getpid", "size": 5882, "yes": 23, "no": 24, "missing": 23 , "children": [
+          { "nodeid": 23, "depth": 4, "name": "setRingerMode", "size": 5, "yes": 41, "no": 42, "missing": 41 , "children": [
+            { "nodeid": 41, "depth": 5, "name": "finishDrawing", "size": 20, "yes": 67, "no": 68, "missing": 67 , "children": [
+              { "nodeid": 67, "leaf": 0.277741581 },
+              { "nodeid": 68, "leaf": 0.0218311697 }
+            ]},
+            { "nodeid": 42, "leaf": -0 }
+          ]},
+          { "nodeid": 24, "leaf": -0.023328688 }
+        ]}
+      ]},
+      { "nodeid": 6, "depth": 2, "name": "futex", "size": 3561, "yes": 13, "no": 14, "missing": 13 , "children": [
+        { "nodeid": 13, "leaf": -0.212557003 },
+        { "nodeid": 14, "leaf": -0 }
+      ]}
+    ]}
+  ]}
+]},
+{
+"name": "tree8",
+"children": [
+ { "nodeid": 0, "depth": 0, "name": "getActivePhoneType", "size": 6, "yes": 1, "no": 2, "missing": 1 , "children": [
+    { "nodeid": 1, "depth": 1, "name": "prctl", "size": 209, "yes": 3, "no": 4, "missing": 3 , "children": [
+      { "nodeid": 3, "depth": 2, "name": "pwrite64", "size": 129, "yes": 7, "no": 8, "missing": 7 , "children": [
+        { "nodeid": 7, "depth": 3, "name": "__arm_nr_cacheflush", "size": 1351, "yes": 15, "no": 16, "missing": 15 , "children": [
+          { "nodeid": 15, "depth": 4, "name": "fdatasync", "size": 34, "yes": 29, "no": 30, "missing": 29 , "children": [
+            { "nodeid": 29, "depth": 5, "name": "lseek", "size": 14, "yes": 43, "no": 44, "missing": 43 , "children": [
+              { "nodeid": 43, "leaf": -0.0116176987 },
+              { "nodeid": 44, "leaf": 0.0786337927 }
+            ]},
+            { "nodeid": 30, "depth": 5, "name": "queryIntentReceivers", "size": 2, "yes": 45, "no": 46, "missing": 45 , "children": [
+              { "nodeid": 45, "leaf": -0.200652465 },
+              { "nodeid": 46, "leaf": 0.182472691 }
+            ]}
+          ]},
+          { "nodeid": 16, "depth": 4, "name": "pwrite64", "size": 60, "yes": 31, "no": 32, "missing": 31 , "children": [
+            { "nodeid": 31, "leaf": -0.253285199 },
+            { "nodeid": 32, "depth": 5, "name": "__arm_nr_set_tls", "size": 40, "yes": 47, "no": 48, "missing": 47 , "children": [
+              { "nodeid": 47, "leaf": 0.15491578 },
+              { "nodeid": 48, "leaf": -0.0296682157 }
+            ]}
+          ]}
+        ]},
+        { "nodeid": 8, "depth": 3, "name": "sendto", "size": 2, "yes": 17, "no": 18, "missing": 17 , "children": [
+          { "nodeid": 17, "depth": 4, "name": "EXECUTE_____", "size": 5, "yes": 33, "no": 34, "missing": 33 , "children": [
+            { "nodeid": 33, "depth": 5, "name": "pwrite64", "size": 146, "yes": 49, "no": 50, "missing": 49 , "children": [
+              { "nodeid": 49, "leaf": -0 },
+              { "nodeid": 50, "leaf": -0.260297924 }
+            ]},
+            { "nodeid": 34, "leaf": 0.214037374 }
+          ]},
+          { "nodeid": 18, "depth": 4, "name": "DEVICE_ACCESS_____", "size": 33, "yes": 35, "no": 36, "missing": 35 , "children": [
+            { "nodeid": 35, "depth": 5, "name": "getNetworkInfo", "size": 2, "yes": 51, "no": 52, "missing": 51 , "children": [
+              { "nodeid": 51, "leaf": 0.198253497 },
+              { "nodeid": 52, "leaf": 0.572468519 }
+            ]},
+            { "nodeid": 36, "depth": 5, "name": "getApplicationInfo", "size": 3, "yes": 53, "no": 54, "missing": 53 , "children": [
+              { "nodeid": 53, "leaf": 0.193555981 },
+              { "nodeid": 54, "leaf": -0.1492185 }
+            ]}
+          ]}
+        ]}
+      ]},
+      { "nodeid": 4, "depth": 2, "name": "__arm_nr_set_tls", "size": 130, "yes": 9, "no": 10, "missing": 9 , "children": [
+        { "nodeid": 9, "depth": 3, "name": "gettimeofday", "size": 3426, "yes": 19, "no": 20, "missing": 19 , "children": [
+          { "nodeid": 19, "depth": 4, "name": "getConnectionInfo", "size": 9, "yes": 37, "no": 38, "missing": 37 , "children": [
+            { "nodeid": 37, "depth": 5, "name": "getIccSerialNumber", "size": 3, "yes": 55, "no": 56, "missing": 55 , "children": [
+              { "nodeid": 55, "leaf": -0.289277256 },
+              { "nodeid": 56, "leaf": -0.0117592542 }
+            ]},
+            { "nodeid": 38, "leaf": 0.0969418138 }
+          ]},
+          { "nodeid": 20, "depth": 4, "name": "pread64", "size": 57, "yes": 39, "no": 40, "missing": 39 , "children": [
+            { "nodeid": 39, "depth": 5, "name": "sched_yield", "size": 3, "yes": 57, "no": 58, "missing": 57 , "children": [
+              { "nodeid": 57, "leaf": 0.227159679 },
+              { "nodeid": 58, "leaf": -0 }
+            ]},
+            { "nodeid": 40, "depth": 5, "name": "NETWORK_ACCESS____", "size": 16, "yes": 59, "no": 60, "missing": 59 , "children": [
+              { "nodeid": 59, "leaf": -0.20586738 },
+              { "nodeid": 60, "leaf": -0 }
+            ]}
+          ]}
+        ]},
+        { "nodeid": 10, "depth": 3, "name": "getInTouchMode", "size": 5, "yes": 21, "no": 22, "missing": 21 , "children": [
+          { "nodeid": 21, "leaf": -0.173794627 },
+          { "nodeid": 22, "leaf": 0.359097749 }
+        ]}
+      ]}
+    ]},
+    { "nodeid": 2, "depth": 1, "name": "pipe", "size": 11, "yes": 5, "no": 6, "missing": 5 , "children": [
+      { "nodeid": 5, "depth": 2, "name": "NETWORK_ACCESS(READ__WRITE)__", "size": 1, "yes": 11, "no": 12, "missing": 11 , "children": [
+        { "nodeid": 11, "leaf": 0.227753356 },
+        { "nodeid": 12, "depth": 3, "name": "registerContentObserver", "size": 2, "yes": 23, "no": 24, "missing": 23 , "children": [
+          { "nodeid": 23, "depth": 4, "name": "__arm_nr_set_tls", "size": 18, "yes": 41, "no": 42, "missing": 41 , "children": [
+            { "nodeid": 41, "leaf": -0 },
+            { "nodeid": 42, "leaf": -0.257925332 }
+          ]},
+          { "nodeid": 24, "leaf": 0.160384968 }
+        ]}
+      ]},
+      { "nodeid": 6, "depth": 2, "name": "sendmsg", "size": 7, "yes": 13, "no": 14, "missing": 13 , "children": [
+        { "nodeid": 13, "depth": 3, "name": "getApplicationInfo", "size": 26, "yes": 25, "no": 26, "missing": 25 , "children": [
+          { "nodeid": 25, "leaf": 0.269798458 },
+          { "nodeid": 26, "leaf": -0 }
+        ]},
+        { "nodeid": 14, "depth": 3, "name": "isScreenOn", "size": 5, "yes": 27, "no": 28, "missing": 27 , "children": [
+          { "nodeid": 27, "leaf": 0.0600912943 },
+          { "nodeid": 28, "leaf": -0.113386661 }
+        ]}
+      ]}
+    ]}
+  ]}
+]},
+{
+"name": "tree9",
+"children": [
+{ "nodeid": 0, "depth": 0, "name": "send", "size": 1, "yes": 1, "no": 2, "missing": 1 , "children": [
+    { "nodeid": 1, "depth": 1, "name": "TERMINATE_THREAD", "size": 1, "yes": 3, "no": 4, "missing": 3 , "children": [
+      { "nodeid": 3, "depth": 2, "name": "gettimeofday", "size": 6, "yes": 7, "no": 8, "missing": 7 , "children": [
+        { "nodeid": 7, "depth": 3, "name": "getuid32", "size": 19, "yes": 15, "no": 16, "missing": 15 , "children": [
+          { "nodeid": 15, "depth": 4, "name": "clock_gettime", "size": 29, "yes": 27, "no": 28, "missing": 27 , "children": [
+            { "nodeid": 27, "depth": 5, "name": "writev", "size": 5, "yes": 47, "no": 48, "missing": 47 , "children": [
+              { "nodeid": 47, "leaf": 0.0485269427 },
+              { "nodeid": 48, "leaf": 0.279210061 }
+            ]},
+            { "nodeid": 28, "leaf": -0.16725266 }
+          ]},
+          { "nodeid": 16, "depth": 4, "name": "access", "size": 4, "yes": 29, "no": 30, "missing": 29 , "children": [
+            { "nodeid": 29, "depth": 5, "name": "write", "size": 43, "yes": 49, "no": 50, "missing": 49 , "children": [
+              { "nodeid": 49, "leaf": -0.198534772 },
+              { "nodeid": 50, "leaf": 0.0134855676 }
+            ]},
+            { "nodeid": 30, "depth": 5, "name": "brk", "size": 23, "yes": 51, "no": 52, "missing": 51 , "children": [
+              { "nodeid": 51, "leaf": 0.309587985 },
+              { "nodeid": 52, "leaf": -0.0361767299 }
+            ]}
+          ]}
+        ]},
+        { "nodeid": 8, "depth": 3, "name": "prctl", "size": 90, "yes": 17, "no": 18, "missing": 17 , "children": [
+          { "nodeid": 17, "leaf": -0.17119813 },
+          { "nodeid": 18, "depth": 4, "name": "prctl", "size": 107, "yes": 31, "no": 32, "missing": 31 , "children": [
+            { "nodeid": 31, "depth": 5, "name": "windowGainedFocus", "size": 3, "yes": 53, "no": 54, "missing": 53 , "children": [
+              { "nodeid": 53, "leaf": 0.260927349 },
+              { "nodeid": 54, "leaf": -0.0760556608 }
+            ]},
+            { "nodeid": 32, "leaf": -0.198246717 }
+          ]}
+        ]}
+      ]},
+      { "nodeid": 4, "depth": 2, "name": "gettimeofday", "size": 13, "yes": 9, "no": 10, "missing": 9 , "children": [
+        { "nodeid": 9, "depth": 3, "name": "getDisplayInfo", "size": 9, "yes": 19, "no": 20, "missing": 19 , "children": [
+          { "nodeid": 19, "depth": 4, "name": "sigprocmask", "size": 193, "yes": 33, "no": 34, "missing": 33 , "children": [
+            { "nodeid": 33, "depth": 5, "name": "futex", "size": 69, "yes": 55, "no": 56, "missing": 55 , "children": [
+              { "nodeid": 55, "leaf": -0 },
+              { "nodeid": 56, "leaf": -0.239912868 }
+            ]},
+            { "nodeid": 34, "depth": 5, "name": "clock_gettime", "size": 1269, "yes": 57, "no": 58, "missing": 57 , "children": [
+              { "nodeid": 57, "leaf": 0.231070831 },
+              { "nodeid": 58, "leaf": -0.176436469 }
+            ]}
+          ]},
+          { "nodeid": 20, "depth": 4, "name": "stat64", "size": 31, "yes": 35, "no": 36, "missing": 35 , "children": [
+            { "nodeid": 35, "depth": 5, "name": "madvise", "size": 102, "yes": 59, "no": 60, "missing": 59 , "children": [
+              { "nodeid": 59, "leaf": -0.0485965759 },
+              { "nodeid": 60, "leaf": 0.352899551 }
+            ]},
+            { "nodeid": 36, "leaf": -0.152103037 }
+          ]}
+        ]},
+        { "nodeid": 10, "depth": 3, "name": "stat64", "size": 27, "yes": 21, "no": 22, "missing": 21 , "children": [
+          { "nodeid": 21, "depth": 4, "name": "getsockopt", "size": 10, "yes": 37, "no": 38, "missing": 37 , "children": [
+            { "nodeid": 37, "depth": 5, "name": "write", "size": 1753, "yes": 61, "no": 62, "missing": 61 , "children": [
+              { "nodeid": 61, "leaf": 0.282354563 },
+              { "nodeid": 62, "leaf": -0.0883595198 }
+            ]},
+            { "nodeid": 38, "depth": 5, "name": "pread64", "size": 4, "yes": 63, "no": 64, "missing": 63 , "children": [
+              { "nodeid": 63, "leaf": 0.127318263 },
+              { "nodeid": 64, "leaf": -0.209107354 }
+            ]}
+          ]},
+          { "nodeid": 22, "depth": 4, "name": "sigprocmask", "size": 297, "yes": 39, "no": 40, "missing": 39 , "children": [
+            { "nodeid": 39, "depth": 5, "name": "dup", "size": 14, "yes": 65, "no": 66, "missing": 65 , "children": [
+              { "nodeid": 65, "leaf": -0.0549106039 },
+              { "nodeid": 66, "leaf": 0.0681386366 }
+            ]},
+            { "nodeid": 40, "depth": 5, "name": "writev", "size": 1406, "yes": 67, "no": 68, "missing": 67 , "children": [
+              { "nodeid": 67, "leaf": -0.129670143 },
+              { "nodeid": 68, "leaf": 0.133364365 }
+            ]}
+          ]}
+        ]}
+      ]}
+    ]},
+    { "nodeid": 2, "depth": 1, "name": "getPackageInfo", "size": 93, "yes": 5, "no": 6, "missing": 5 , "children": [
+      { "nodeid": 5, "depth": 2, "name": "getsockname", "size": 5, "yes": 11, "no": 12, "missing": 11 , "children": [
+        { "nodeid": 11, "depth": 3, "name": "getNetworkInfo", "size": 6, "yes": 23, "no": 24, "missing": 23 , "children": [
+          { "nodeid": 23, "depth": 4, "name": "sigprocmask", "size": 103, "yes": 41, "no": 42, "missing": 41 , "children": [
+            { "nodeid": 41, "depth": 5, "name": "getConnectionInfo", "size": 3, "yes": 69, "no": 70, "missing": 69 , "children": [
+              { "nodeid": 69, "leaf": 0.174691498 },
+              { "nodeid": 70, "leaf": -0.151398107 }
+            ]},
+            { "nodeid": 42, "leaf": -0.236016721 }
+          ]},
+          { "nodeid": 24, "leaf": 0.241361037 }
+        ]},
+        { "nodeid": 12, "depth": 3, "name": "getuid32", "size": 490, "yes": 25, "no": 26, "missing": 25 , "children": [
+          { "nodeid": 25, "depth": 4, "name": "NETWORK_ACCESS()____", "size": 32, "yes": 43, "no": 44, "missing": 43 , "children": [
+            { "nodeid": 43, "depth": 5, "name": "finishDrawing", "size": 4, "yes": 71, "no": 72, "missing": 71 , "children": [
+              { "nodeid": 71, "leaf": 0.302470446 },
+              { "nodeid": 72, "leaf": 0.115481086 }
+            ]},
+            { "nodeid": 44, "leaf": -0.0729125738 }
+          ]},
+          { "nodeid": 26, "depth": 4, "name": "requestLocationUpdates", "size": 1, "yes": 45, "no": 46, "missing": 45 , "children": [
+            { "nodeid": 45, "depth": 5, "name": "gettimeofday", "size": 164, "yes": 73, "no": 74, "missing": 73 , "children": [
+              { "nodeid": 73, "leaf": -0.141807392 },
+              { "nodeid": 74, "leaf": 0.146960631 }
+            ]},
+            { "nodeid": 46, "depth": 5, "name": "epoll_wait", "size": 3157, "yes": 75, "no": 76, "missing": 75 , "children": [
+              { "nodeid": 75, "leaf": -0.208527535 },
+              { "nodeid": 76, "leaf": -0 }
+            ]}
+          ]}
+        ]}
+      ]},
+      { "nodeid": 6, "depth": 2, "name": "TERMINATE_THREAD", "size": 28, "yes": 13, "no": 14, "missing": 13 , "children": [
+        { "nodeid": 13, "leaf": -0.248334587 },
+        { "nodeid": 14, "leaf": -0.00428343564 }
+      ]}
+    ]}
+  ]}
+]},
+{
+"name": "tree10",
+"children": [
+ { "nodeid": 0, "depth": 0, "name": "getSubscriberId", "size": 13, "yes": 1, "no": 2, "missing": 1 , "children": [
+    { "nodeid": 1, "depth": 1, "name": "TERMINATE_THREAD", "size": 1, "yes": 3, "no": 4, "missing": 3 , "children": [
+      { "nodeid": 3, "depth": 2, "name": "gettimeofday", "size": 6, "yes": 7, "no": 8, "missing": 7 , "children": [
+        { "nodeid": 7, "depth": 3, "name": "recvfrom", "size": 62, "yes": 13, "no": 14, "missing": 13 , "children": [
+          { "nodeid": 13, "depth": 4, "name": "madvise", "size": 53, "yes": 21, "no": 22, "missing": 21 , "children": [
+            { "nodeid": 21, "depth": 5, "name": "close", "size": 25, "yes": 37, "no": 38, "missing": 37 , "children": [
+              { "nodeid": 37, "leaf": -0.00548406737 },
+              { "nodeid": 38, "leaf": 0.268434554 }
+            ]},
+            { "nodeid": 22, "depth": 5, "name": "epoll_wait", "size": 39, "yes": 39, "no": 40, "missing": 39 , "children": [
+              { "nodeid": 39, "leaf": -0.27177456 },
+              { "nodeid": 40, "leaf": -0 }
+            ]}
+          ]},
+          { "nodeid": 14, "depth": 4, "name": "mmap2", "size": 86, "yes": 23, "no": 24, "missing": 23 , "children": [
+            { "nodeid": 23, "depth": 5, "name": "writev", "size": 8, "yes": 41, "no": 42, "missing": 41 , "children": [
+              { "nodeid": 41, "leaf": -0.163575783 },
+              { "nodeid": 42, "leaf": 0.0184818301 }
+            ]},
+            { "nodeid": 24, "depth": 5, "name": "futex", "size": 74, "yes": 43, "no": 44, "missing": 43 , "children": [
+              { "nodeid": 43, "leaf": 0.863257825 },
+              { "nodeid": 44, "leaf": 0.131009236 }
+            ]}
+          ]}
+        ]},
+        { "nodeid": 8, "depth": 3, "name": "recvfrom", "size": 23, "yes": 15, "no": 16, "missing": 15 , "children": [
+          { "nodeid": 15, "depth": 4, "name": "write", "size": 53, "yes": 25, "no": 26, "missing": 25 , "children": [
+            { "nodeid": 25, "depth": 5, "name": "FS_ACCESS____", "size": 4, "yes": 45, "no": 46, "missing": 45 , "children": [
+              { "nodeid": 45, "leaf": 0.178063393 },
+              { "nodeid": 46, "leaf": -0.100697361 }
+            ]},
+            { "nodeid": 26, "depth": 5, "name": "FS_ACCESS____", "size": 48, "yes": 47, "no": 48, "missing": 47 , "children": [
+              { "nodeid": 47, "leaf": 0.297289014 },
+              { "nodeid": 48, "leaf": -0 }
+            ]}
+          ]},
+          { "nodeid": 16, "depth": 4, "name": "recvfrom", "size": 735, "yes": 27, "no": 28, "missing": 27 , "children": [
+            { "nodeid": 27, "depth": 5, "name": "mprotect", "size": 189, "yes": 49, "no": 50, "missing": 49 , "children": [
+              { "nodeid": 49, "leaf": -0.248321116 },
+              { "nodeid": 50, "leaf": 0.0037614652 }
+            ]},
+            { "nodeid": 28, "depth": 5, "name": "stat64", "size": 30, "yes": 51, "no": 52, "missing": 51 , "children": [
+              { "nodeid": 51, "leaf": 0.219075441 },
+              { "nodeid": 52, "leaf": -0.123289794 }
+            ]}
+          ]}
+        ]}
+      ]},
+      { "nodeid": 4, "depth": 2, "name": "bind", "size": 2, "yes": 9, "no": 10, "missing": 9 , "children": [
+        { "nodeid": 9, "depth": 3, "name": "FS_ACCESS(READ)____", "size": 64, "yes": 17, "no": 18, "missing": 17 , "children": [
+          { "nodeid": 17, "depth": 4, "name": "read", "size": 220, "yes": 29, "no": 30, "missing": 29 , "children": [
+            { "nodeid": 29, "depth": 5, "name": "clock_gettime", "size": 879, "yes": 53, "no": 54, "missing": 53 , "children": [
+              { "nodeid": 53, "leaf": -0.10838338 },
+              { "nodeid": 54, "leaf": 0.062356744 }
+            ]},
+            { "nodeid": 30, "depth": 5, "name": "registerContentObserver", "size": 2, "yes": 55, "no": 56, "missing": 55 , "children": [
+              { "nodeid": 55, "leaf": -0.204024285 },
+              { "nodeid": 56, "leaf": 0.0387935154 }
+            ]}
+          ]},
+          { "nodeid": 18, "depth": 4, "name": "recvfrom", "size": 733, "yes": 31, "no": 32, "missing": 31 , "children": [
+            { "nodeid": 31, "depth": 5, "name": "mprotect", "size": 598, "yes": 57, "no": 58, "missing": 57 , "children": [
+              { "nodeid": 57, "leaf": -0.209390461 },
+              { "nodeid": 58, "leaf": 0.0852058753 }
+            ]},
+            { "nodeid": 32, "depth": 5, "name": "clock_gettime", "size": 100474, "yes": 59, "no": 60, "missing": 59 , "children": [
+              { "nodeid": 59, "leaf": 0.150213733 },
+              { "nodeid": 60, "leaf": -0.192549944 }
+            ]}
+          ]}
+        ]},
+        { "nodeid": 10, "depth": 3, "name": "setsockopt", "size": 2, "yes": 19, "no": 20, "missing": 19 , "children": [
+          { "nodeid": 19, "depth": 4, "name": "FS_ACCESS(CREATE)____", "size": 7, "yes": 33, "no": 34, "missing": 33 , "children": [
+            { "nodeid": 33, "depth": 5, "name": "getLine1Number", "size": 2, "yes": 61, "no": 62, "missing": 61 , "children": [
+              { "nodeid": 61, "leaf": 0.355664909 },
+              { "nodeid": 62, "leaf": 0.00734467385 }
+            ]},
+            { "nodeid": 34, "depth": 5, "name": "windowGainedFocus", "size": 1, "yes": 63, "no": 64, "missing": 63 , "children": [
+              { "nodeid": 63, "leaf": 0.0697071701 },
+              { "nodeid": 64, "leaf": -0.268924713 }
+            ]}
+          ]},
+          { "nodeid": 20, "depth": 4, "name": "sigprocmask", "size": 297, "yes": 35, "no": 36, "missing": 35 , "children": [
+            { "nodeid": 35, "depth": 5, "name": "relayout", "size": 11, "yes": 65, "no": 66, "missing": 65 , "children": [
+              { "nodeid": 65, "leaf": 0.0177093353 },
+              { "nodeid": 66, "leaf": 0.222477317 }
+            ]},
+            { "nodeid": 36, "depth": 5, "name": "fstat64", "size": 1236, "yes": 67, "no": 68, "missing": 67 , "children": [
+              { "nodeid": 67, "leaf": -0.124660134 },
+              { "nodeid": 68, "leaf": 0.057076484 }
+            ]}
+          ]}
+        ]}
+      ]}
+    ]},
+    { "nodeid": 2, "depth": 1, "name": "getActivityInfo", "size": 4, "yes": 5, "no": 6, "missing": 5 , "children": [
+      { "nodeid": 5, "depth": 2, "name": "NETWORK_ACCESS()____", "size": 56, "yes": 11, "no": 12, "missing": 11 , "children": [
+        { "nodeid": 11, "leaf": 0.232823163 },
+        { "nodeid": 12, "leaf": -0 }
+      ]},
+      { "nodeid": 6, "leaf": -0.0591722578 }
+    ]}
+  ]}
+]},
+{
+"name": "tree11",
+"children": [
+ { "nodeid": 0, "depth": 0, "name": "writev", "size": 372, "yes": 1, "no": 2, "missing": 1 , "children": [
+    { "nodeid": 1, "depth": 1, "name": "sigprocmask", "size": 20, "yes": 3, "no": 4, "missing": 3 , "children": [
+      { "nodeid": 3, "depth": 2, "name": "write", "size": 88, "yes": 7, "no": 8, "missing": 7 , "children": [
+        { "nodeid": 7, "depth": 3, "name": "getpriority", "size": 23, "yes": 15, "no": 16, "missing": 15 , "children": [
+          { "nodeid": 15, "depth": 4, "name": "stat64", "size": 17, "yes": 27, "no": 28, "missing": 27 , "children": [
+            { "nodeid": 27, "depth": 5, "name": "futex", "size": 35, "yes": 45, "no": 46, "missing": 45 , "children": [
+              { "nodeid": 45, "leaf": 0.120203212 },
+              { "nodeid": 46, "leaf": -0.0564933196 }
+            ]},
+            { "nodeid": 28, "depth": 5, "name": "getpriority", "size": 17, "yes": 47, "no": 48, "missing": 47 , "children": [
+              { "nodeid": 47, "leaf": -0.0270121731 },
+              { "nodeid": 48, "leaf": 0.248805061 }
+            ]}
+          ]},
+          { "nodeid": 16, "depth": 4, "name": "getpriority", "size": 40, "yes": 29, "no": 30, "missing": 29 , "children": [
+            { "nodeid": 29, "depth": 5, "name": "clock_gettime", "size": 26, "yes": 49, "no": 50, "missing": 49 , "children": [
+              { "nodeid": 49, "leaf": 0.183608294 },
+              { "nodeid": 50, "leaf": -0.218994409 }
+            ]},
+            { "nodeid": 30, "depth": 5, "name": "getDisplayInfo", "size": 6, "yes": 51, "no": 52, "missing": 51 , "children": [
+              { "nodeid": 51, "leaf": 0.238726199 },
+              { "nodeid": 52, "leaf": -0 }
+            ]}
+          ]}
+        ]},
+        { "nodeid": 8, "depth": 3, "name": "NETWORK_ACCESS(READ__WRITE)__", "size": 6, "yes": 17, "no": 18, "missing": 17 , "children": [
+          { "nodeid": 17, "depth": 4, "name": "finishDrawing", "size": 2, "yes": 31, "no": 32, "missing": 31 , "children": [
+            { "nodeid": 31, "depth": 5, "name": "getLine1Number", "size": 1, "yes": 53, "no": 54, "missing": 53 , "children": [
+              { "nodeid": 53, "leaf": 0.244310692 },
+              { "nodeid": 54, "leaf": -0.066963546 }
+            ]},
+            { "nodeid": 32, "depth": 5, "name": "getDisplayInfo", "size": 8, "yes": 55, "no": 56, "missing": 55 , "children": [
+              { "nodeid": 55, "leaf": -0.156787753 },
+              { "nodeid": 56, "leaf": 0.126196384 }
+            ]}
+          ]},
+          { "nodeid": 18, "depth": 4, "name": "getApplicationInfo", "size": 1, "yes": 33, "no": 34, "missing": 33 , "children": [
+            { "nodeid": 33, "leaf": -0.258666486 },
+            { "nodeid": 34, "leaf": 0.123168632 }
+          ]}
+        ]}
+      ]},
+      { "nodeid": 4, "depth": 2, "name": "FS_ACCESS(READ)____", "size": 15, "yes": 9, "no": 10, "missing": 9 , "children": [
+        { "nodeid": 9, "depth": 3, "name": "setComponentEnabledSetting", "size": 2, "yes": 19, "no": 20, "missing": 19 , "children": [
+          { "nodeid": 19, "depth": 4, "name": "epoll_wait", "size": 1827, "yes": 35, "no": 36, "missing": 35 , "children": [
+            { "nodeid": 35, "depth": 5, "name": "brk", "size": 44, "yes": 57, "no": 58, "missing": 57 , "children": [
+              { "nodeid": 57, "leaf": -0.0727671683 },
+              { "nodeid": 58, "leaf": -0.259778023 }
+            ]},
+            { "nodeid": 36, "depth": 5, "name": "finishDrawing", "size": 3, "yes": 59, "no": 60, "missing": 59 , "children": [
+              { "nodeid": 59, "leaf": 0.210851878 },
+              { "nodeid": 60, "leaf": -0 }
+            ]}
+          ]},
+          { "nodeid": 20, "leaf": 0.325284421 }
+        ]},
+        { "nodeid": 10, "depth": 3, "name": "fcntl64", "size": 9, "yes": 21, "no": 22, "missing": 21 , "children": [
+          { "nodeid": 21, "depth": 4, "name": "close", "size": 37, "yes": 37, "no": 38, "missing": 37 , "children": [
+            { "nodeid": 37, "leaf": -0.140956566 },
+            { "nodeid": 38, "depth": 5, "name": "exit", "size": 3, "yes": 61, "no": 62, "missing": 61 , "children": [
+              { "nodeid": 61, "leaf": 0.322183728 },
+              { "nodeid": 62, "leaf": -0 }
+            ]}
+          ]},
+          { "nodeid": 22, "depth": 4, "name": "set", "size": 2, "yes": 39, "no": 40, "missing": 39 , "children": [
+            { "nodeid": 39, "depth": 5, "name": "enqueueToast", "size": 1, "yes": 63, "no": 64, "missing": 63 , "children": [
+              { "nodeid": 63, "leaf": -0.0144364377 },
+              { "nodeid": 64, "leaf": 0.122805342 }
+            ]},
+            { "nodeid": 40, "depth": 5, "name": "pwrite64", "size": 131, "yes": 65, "no": 66, "missing": 65 , "children": [
+              { "nodeid": 65, "leaf": -0.187836081 },
+              { "nodeid": 66, "leaf": 0.0374443568 }
+            ]}
+          ]}
+        ]}
+      ]}
+    ]},
+    { "nodeid": 2, "depth": 1, "name": "getDisplayInfo", "size": 33, "yes": 5, "no": 6, "missing": 5 , "children": [
+      { "nodeid": 5, "depth": 2, "name": "flock", "size": 5, "yes": 11, "no": 12, "missing": 11 , "children": [
+        { "nodeid": 11, "depth": 3, "name": "getActiveNetworkInfo", "size": 13, "yes": 23, "no": 24, "missing": 23 , "children": [
+          { "nodeid": 23, "depth": 4, "name": "getegid32", "size": 2, "yes": 41, "no": 42, "missing": 41 , "children": [
+            { "nodeid": 41, "depth": 5, "name": "addAccessibilityInteractionConnection", "size": 2, "yes": 67, "no": 68, "missing": 67 , "children": [
+              { "nodeid": 67, "leaf": -0.183853999 },
+              { "nodeid": 68, "leaf": 0.0743991658 }
+            ]},
+            { "nodeid": 42, "depth": 5, "name": "checkPermission", "size": 6, "yes": 69, "no": 70, "missing": 69 , "children": [
+              { "nodeid": 69, "leaf": 0.220975712 },
+              { "nodeid": 70, "leaf": -0.153918907 }
+            ]}
+          ]},
+          { "nodeid": 24, "depth": 4, "name": "FS_PIPE_ACCESS(READ__)_", "size": 7, "yes": 43, "no": 44, "missing": 43 , "children": [
+            { "nodeid": 43, "depth": 5, "name": "getActivePhoneType", "size": 3, "yes": 71, "no": 72, "missing": 71 , "children": [
+              { "nodeid": 71, "leaf": -0.277483106 },
+              { "nodeid": 72, "leaf": -0 }
+            ]},
+            { "nodeid": 44, "leaf": 0.0693786964 }
+          ]}
+        ]},
+        { "nodeid": 12, "depth": 3, "name": "FS_ACCESS(CREATE__READ__WRITE)", "size": 4, "yes": 25, "no": 26, "missing": 25 , "children": [
+          { "nodeid": 25, "leaf": 0.221908122 },
+          { "nodeid": 26, "leaf": -0 }
+        ]}
+      ]},
+      { "nodeid": 6, "depth": 2, "name": "CREATE_PROCESS`_____", "size": 2, "yes": 13, "no": 14, "missing": 13 , "children": [
+        { "nodeid": 13, "leaf": 0.307589889 },
+        { "nodeid": 14, "leaf": -0.0427377969 }
+      ]}
+    ]}
+  ]}
+]},
+{
+"name": "tree12",
+"children": [
+{ "nodeid": 0, "depth": 0, "name": "getuid32", "size": 5803, "yes": 1, "no": 2, "missing": 1 , "children": [
+    { "nodeid": 1, "depth": 1, "name": "writev", "size": 155, "yes": 3, "no": 4, "missing": 3 , "children": [
+      { "nodeid": 3, "depth": 2, "name": "sigprocmask", "size": 344, "yes": 7, "no": 8, "missing": 7 , "children": [
+        { "nodeid": 7, "depth": 3, "name": "rename", "size": 10, "yes": 15, "no": 16, "missing": 15 , "children": [
+          { "nodeid": 15, "depth": 4, "name": "fsync", "size": 4, "yes": 27, "no": 28, "missing": 27 , "children": [
+            { "nodeid": 27, "depth": 5, "name": "sigprocmask", "size": 208, "yes": 45, "no": 46, "missing": 45 , "children": [
+              { "nodeid": 45, "leaf": 3.01285418e-05 },
+              { "nodeid": 46, "leaf": 0.136460632 }
+            ]},
+            { "nodeid": 28, "depth": 5, "name": "onRectangleOnScreenRequested", "size": 1, "yes": 47, "no": 48, "missing": 47 , "children": [
+              { "nodeid": 47, "leaf": -0.140090689 },
+              { "nodeid": 48, "leaf": 0.230218157 }
+            ]}
+          ]},
+          { "nodeid": 16, "depth": 4, "name": "DEVICE_ACCESS_____", "size": 59, "yes": 29, "no": 30, "missing": 29 , "children": [
+            { "nodeid": 29, "depth": 5, "name": "FS_ACCESS(CREATE__READ)__", "size": 1, "yes": 49, "no": 50, "missing": 49 , "children": [
+              { "nodeid": 49, "leaf": 0.221694142 },
+              { "nodeid": 50, "leaf": -0.0788906813 }
+            ]},
+            { "nodeid": 30, "depth": 5, "name": "getActiveNetworkInfo", "size": 12, "yes": 51, "no": 52, "missing": 51 , "children": [
+              { "nodeid": 51, "leaf": -0.179797173 },
+              { "nodeid": 52, "leaf": -0 }
+            ]}
+          ]}
+        ]},
+        { "nodeid": 8, "depth": 3, "name": "lstat64", "size": 106, "yes": 17, "no": 18, "missing": 17 , "children": [
+          { "nodeid": 17, "depth": 4, "name": "enqueueToast", "size": 2, "yes": 31, "no": 32, "missing": 31 , "children": [
+            { "nodeid": 31, "depth": 5, "name": "stat64", "size": 38, "yes": 53, "no": 54, "missing": 53 , "children": [
+              { "nodeid": 53, "leaf": -0 },
+              { "nodeid": 54, "leaf": -0.2296471 }
+            ]},
+            { "nodeid": 32, "depth": 5, "name": "finishDrawing", "size": 15, "yes": 55, "no": 56, "missing": 55 , "children": [
+              { "nodeid": 55, "leaf": -0 },
+              { "nodeid": 56, "leaf": 0.256427824 }
+            ]}
+          ]},
+          { "nodeid": 18, "leaf": 0.199592337 }
+        ]}
+      ]},
+      { "nodeid": 4, "depth": 2, "name": "mmap2", "size": 434, "yes": 9, "no": 10, "missing": 9 , "children": [
+        { "nodeid": 9, "depth": 3, "name": "getDisplayInfo", "size": 9, "yes": 19, "no": 20, "missing": 19 , "children": [
+          { "nodeid": 19, "depth": 4, "name": "getCellLocation", "size": 1, "yes": 33, "no": 34, "missing": 33 , "children": [
+            { "nodeid": 33, "depth": 5, "name": "mmap2", "size": 341, "yes": 57, "no": 58, "missing": 57 , "children": [
+              { "nodeid": 57, "leaf": -0.164157063 },
+              { "nodeid": 58, "leaf": 0.155020773 }
+            ]},
+            { "nodeid": 34, "depth": 5, "name": "lstat64", "size": 53, "yes": 59, "no": 60, "missing": 59 , "children": [
+              { "nodeid": 59, "leaf": 0.194134831 },
+              { "nodeid": 60, "leaf": -0 }
+            ]}
+          ]},
+          { "nodeid": 20, "depth": 4, "name": "NETWORK_ACCESS(WRITE__)__", "size": 2, "yes": 35, "no": 36, "missing": 35 , "children": [
+            { "nodeid": 35, "depth": 5, "name": "dup2", "size": 5, "yes": 61, "no": 62, "missing": 61 , "children": [
+              { "nodeid": 61, "leaf": 0.250336677 },
+              { "nodeid": 62, "leaf": -0.109745033 }
+            ]},
+            { "nodeid": 36, "leaf": -0.134550989 }
+          ]}
+        ]},
+        { "nodeid": 10, "depth": 3, "name": "FS_ACCESS(READ)____", "size": 217, "yes": 21, "no": 22, "missing": 21 , "children": [
+          { "nodeid": 21, "depth": 4, "name": "performDeferredDestroy", "size": 6, "yes": 37, "no": 38, "missing": 37 , "children": [
+            { "nodeid": 37, "depth": 5, "name": "sigprocmask", "size": 130, "yes": 63, "no": 64, "missing": 63 , "children": [
+              { "nodeid": 63, "leaf": 0.0287090577 },
+              { "nodeid": 64, "leaf": -0.202169076 }
+            ]},
+            { "nodeid": 38, "leaf": 0.127898723 }
+          ]},
+          { "nodeid": 22, "depth": 4, "name": "epoll_wait", "size": 466, "yes": 39, "no": 40, "missing": 39 , "children": [
+            { "nodeid": 39, "depth": 5, "name": "NETWORK_ACCESS(WRITE)____", "size": 11, "yes": 65, "no": 66, "missing": 65 , "children": [
+              { "nodeid": 65, "leaf": 0.2298958 },
+              { "nodeid": 66, "leaf": 0.00157930527 }
+            ]},
+            { "nodeid": 40, "depth": 5, "name": "FS_ACCESS(CREATE)____", "size": 69, "yes": 67, "no": 68, "missing": 67 , "children": [
+              { "nodeid": 67, "leaf": -0.135720402 },
+              { "nodeid": 68, "leaf": 0.118356362 }
+            ]}
+          ]}
+        ]}
+      ]}
+    ]},
+    { "nodeid": 2, "depth": 1, "name": "epoll_ctl", "size": 7, "yes": 5, "no": 6, "missing": 5 , "children": [
+      { "nodeid": 5, "depth": 2, "name": "finishDrawing", "size": 2, "yes": 11, "no": 12, "missing": 11 , "children": [
+        { "nodeid": 11, "leaf": -0.0829278678 },
+        { "nodeid": 12, "leaf": 0.216926366 }
+      ]},
+      { "nodeid": 6, "depth": 2, "name": "sigaction", "size": 27, "yes": 13, "no": 14, "missing": 13 , "children": [
+        { "nodeid": 13, "depth": 3, "name": "getStreamVolume", "size": 4, "yes": 23, "no": 24, "missing": 23 , "children": [
+          { "nodeid": 23, "depth": 4, "name": "epoll_ctl", "size": 305, "yes": 41, "no": 42, "missing": 41 , "children": [
+            { "nodeid": 41, "depth": 5, "name": "brk", "size": 188, "yes": 69, "no": 70, "missing": 69 , "children": [
+              { "nodeid": 69, "leaf": -0 },
+              { "nodeid": 70, "leaf": -0.280634254 }
+            ]},
+            { "nodeid": 42, "depth": 5, "name": "epoll_ctl", "size": 334, "yes": 71, "no": 72, "missing": 71 , "children": [
+              { "nodeid": 71, "leaf": 0.133859113 },
+              { "nodeid": 72, "leaf": -0.0687346235 }
+            ]}
+          ]},
+          { "nodeid": 24, "depth": 4, "name": "close", "size": 1305, "yes": 43, "no": 44, "missing": 43 , "children": [
+            { "nodeid": 43, "leaf": 0.0480164066 },
+            { "nodeid": 44, "leaf": -0 }
+          ]}
+        ]},
+        { "nodeid": 14, "depth": 3, "name": "FS_PIPE_ACCESS(READ__WRITE)_", "size": 8, "yes": 25, "no": 26, "missing": 25 , "children": [
+          { "nodeid": 25, "leaf": 0.154991612 },
+          { "nodeid": 26, "leaf": -0 }
+        ]}
+      ]}
+    ]}
+  ]}
+]},
+{
+"name": "tree13",
+"children": [
+ { "nodeid": 0, "depth": 0, "name": "bind", "size": 3, "yes": 1, "no": 2, "missing": 1 , "children": [
+    { "nodeid": 1, "depth": 1, "name": "windowGainedFocus", "size": 2, "yes": 3, "no": 4, "missing": 3 , "children": [
+      { "nodeid": 3, "depth": 2, "name": "getDisplayInfo", "size": 18, "yes": 7, "no": 8, "missing": 7 , "children": [
+        { "nodeid": 7, "depth": 3, "name": "FS_ACCESS(WRITE)____", "size": 9, "yes": 15, "no": 16, "missing": 15 , "children": [
+          { "nodeid": 15, "depth": 4, "name": "flock", "size": 3, "yes": 29, "no": 30, "missing": 29 , "children": [
+            { "nodeid": 29, "depth": 5, "name": "getLine1Number", "size": 1, "yes": 51, "no": 52, "missing": 51 , "children": [
+              { "nodeid": 51, "leaf": 0.00765548041 },
+              { "nodeid": 52, "leaf": -0.161334828 }
+            ]},
+            { "nodeid": 30, "depth": 5, "name": "getApplicationInfo", "size": 2, "yes": 53, "no": 54, "missing": 53 , "children": [
+              { "nodeid": 53, "leaf": 0.180794984 },
+              { "nodeid": 54, "leaf": -0.0240490809 }
+            ]}
+          ]},
+          { "nodeid": 16, "depth": 4, "name": "lseek", "size": 260, "yes": 31, "no": 32, "missing": 31 , "children": [
+            { "nodeid": 31, "leaf": -0.311369866 },
+            { "nodeid": 32, "leaf": 0.114588946 }
+          ]}
+        ]},
+        { "nodeid": 8, "depth": 3, "name": "getDeviceId", "size": 2, "yes": 17, "no": 18, "missing": 17 , "children": [
+          { "nodeid": 17, "leaf": 0.249771893 },
+          { "nodeid": 18, "leaf": -0 }
+        ]}
+      ]},
+      { "nodeid": 4, "depth": 2, "name": "getInstalledPackages", "size": 1, "yes": 9, "no": 10, "missing": 9 , "children": [
+        { "nodeid": 9, "depth": 3, "name": "enqueueToast", "size": 1, "yes": 19, "no": 20, "missing": 19 , "children": [
+          { "nodeid": 19, "depth": 4, "name": "pread64", "size": 65, "yes": 33, "no": 34, "missing": 33 , "children": [
+            { "nodeid": 33, "depth": 5, "name": "poll", "size": 1, "yes": 55, "no": 56, "missing": 55 , "children": [
+              { "nodeid": 55, "leaf": -0.162798554 },
+              { "nodeid": 56, "leaf": 0.000135855284 }
+            ]},
+            { "nodeid": 34, "depth": 5, "name": "madvise", "size": 777, "yes": 57, "no": 58, "missing": 57 , "children": [
+              { "nodeid": 57, "leaf": -0.258931726 },
+              { "nodeid": 58, "leaf": 0.023028817 }
+            ]}
+          ]},
+          { "nodeid": 20, "depth": 4, "name": "TERMINATE_THREAD", "size": 5, "yes": 35, "no": 36, "missing": 35 , "children": [
+            { "nodeid": 35, "depth": 5, "name": "mprotect", "size": 439, "yes": 59, "no": 60, "missing": 59 , "children": [
+              { "nodeid": 59, "leaf": 0.225306615 },
+              { "nodeid": 60, "leaf": -0.01926939 }
+            ]},
+            { "nodeid": 36, "leaf": -0.151868939 }
+          ]}
+        ]},
+        { "nodeid": 10, "depth": 3, "name": "gettimeofday", "size": 526, "yes": 21, "no": 22, "missing": 21 , "children": [
+          { "nodeid": 21, "depth": 4, "name": "addToDisplay", "size": 5, "yes": 37, "no": 38, "missing": 37 , "children": [
+            { "nodeid": 37, "leaf": 0.384411037 },
+            { "nodeid": 38, "leaf": 0.090167895 }
+          ]},
+          { "nodeid": 22, "leaf": -0.159947619 }
+        ]}
+      ]}
+    ]},
+    { "nodeid": 2, "depth": 1, "name": "socket", "size": 8, "yes": 5, "no": 6, "missing": 5 , "children": [
+      { "nodeid": 5, "depth": 2, "name": "epoll_wait", "size": 1879, "yes": 11, "no": 12, "missing": 11 , "children": [
+        { "nodeid": 11, "depth": 3, "name": "writev", "size": 14, "yes": 23, "no": 24, "missing": 23 , "children": [
+          { "nodeid": 23, "depth": 4, "name": "close", "size": 25, "yes": 39, "no": 40, "missing": 39 , "children": [
+            { "nodeid": 39, "leaf": 0.00700038206 },
+            { "nodeid": 40, "leaf": -0.0955065265 }
+          ]},
+          { "nodeid": 24, "depth": 4, "name": "checkPermission", "size": 3, "yes": 41, "no": 42, "missing": 41 , "children": [
+            { "nodeid": 41, "depth": 5, "name": "open", "size": 38, "yes": 61, "no": 62, "missing": 61 , "children": [
+              { "nodeid": 61, "leaf": 0.0284946039 },
+              { "nodeid": 62, "leaf": 0.368795604 }
+            ]},
+            { "nodeid": 42, "leaf": -0.00922445115 }
+          ]}
+        ]},
+        { "nodeid": 12, "leaf": -0.0985992923 }
+      ]},
+      { "nodeid": 6, "depth": 2, "name": "munmap", "size": 52, "yes": 13, "no": 14, "missing": 13 , "children": [
+        { "nodeid": 13, "depth": 3, "name": "lstat64", "size": 8, "yes": 25, "no": 26, "missing": 25 , "children": [
+          { "nodeid": 25, "depth": 4, "name": "TERMINATE_THREAD", "size": 4, "yes": 43, "no": 44, "missing": 43 , "children": [
+            { "nodeid": 43, "depth": 5, "name": "sigprocmask", "size": 51, "yes": 63, "no": 64, "missing": 63 , "children": [
+              { "nodeid": 63, "leaf": -0 },
+              { "nodeid": 64, "leaf": -0.131079137 }
+            ]},
+            { "nodeid": 44, "leaf": 0.258739978 }
+          ]},
+          { "nodeid": 26, "depth": 4, "name": "ACCESS_PERSONAL_INFO___", "size": 13, "yes": 45, "no": 46, "missing": 45 , "children": [
+            { "nodeid": 45, "leaf": -0.279408962 },
+            { "nodeid": 46, "leaf": -0 }
+          ]}
+        ]},
+        { "nodeid": 14, "depth": 3, "name": "write", "size": 150, "yes": 27, "no": 28, "missing": 27 , "children": [
+          { "nodeid": 27, "depth": 4, "name": "brk", "size": 64, "yes": 47, "no": 48, "missing": 47 , "children": [
+            { "nodeid": 47, "leaf": -0.0901507139 },
+            { "nodeid": 48, "depth": 5, "name": "socket", "size": 12, "yes": 65, "no": 66, "missing": 65 , "children": [
+              { "nodeid": 65, "leaf": 0.585503757 },
+              { "nodeid": 66, "leaf": 0.0876065269 }
+            ]}
+          ]},
+          { "nodeid": 28, "depth": 4, "name": "getpriority", "size": 76, "yes": 49, "no": 50, "missing": 49 , "children": [
+            { "nodeid": 49, "depth": 5, "name": "FS_PIPE_ACCESS(READ__)_", "size": 1, "yes": 67, "no": 68, "missing": 67 , "children": [
+              { "nodeid": 67, "leaf": -0.134212285 },
+              { "nodeid": 68, "leaf": 0.160025299 }
+            ]},
+            { "nodeid": 50, "depth": 5, "name": "clock_gettime", "size": 8286, "yes": 69, "no": 70, "missing": 69 , "children": [
+              { "nodeid": 69, "leaf": 0.107056096 },
+              { "nodeid": 70, "leaf": -0.0252289642 }
+            ]}
+          ]}
+        ]}
+      ]}
+    ]}
+  ]}
+]},
+{
+"name": "tree14",
+"children": [
+ { "nodeid": 0, "depth": 0, "name": "getuid32", "size": 19, "yes": 1, "no": 2, "missing": 1 , "children": [
+    { "nodeid": 1, "depth": 1, "name": "FS_ACCESS(READ)____", "size": 9, "yes": 3, "no": 4, "missing": 3 , "children": [
+      { "nodeid": 3, "depth": 2, "name": "FS_ACCESS(CREATE)____", "size": 1, "yes": 7, "no": 8, "missing": 7 , "children": [
+        { "nodeid": 7, "leaf": 0.0651573539 },
+        { "nodeid": 8, "depth": 3, "name": "ioctl", "size": 30, "yes": 13, "no": 14, "missing": 13 , "children": [
+          { "nodeid": 13, "leaf": -0.170582086 },
+          { "nodeid": 14, "leaf": -0 }
+        ]}
+      ]},
+      { "nodeid": 4, "leaf": 0.228082553 }
+    ]},
+    { "nodeid": 2, "depth": 1, "name": "getpriority", "size": 17, "yes": 5, "no": 6, "missing": 5 , "children": [
+      { "nodeid": 5, "depth": 2, "name": "ACCESS_PERSONAL_INFO___", "size": 2, "yes": 9, "no": 10, "missing": 9 , "children": [
+        { "nodeid": 9, "depth": 3, "name": "mkdir", "size": 1, "yes": 15, "no": 16, "missing": 15 , "children": [
+          { "nodeid": 15, "leaf": -0.263237894 },
+          { "nodeid": 16, "depth": 4, "name": "mprotect", "size": 55, "yes": 21, "no": 22, "missing": 21 , "children": [
+            { "nodeid": 21, "depth": 5, "name": "writev", "size": 7, "yes": 31, "no": 32, "missing": 31 , "children": [
+              { "nodeid": 31, "leaf": 0.187409908 },
+              { "nodeid": 32, "leaf": -0 }
+            ]},
+            { "nodeid": 22, "depth": 5, "name": "gettimeofday", "size": 5, "yes": 33, "no": 34, "missing": 33 , "children": [
+              { "nodeid": 33, "leaf": -0.329010546 },
+              { "nodeid": 34, "leaf": 0.034309648 }
+            ]}
+          ]}
+        ]},
+        { "nodeid": 10, "leaf": 0.156530932 }
+      ]},
+      { "nodeid": 6, "depth": 2, "name": "CREATE_FOLDER_____", "size": 1, "yes": 11, "no": 12, "missing": 11 , "children": [
+        { "nodeid": 11, "depth": 3, "name": "madvise", "size": 48, "yes": 17, "no": 18, "missing": 17 , "children": [
+          { "nodeid": 17, "depth": 4, "name": "getuid32", "size": 23, "yes": 23, "no": 24, "missing": 23 , "children": [
+            { "nodeid": 23, "depth": 5, "name": "mprotect", "size": 37, "yes": 35, "no": 36, "missing": 35 , "children": [
+              { "nodeid": 35, "leaf": 0.45919016 },
+              { "nodeid": 36, "leaf": -0.132186249 }
+            ]},
+            { "nodeid": 24, "depth": 5, "name": "mprotect", "size": 38, "yes": 37, "no": 38, "missing": 37 , "children": [
+              { "nodeid": 37, "leaf": -0 },
+              { "nodeid": 38, "leaf": 0.317116648 }
+            ]}
+          ]},
+          { "nodeid": 18, "depth": 4, "name": "gettimeofday", "size": 13, "yes": 25, "no": 26, "missing": 25 , "children": [
+            { "nodeid": 25, "depth": 5, "name": "write", "size": 130, "yes": 39, "no": 40, "missing": 39 , "children": [
+              { "nodeid": 39, "leaf": -0.208530888 },
+              { "nodeid": 40, "leaf": 0.0691382661 }
+            ]},
+            { "nodeid": 26, "depth": 5, "name": "fsync", "size": 3, "yes": 41, "no": 42, "missing": 41 , "children": [
+              { "nodeid": 41, "leaf": 0.128857121 },
+              { "nodeid": 42, "leaf": -0.0593196638 }
+            ]}
+          ]}
+        ]},
+        { "nodeid": 12, "depth": 3, "name": "getuid32", "size": 43, "yes": 19, "no": 20, "missing": 19 , "children": [
+          { "nodeid": 19, "depth": 4, "name": "chmod", "size": 2, "yes": 27, "no": 28, "missing": 27 , "children": [
+            { "nodeid": 27, "depth": 5, "name": "ACCESS_PERSONAL_INFO___", "size": 2, "yes": 43, "no": 44, "missing": 43 , "children": [
+              { "nodeid": 43, "leaf": -0.256637067 },
+              { "nodeid": 44, "leaf": 0.0393431932 }
+            ]},
+            { "nodeid": 28, "depth": 5, "name": "pread64", "size": 4, "yes": 45, "no": 46, "missing": 45 , "children": [
+              { "nodeid": 45, "leaf": 0.224430755 },
+              { "nodeid": 46, "leaf": -0.181964219 }
+            ]}
+          ]},
+          { "nodeid": 20, "depth": 4, "name": "stat64", "size": 18, "yes": 29, "no": 30, "missing": 29 , "children": [
+            { "nodeid": 29, "depth": 5, "name": "startInput", "size": 1, "yes": 47, "no": 48, "missing": 47 , "children": [
+              { "nodeid": 47, "leaf": 0.236478552 },
+              { "nodeid": 48, "leaf": -0 }
+            ]},
+            { "nodeid": 30, "depth": 5, "name": "madvise", "size": 62, "yes": 49, "no": 50, "missing": 49 , "children": [
+              { "nodeid": 49, "leaf": 0.208801836 },
+              { "nodeid": 50, "leaf": -0.0078619048 }
+            ]}
+          ]}
+        ]}
+      ]}
+    ]}
+  ]}
+
+]}
+]
+}

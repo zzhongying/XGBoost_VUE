@@ -1,0 +1,391 @@
+<!DOCTYPE html style="height:100%;width:100%">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    .frame {
+        fill: none;
+        stroke: #000;
+    }
+
+    .axis text {
+        font: 10px sans-serif;
+    }
+
+    .axis line,
+    .axis circle {
+        fill: none;
+        stroke: steelblue;
+        stroke-dasharray: 4;
+    }
+
+    .axis:last-of-type circle {
+        stroke: steelblue;
+        stroke-dasharray: none;
+    }
+
+    .line {
+        fill: none;
+        stroke: orange;
+        stroke-width: 3px;
+    }
+</style>
+<script src="public/js/echarts.js"></script>
+<script src="//d3js.org/d3.v3.min.js"></script>
+<script src="public/js/jquery-1.11.3.min.js"></script>
+<body style="height:100%;width:100%">
+    <div id="main" style="height:100%;width:100%;">
+    </div >
+</body>
+
+<script>
+
+    function planisphere( type_name) {
+
+        var width = $('#main').width()
+        var height = $('#main').height()
+        var radius = width * 0.13
+        var circle_data=[{"cx":width*0.5,"cy":height*0.5,"r":width*0.1,"fill":"#b31313"}]
+        var transform=[width/2, height/2]
+
+        var data_inner = [
+            [radius*0.9, radius*0.16, 15,"精确率"],
+            [-radius*0.9,radius*0.16, 7,"特异性"],
+            [radius*0.9,-radius*0.16, 7,"召回率"],
+            [-radius*0.9,-radius*0.16, 7,"敏感性"],
+            [radius/1.9, radius/3.15, 7,"漏报率"],
+            [-radius/1.9, radius/3.15, 20,"假阳性率"],
+            [-radius/1.9, -radius/3.15, 18,"假阴性率"],
+            [radius/1.9, -radius/3.15, 17,"真阳性率"],
+            [0 , radius*0.375, 13,"真阴性率"],
+            [0, -radius*0.375, 20,"F1分数"]
+        ]
+
+        var data_outer = [
+            [ -radius*1.2, 0,15,"sigprocmask"],
+            [ radius*1.2, 0,10,"getDisplayInfo"],
+            [ radius*0.9, radius*0.3,7,"pread64"],
+            [ -radius*0.9, radius*0.3,5,"mprotect"],
+            [ -radius*0.9, -radius*0.3,13,"access"],
+            [ radius*0.9, -radius*0.3,10,"getDeviceld"],
+            [ radius*0.35, -radius*0.43,6,"read"],
+            [ radius*0.35, radius*0.43,5,"ACCESS_PRESONAL_INFO"],
+            [ -radius*0.35, radius*0.43,15,"mkdir"],
+            [ -radius*0.35, -radius*0.43,10,"getInstallerPackageName"],
+        ]
+
+        var svg =d3.select('#main').append("svg")
+            .attr("width", width *0.98)
+            .attr("height", height *0.98)
+            .append("g")
+            .attr("id","all_g")
+
+        function polar_plot() {
+            //比例尺
+            var r_inner = d3.scale.linear()
+                .domain([0, radius*0.9])
+                .range([0, radius]);
+
+            var r_outer = d3.scale.linear()
+                .domain([0, radius*0.9])
+                .range([0, radius]);
+
+            var line = d3.svg.line.radial()
+                .radius(function(d) {
+                    return r(d[1]);
+                })
+                .angle(function(d) {
+                    return -d[0] + Math.PI / 2;
+                });
+
+            //内半径坐标轴
+            var gr_inner = svg.append("g")
+                .attr("class", "r axis inner")
+                .selectAll("g")
+                .data(r_inner.ticks(1).slice(1))
+                .enter().append("g")
+                .attr("transform", "translate(" +transform[0]/2 + "," + transform[1]/2 + ")");
+
+            gr_inner.append("circle")
+                .attr("r", radius)
+                .attr("transform", "translate(" + transform[0]/2 + "," + transform[1]/2 + ")");
+
+            //外半径坐标轴
+            var gr_outer = svg.append("g")
+                .attr("class", "r axis outer")
+                .selectAll("g")
+                .data(r_outer.ticks(1).slice(1))
+                .enter().append("g")
+                .attr("transform", "translate(" +transform[0]/2 + "," + transform[1]/2 + ")");
+
+            gr_outer.append("circle")
+                .attr("r", radius*1.2)
+                .attr("transform", "translate(" +transform[0]/2 + "," + transform[1]/2 + ")");
+
+
+            //角度坐标轴
+            // var ga = svg.append("g")
+            //     .attr("class", "a axis")
+            //     .selectAll("g")
+            //     .data(d3.range(0, 360, 36))  //0-360度中间隔360度画一条线
+            //     .enter()
+            //     .append("g")
+            //     .attr("transform", "translate(" + width / 4 + "," + height / 4 + ")");
+            // .attr("transform", function(d) {
+            //    // console.log("rotate(" + -d + ")")
+            //     return "rotate(" + -d + ")";
+            // });
+            //
+            // ga.append("line")
+            //     .attr("x2", radius);
+
+            var color = ['#cbdcdf', '#a5bbbf','#cce8e2','#ce848f', '#EFBAC0',
+                '#F9F3E1','#EDE9BF' ,'#F7E7E0', '#F7DDC0',
+                '#F9BCB2','#ea8991','#cbdcdf', '#a5bbbf',
+                '#cce8e2','#ce848f', '#EFBAC0','#F9F3E1',
+                '#EDE9BF' ,'#F7E7E0', '#F7DDC0'];
+
+            svg.selectAll("point")
+                .data(data_inner)
+                .enter()
+                .append("circle")
+                .attr("class", "point")
+                .attr("id",function (d) {
+                    return d[3]
+                })
+                .attr("transform", function(d) {
+                    var an = d[0],
+                        ra = r_inner(d[1]),
+                        x = ra + width/2 + d[1]*1.55,
+                        y = an +height/2;
+                    return "translate(" + [x, y] + ")";
+                })
+                .attr("r", function (d) {
+                    return d[2]
+                })
+                .attr("fill",function(d,i){
+                    return color[i];
+                })
+
+
+            svg.selectAll("point")
+                .data(data_outer)
+                .enter()
+                .append("circle")
+                .attr("class", "point")
+                .attr("id",function (d) {
+                    return d[3]
+                })
+                .attr("transform", function(d) {
+                    console.log(d[1])
+                    // console.log( r(d[1]))
+                    var an = d[0],
+                        ra = r_outer(d[1]),
+                        x = ra + width/2 + d[1]*1.55,
+                        y = an + height/2;
+                    return "translate(" + [x, y] + ")";
+                })
+                .attr("r", function (d) {
+                    return d[2]
+                })
+                .attr("fill",function(d,i){
+                    return color[i];
+                })
+        }
+
+        function  center_tree(type_name) {
+
+            var forces =svg.selectAll("g")
+                .data(circle_data)
+                .enter()
+                .append("g")
+                .append("circle")
+                .attr("id","circle")
+                .attr("cx", function (d) {
+                    return d.cx
+                })
+                .attr("cy", function (d) {
+                    return d.cy
+                })
+                .attr("r", function (d) {
+                    return d.r
+                })
+                .style("fill",'rgba(203, 220, 223,0.2)')
+                .style("stroke","rgba(123,172,186,0.7)")
+                .style("stroke-width","10px")
+            //.attr("transform", "translate(" -10  + "," -10  + ")");
+
+            function draw(type_name) {
+
+                var force = d3.layout.force()
+                    .size([$('#circle').width(), $('#circle').height()])
+                    .on("tick", tick)
+
+                var link = svg.append("g")
+                    .attr("id","tree_link")
+                    .selectAll(".link")
+
+                node = svg.append("g")
+                    .attr("id","tree_node")
+                    .attr("width",width*0.5)
+                    .attr("height",height*0.5)
+                    .selectAll(".node")
+
+
+                d3.json("./public/Data/center_layout_json/Bank_malware.json", function(error, json) {
+                    if (error) throw error;
+                    root = json;
+                    update();
+                });
+
+                function update() {
+
+                    var nodes = flatten(root),
+                        links = d3.layout.tree().links(nodes);
+
+                    // Restart the force layout.
+                    force
+                        .nodes(nodes)
+                        .links(links)
+                        .start()
+
+                    function drag(){//拖拽函数
+                        return force.drag()
+                            .on("dragstart",function(d){
+                                d3.event.sourceEvent.stopPropagation(); //取消默认事件
+                                d.fixed = true;    //拖拽开始后设定被拖拽对象为固定
+                            });
+                    }
+
+                    // Update the links…
+                    link = link.data(links, function(d) { return d.target.id; });
+
+                    // Exit any old links.
+                    link.exit().remove();
+
+                    // Enter any new links.
+                    link.enter().insert("line", ".node")
+                        .attr("class", "link")
+                        .attr("x1", function(d) { return d.source.x * radius*0.1; })
+                        .attr("y1", function(d) { return d.source.y * radius*0.1; })
+                        .attr("x2", function(d) { return d.target.x * radius*0.1; })
+                        .attr("y2", function(d) { return d.target.y * radius*0.1; })
+                        .style("stroke","#CCDDDF")
+                        .style("stroke-width","1.5px")
+                        .attr("transform", "translate(" +transform[0] + "," + transform[1] + ")");
+
+                    // Update the nodes…
+                    node = node.data(nodes, function(d) { return d.id; }).style("fill", color);
+
+                    // Exit any old nodes.
+                    node.exit().remove();
+
+                    // Enter any new nodes.
+                    node.enter()
+                        .append("circle")
+                        .attr("class", "node")
+                        .attr("id",function (d) {
+                            return d.name;
+                        })
+                        .attr("cx", function(d) { return d.x* radius*0.1 ; })
+                        .attr("cy", function(d) { return d.y* radius*0.1 ; })
+                        .attr("r", function(d) {
+                            if (d.name.substr(0,4) == 'tree') {
+                                return Math.sqrt(d.size) || 10 ;
+                            }
+                            else if(d.name== 'flare'){
+                                return Math.sqrt(d.size) || 20 ;
+                            }
+                            else {
+                                return Math.sqrt(d.size)  || 15;
+                            }
+                        })
+                        .style("fill", color)
+                        .style("stroke","#8db8bb")
+                        .style("stroke-width","1.5px")
+                        // .on("click", click)   //单击操作冲突，暂时取消节点的收起功能
+                        .on('click', function (d) {
+                            // d3.select(this).style('stroke-width', 4)//被选中的圆圈边框
+                            // if (d.name.substr(0,4) == 'tree') {
+                            //    // treeview(file_name,this.id)
+                            // }
+                            console.log(this.id)
+                        })
+                        //.call(drag())//使顶点可以被拖动
+                        .attr("transform", "translate(" +transform[0] + "," + transform[1] + ")");
+                    //.call(force.drag)   //使顶不可以被拖动
+                }
+                function tick() {
+                    if(force.alpha()<=0.02) {    //渲染全部数据完成后再绘图，足够稳定时，才渲染一次
+                        link.attr("x1", function (d) {
+                            return d.source.x* radius*0.0035;  //力道向图的缩放问题
+                        })
+                            .attr("y1", function (d) {
+                                return d.source.y* radius*0.0035;
+                            })
+                            .attr("x2", function (d) {
+                                return d.target.x* radius*0.0035;
+                            })
+                            .attr("y2", function (d) {
+                                return d.target.y* radius*0.0035;
+                            })
+                        node.attr("cx", function (d) {
+                            return d.x* radius*0.0035;
+                        })
+                            .attr("cy", function (d) {
+                                return d.y* radius*0.0035;
+                            })
+                        //force.stop(); // 渲染完成后立即停止刷新
+                    }
+                }
+
+                // Color leaf nodes orange, and packages white or blue.
+                function color(d) {
+                    return d._children ? "#CF8590" : d.children ? "#f1d5d8" : "#CCDDDF";
+                }
+
+                // Toggle children on click.
+                function click(d) {
+                    if (!d3.event.defaultPrevented) {
+                        if (d.children) {
+                            d._children = d.children;
+                            d.children = null;
+                        } else {
+                            d.children = d._children;
+                            d._children = null;
+                        }
+                        update();
+                    }
+                }
+
+                // Returns a list of all nodes under the root.
+                function flatten(root) {
+                    var nodes = [], i = 0;
+
+                    function recurse(node) {
+                        if (node.children) node.children.forEach(recurse);
+                        if (!node.id) node.id = ++i;
+                        nodes.push(node);
+                    }
+                    recurse(root);
+                    return nodes;
+                }
+            }
+
+            draw(type_name[0]);
+
+        }
+        center_tree('Bank_malware')
+        polar_plot()
+
+    }
+
+    planisphere()
+
+
+
+
+</script>
+</html>
