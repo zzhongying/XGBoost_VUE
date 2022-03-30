@@ -1,5 +1,6 @@
 <template>
   <div id="right-panel-proj">
+    <h4> CONSTELLATION BASED ON ITERATION </h4>
     <table class="proj-table">
       <tr>
         <th style="border-radius: 1px; width: 280px">
@@ -15,7 +16,7 @@
       </tr>
       <tr>
         <td>
-          <div id="distribution-div" style="height: 100%;width: 100%"></div>
+          <div id="distribution-div" style="height: 90%;width: 100%"></div>
         </td>
       </tr>
     </table>
@@ -324,7 +325,8 @@ export default {
         .attr("style", "float: center;")
         .attr("class", "main-svg")
         .append("g")
-        .attr("transform", "translate(" + 0 + "," + 50 + ")");
+        .attr("transform", "translate(" + margin.left + "," + margin.top + ")")
+
         // .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
       // -- Drawing and styling the AXIS
