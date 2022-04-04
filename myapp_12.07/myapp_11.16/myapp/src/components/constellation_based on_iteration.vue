@@ -38,7 +38,10 @@ export default {
       point_toggle,
       cf_toggle,
       detail_toggle
-    ) {
+    )
+    {
+
+
       // -- Which side to draw on --
       let single_side = 0; // 0 - left || 1 - right
 

@@ -23,7 +23,7 @@
     border: 2px solid #686767;
     border-radius: 5px;
     width: 30%;
-    height: 8%;
+    height: 15%;
     font-size: 15px;
     padding: 1% 1%;
     text-align: center;

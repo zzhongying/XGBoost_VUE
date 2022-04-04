@@ -25,6 +25,9 @@ export default {
   },
   methods: {
     Sankey(res) {
+      //绘制之前先清空，否则会重复绘制
+      $("#box").empty()
+
       res.path.unshift({ source: "", target: 0, yes: 0, no: 0 });
       let data = res.path;
       let name = res.nodeid_split;
@@ -38,6 +41,7 @@ export default {
         .parentId(function (d) {
           return d.source;
         })(data);
+
       function bfs(obj) {
         for (let key in obj) {
           if (key == "children") {
@@ -93,6 +97,8 @@ export default {
       let tm_h = d3.hierarchy(entries).sum(function (d) {
         return d.Freq || 0;
       });
+
+
       // console.log("tm-h->", tm_h);
       let width = $('#sankey_main').width();
       let height = $('#chart').height();
@@ -139,7 +145,11 @@ export default {
         nodes.exit().remove(); //删除多余的dom
 
         //将多个数组合并成一个,并返回新数组
-        nodes = nodes.merge(nodes.enter().append("g").attr("class", "node"));
+        nodes = nodes.merge(nodes.enter()
+          .append("g")
+          .attr("class", function (d) {
+            return d.data.name
+          }));
 
         nodes.attr("transform", function (d) {
           //位移
@@ -148,6 +158,17 @@ export default {
 
         nodes.append("rect")
           .classed("rect-part", true)
+
+        nodes.append("text")
+          .attr("transform",d =>{
+            return "translate(" + d.y0 + "," + d.x0+10 + ")";
+          })
+          .text(function (d) {
+            // console.log(d.data.name)
+            return d.data.name
+          })
+          .style("text-align","left")
+          .style("font-size", 20)
 
         // these are reference rectangles to see space allocated for each node
         //这些是参考矩形，用于查看为每个节点分配的空间
@@ -2035,7 +2056,8 @@ export default {
           id: 78,
         },
       ];
-      console.log("sankey中d3的版本：", d3.version);
+
+      //console.log("sankey中d3的版本：", d3.version);
       // d3.json("http://127.0.0.1:5000/get_data/sankey",function(res){
       //   console.log("sankey res")
       //   this.Sankey(res);

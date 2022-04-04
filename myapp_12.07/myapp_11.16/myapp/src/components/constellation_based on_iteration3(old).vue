@@ -40,6 +40,9 @@
     },
     methods: {
       node_view(type_name, style, bubbledata) {
+
+
+
         //console.log(style["secondary_node"])
         d3.select('#div_center').selectAll('svg').remove();
 
@@ -447,19 +450,22 @@
         // console.log(name)
         if (len == '1') {
           draw_charts(name, type_name, width * 0.5, height * 0.5, width * 0.18, bubbledata)
-        } else if (len == '2') {
+        }
+        else if (len == '2') {
           draw_charts(name[0], type_name, width * 0.3, height * 0.6, width * 0.13, bubbledata)
           draw_charts(name[1], type_name, width * 0.6, height * 0.35, width * 0.13, bubbledata)
         } else if (len == '3') {
           draw_charts(name[0], type_name, width * 0.2, height * 0.28, width * 0.105, bubbledata)
           draw_charts(name[1], type_name, width * 0.7, height * 0.28, width * 0.105, bubbledata)
           draw_charts(name[2], type_name, width * 0.45, height * 0.7, width * 0.105, bubbledata)
-        } else if (len == '4') {
+        }
+        else if (len == '4') {
           draw_charts(name[0], type_name, width * 0.3, height * 0.25, width * 0.09, bubbledata)
           draw_charts(name[1], type_name, width * 0.6, height * 0.25, width * 0.09, bubbledata)
           draw_charts(name[2], type_name, width * 0.3, height * 0.75, width * 0.09, bubbledata)
           draw_charts(name[3], type_name, width * 0.6, height * 0.75, width * 0.09, bubbledata)
-        } else if (len == '5') {
+        }
+        else if (len == '5') {
           draw_charts(name[1], type_name, width * 0.18, height * 0.25, width * 0.09, bubbledata)
           draw_charts(name[2], type_name, width * 0.45, height * 0.25, width * 0.09, bubbledata)
           draw_charts(name[3], type_name, width * 0.18, height * 0.75, width * 0.09, bubbledata)
@@ -536,7 +542,8 @@
           "f1": 0.87,
           "AUC": 0.9
         }],
-        "spam": [{
+        "spam": [
+          {
           "NumberofDotsinURL": 0.7674197554588318,
           "domain_token_count": 0.6365543007850647,
           "avgdomaintokenlen": 0.4152362048625946,
@@ -556,7 +563,8 @@
           "accuracy": 0.06,
           "f1": 0.1,
           "AUC": 0.51
-        }],
+        }
+        ],
         "malware": [{
           "urlLen": 0.8656346797943115,
           "CharacterContinuityRate": 0.2946297228336334,
