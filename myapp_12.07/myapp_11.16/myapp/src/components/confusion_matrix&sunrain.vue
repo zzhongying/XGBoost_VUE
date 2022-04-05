@@ -268,7 +268,8 @@
           ]
         };
         myChart.on('click', (params) => {
-          console.log('ss')
+
+
         })
 
         myChart.setOption(option)
@@ -303,7 +304,7 @@
             data: data.xAxis_data,
             axisLabel: {
               interval: 0,
-              show: false
+              show: true
             }
           },
           yAxis: {
@@ -339,10 +340,11 @@
       },
 
       draw_sunrain(performance, control) {
+
         if (!this.check) {
           $("#hotmap_chart").empty();
         }
-        console.log(performance, control)
+
         let utils = {
           parseToInt: function (num) {
             return "" === num ? 0 : parseInt(num)
@@ -361,7 +363,7 @@
           let preInc = 0;
           let incArr = [];
           let perf = control['Parameter']
-          console.log(performance)
+
 
           for (let i = 0; i < 8; i++) {   //10为性能分析中的个数
             let min = -50;
@@ -391,7 +393,7 @@
 
         //边距
         const margin = ({
-          top: $('#hotmap_chart').height() * 0.15,
+          top: $('#hotmap_chart').height() * 0.05,
           right: 0,
           bottom: 30,
           left: $('#hotmap_chart').width() * 0.015
@@ -410,7 +412,7 @@
         //规模，标签
         const x = d3.scaleBand()
           .domain(xLabel)
-          .range([margin.left, width - margin.right])
+          .range([margin.left, width ])
           .paddingInner(0.1)
           .paddingOuter(0.2)
 
@@ -430,21 +432,31 @@
           .domain([1, d3.max(mapData.map(d => d.max))])
           //.domain([1, 178])
           .rangeRound([5 * 5, Math.pow(x.bandwidth(), 2)])
+
         //添加画布
         const svg = d3.select('#hotmap_chart')
           .append('svg')
           .attr("width", $('#hotmap_chart').width() - 10)
-          .attr("height", height * 1)
-        console.log(d3, 'dddd')
+          .attr("height",  function(){
+              if($('#hotmap_chart').html() == null || $('#hotmap_chart').html().length == 0){
+                return rectHeight + 50
+              }
+              else {
+                return rectHeight + 50
+              }
+          })
+        .attr('class','rect_class')
+
+
         if (!this.check) {
           svg.append('g')
             .attr("class", "x")
-            .attr("transform", `translate(${margin.left * 2.5 * 1.2},${margin.top - 10})`)
+            .attr("transform", `translate(${margin.left *5}, 50 )`)
             .call(d3.axisTop(x))
             .call(g => g.select(".domain").remove())
             .call(g => g.selectAll("text")
-              .style("font-size", "10")
-              .attr('x', (t, n) => x(xLabel[n]) / 30 - 30
+              .style("font-size", "25")
+              .attr('x', (t, n) => x(xLabel[n])/10
               )
               .attr('y', -15)
             )
@@ -477,14 +489,14 @@
               .text("")
             )
           // $('.x').remove()
-          console.log(mapData, 'mmmmm');
+
 
           let prov = svg.append('g')
             .selectAll('g')
             .data(mapData)
             .join('g')
             .attr('class', 'prov')
-            .attr("transform", `translate(${margin.left * 2.5 - 10},-${margin.top - 5})`)
+            .attr("transform", `translate(${margin.left * 2.5 + 20}, ${margin.top })`)
 
           prov.each(function (d, i) {
 
@@ -493,9 +505,9 @@
               .selectAll('rect')     //外置矩形
               .data(d => d.data)
               .join('rect')
-              .attr('width', x.bandwidth() * 0.85)
+              .attr('width', x.bandwidth())
               .attr('height', x.bandwidth())
-              .attr('x', (t, n) => x(xLabel[n]) * 0.85)
+              .attr('x', (t, n) => x(xLabel[n])*1.1 )
               .attr('y', y(op_record[i]) * 2)
               .attr('fill', '#eee')
 
@@ -505,12 +517,12 @@
               .data(d => d.data)
               .join('rect')
               .attr('width', t => {
-                return (t.inc === 0 ? 0 : Math.sqrt(r(t.inc))) * 0.85
+                return (t.inc === 0 ? 0 : Math.sqrt(r(t.inc)))
               })
               .attr('height', t => {
                 return t.inc === 0 ? 0 : Math.sqrt(r(t.inc))
               })
-              .attr('x', (t, n) => x(xLabel[n]) * 0.85)
+              .attr('x', (t, n) => x(xLabel[n])*1.1 )
               .attr('y', y(op_record[i]) * 2)
               .attr('fill', t => t.change > 0 ? incColor : t.change < 0 ? decColor : color)
               .attr("transform", t => {
@@ -518,6 +530,18 @@
                 let outerR = x.bandwidth()
                 return t.inc === 0 ? '' : `translate(${(outerR - innerR) / 2},${(outerR - innerR) / 2})`
               })
+
+            d3.select(this)
+              .append('g')
+              .selectAll('text')
+              .data((d,i) => {
+
+                return d.data[i]
+              })
+              .join('text')
+              .style("font-size", "25")
+              .attr('x', (t, n) => x(xLabel[n]) )
+              .attr('y', y(op_record[i]) * 2)
 
             // d3.select(this)
             //   .append('g')
@@ -646,12 +670,14 @@
     width: 100%;
     margin-top: 0;
     overflow-y: scroll;
+    overflow-x: hidden;
   }
 
   #hotmap_chart {
     height: 100%;
     width: 100%;
-    overflow: auto
+    overflow-y: auto;
+    overflow-x: hidden;
   }
 
   h4 {

@@ -672,7 +672,7 @@
                 })
 
               function DrawPie(data) {
-                console.log(data)
+                // console.log(data)
                 var radius = data.r
 
                 var g = svg.select("#" + name + '__' + data.id)

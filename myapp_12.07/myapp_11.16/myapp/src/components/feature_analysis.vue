@@ -319,7 +319,7 @@ export default {
 
       // --- Creating base SVG ---
       //创建基本SVG
-      console.log("svg宽度", width, margin.right, margin.left);
+      // console.log("svg宽度", width, margin.right, margin.left);
       var svg = d3
         .select(place)
         .append("svg")
@@ -869,12 +869,12 @@ export default {
     },
   },
   mounted() {
-    console.log("mounted调用咯")
-    console.log(this)
+    // console.log("mounted调用咯")
+    // console.log(this)
     d3.json("./data_div_center.json").then((data)=>{
-      console.log("d3读取数据",data)
+      // console.log("d3读取数据",data)
       document.getElementById("data-button").onclick = () => {
-        console.log("数据：", data);
+        // console.log("数据：", data);
       };
       let resp_list = data;
       let median_toggle = false;
@@ -886,7 +886,7 @@ export default {
       document.getElementById("median-button").onclick = () => {
         box.innerHTML = "";
         median_toggle = !median_toggle;
-        console.log("median_toggle:", median_toggle);
+        // console.log("median_toggle:", median_toggle);
         median_toggle == true
           ? (document.getElementById("median-button").style.backgroundColor =
               "red")
@@ -905,7 +905,7 @@ export default {
       document.getElementById("density-button").onclick = () => {
         box.innerHTML = "";
         density_toggle = !density_toggle;
-        console.log("density_toggle:", density_toggle);
+        // console.log("density_toggle:", density_toggle);
         density_toggle == true
           ? (document.getElementById("density-button").style.backgroundColor =
               "red")
@@ -924,7 +924,7 @@ export default {
       document.getElementById("points-button").onclick = () => {
         box.innerHTML = "";
         points_toggle = !points_toggle;
-        console.log("points_toggle:", points_toggle);
+        // console.log("points_toggle:", points_toggle);
         points_toggle == true
           ? (document.getElementById("points-button").style.backgroundColor =
               "red")
@@ -943,7 +943,7 @@ export default {
       document.getElementById("cf-button").onclick = () => {
         box.innerHTML = "";
         cf_toggle = !cf_toggle;
-        console.log("cf_toggle:", cf_toggle);
+        // console.log("cf_toggle:", cf_toggle);
         cf_toggle == true
           ? (document.getElementById("cf-button").style.backgroundColor = "red")
           : (document.getElementById("cf-button").style.backgroundColor =
@@ -961,7 +961,7 @@ export default {
       document.getElementById("detail-button").onclick = () => {
         box.innerHTML = "";
         detail_toggle = !detail_toggle;
-        console.log("detail_toggle:", detail_toggle);
+        // console.log("detail_toggle:", detail_toggle);
         detail_toggle == true
           ? (document.getElementById("detail-button").style.backgroundColor =
               "red")
