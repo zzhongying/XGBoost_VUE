@@ -672,7 +672,7 @@
           arcs2.append("path")
             .attr("d", path2)
             .attr("fill", function(d,i) {
-              console.log(d.data, d.data%1, d.data-d.data%1, 'ddaata')
+              // console.log(d.data, d.data%1, d.data-d.data%1, 'ddaata')
               if(d.data < 0 && d.data-d.data%1==0  )  //建议下调权重
               {
                 return "#83b4ce"

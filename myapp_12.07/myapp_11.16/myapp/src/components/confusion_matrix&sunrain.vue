@@ -284,6 +284,9 @@
       },
 
       draw_hot() {
+
+
+
         let data = this.hotData
         if (document.getElementById('hotmap_chart') == null) {
           return

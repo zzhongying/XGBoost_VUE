@@ -1,79 +1,28 @@
 <template>
-  <div id="div_left">
-    <div id="controls">
-      <h4 id="test2">CONTROLS</h4>
-      <div id="control">
-        <vue-grid
-          style="width: 21vw;border-top:3px solid rgb(255,255,255);border-bottom:3px solid rgb(255,255,255);border-right: 6px solid rgb(255,255,255);border-left: 6px solid rgb(255,255,255);height:99%;">
-          <!--            <vue-cell width="12of12" style="background-color: #fdfdfd;margin-top: 0.2%;font-size:  15px"> ☀ Parameter:-->
-          <!--            </vue-cell>-->
-          <vue-cell width="5of12"><label style="font-size: smaller">Eta</label></vue-cell>
-          <vue-cell width="7of12"><input type="range" min="0" max="1.0" step="0.1" class="input" v-model.number="eta_"/><label>{{eta_}}</label>
-          </vue-cell>
-          <vue-cell width="5of12"><label style="font-size: smaller">Max depth:</label></vue-cell>
-          <vue-cell width="7of12"><input type="range" min="0" max="100" class="input" v-model.number="maxdepth"/><label>{{
-            maxdepth }}</label></vue-cell>
-          <vue-cell width="5of12"><label style="font-size: smaller">Min child weight:</label></vue-cell>
-          <vue-cell width="7of12"><input type="range" min="0" max="100" class="input"
-                                         v-model.number="minchildweight"/><label>{{ minchildweight }}</label></vue-cell>
-          <vue-cell width="5of12"><label style="font-size: smaller">Gamma:</label></vue-cell>
-          <vue-cell width="7of12"><input type="range" min="0" max="100" class="input" v-model.number="gamma_"/><label>{{
-            gamma_ }}</label></vue-cell>
-          <vue-cell width="5of12"><label style="font-size: smaller">Subsample:</label></vue-cell>
-          <vue-cell width="7of12"><input type="range" min="0" max="1" class="input" step="0.1"
-                                         v-model.number="subsample_"/><label>{{
-            subsample_ }}</label></vue-cell>
-          <vue-cell width="5of12"><label style="font-size: smaller">Num_rank:</label></vue-cell>
-          <vue-cell width="7of12"><input type="range" min="0" max="4" class="input" step="1" v-model.number="num_rank"/><label>{{
-            num_rank}}</label></vue-cell>
-          <key_button @sub="submit"></key_button>
-        </vue-grid>
-      </div>
-    </div>
-    <div id="sample">
-      <h4 id="title_controls">CONSTELLATION BASED ON ITERATION</h4>
-      <div id="barchart">
-
-      </div>
+  <div class="bottom_1">
+    <h4>CONSTELLATION BASED ON ITERATION</h4>
+    <div id="barchart">
     </div>
   </div>
 </template>
 
 <script>
-  import * as echarts from 'echarts'
-  import {VueGrid, VueCell} from 'vue-grd';
-  import Readcsv from '../ToolJs/Readcsv'
   import * as d3 from 'd3'
-  import $ from 'jquery';
-  import key_button from "./key_button";
-  import axios from "axios";
+  import * as echarts from 'echarts'
+  import $ from 'jquery'
+  import Readcsv from '../ToolJs/Readcsv'
+  import Selector from "./selector"
   import * as d4 from "../../public/d3";
+  import axios from "axios";
 
   export default {
-    name: "div_left",
+    name: "bottom_1",
+    // components: {select},
     data() {
       return {
-        //显示默认值
-        eta_: '0.3',
-        maxdepth: '6',
-        minchildweight: '1',
-        gamma_: '0',
-        subsample_: '1',
-        num_rank: '2',
-        timer: null,
-        barData: null,
-        dataset1: null,
-        dataset2: null,
-        dataset3: null,
-        Data_size: null,
-        Data_rows: null,
-        Attr_num: null,
-        Type_distribution: null,
-        Correct_identification: null,
-        samplebar: null,
-        dataset_show: [],
+        data_right: [],
         type_name:{
-          "benign": [
+          "Benign_application": [
             {
               "attr_a": 10,
               "attr_b": 8,
@@ -153,7 +102,7 @@
           // ]
         },
         bubble_data:{
-          "benign": [
+          "Benign_application": [
             {name: "tree1", count: 345, piedata: [{"area": "正影响 ", "value": 60}, {"area": "负影响 ", "value": 40}]},
             {name: "tree2", count: 3345, piedata: [{"area": "正影响 ", "value": 30}, {"area": "负影响 ", "value": 70}]},
             {name: "tree3", count: 1345, piedata: [{"area": "正影响 ", "value": 20}, {"area": "负影响 ", "value": 80}]},
@@ -315,62 +264,224 @@
         }
       }
     },
-    components: {
-      VueGrid,
-      VueCell,
-      key_button
-    },
     methods: {
-      //draw_charts() {},
-      submit() {
-        let num = this.$store.getters.get_click_num + 1;
-        this.$store.commit('set_click_num', num)
-        let deliver = {
-          "Parameter": [this.eta_, this.maxdepth, this.minchildweight, this.gamma_, this.subsample_],
-          "master_node": [this.fnode_tree_size, this.fnode_attr_size, this.fnode_opacity, this.root_node_color, this.Leaf_node_color],
-          "secondary_node": [this.node_size, this.node_opacity, this.node_stroke, this.node_color],
-          "edge": [this.edge_width, this.edge_opacity, this.edge_color],
-          "count": this.count++
-        }
-        this.$store.commit('set_control2', deliver);
-        this.$store.commit('set_recordData', deliver);
-        Readcsv.Read_sca_data();
-        Readcsv.Read_hotData()
-        // console.log(this.$store.state.control2)
+      test(){
+        console.log("this is test")
       },
-      goToPay: function (param1, param2) {
-        this.$nextTick(function () {
-          if (this.timer) {
-            clearTimeout(this.timer);
-          }
-          this.timer = setTimeout(() => {
-            this.$refs.getFocus.focus();
-
-          }, 100);
-        });
-      },
-      button_data_select: function (event) {
-
-        if (event) {
-          Readcsv.Read_dataset_show(event.currentTarget.id);
-          $('.data').css("background-color", "rgb(255,254,255)")
-          //点击后变色
-          $('#' + event.currentTarget.id).css("background-color", "rgb(242,242,242)");
-        }
-      },
-      button_type_select: function (event) {
-        if (event) {
-          // console.log(event.currentTarget.id)
-          $('.type').css("background-color", "rgb(255,254,255)")
-          //点击后变色
-          $('#' + event.currentTarget.id).css("background-color", "rgb(242,242,242)");
-        }
-      },
-
-      // type_name:当前展示的类型，style：
+      // draw_scatter() {
+      //   echarts.dispose(document.getElementById('scatter_chart'))
+      //   let myChart = echarts.init(document.getElementById('scatter_chart'));
+      //   // 为echarts对象加载数据
+      //   let option = {
+      //     // title: {
+      //     //     text: '频率幅值图'
+      //     // },
+      //     grid: [  //将视图分成5个区域
+      //       {
+      //         left: '9%',
+      //         width: '16%'
+      //       },
+      //       {
+      //         left: '25%',
+      //         width: '16%'
+      //       },
+      //       {
+      //         left: '41%',
+      //         width: '16%'
+      //       },
+      //       {
+      //         left: '57%',
+      //         width: '16%'
+      //       },
+      //       {
+      //         left: '73%',
+      //         width: '16%'
+      //       },
+      //     ],
+      //     tooltip: {},
+      //     legend: {
+      //       orient: 'horizontal',
+      //       //data:["SMS_malware", "Risk_software", "Bank_malware", "Benign_application","Advertising_software"],
+      //       data: ["malware", "spam", "benign", "Defacement", "phishing"],
+      //       textStyle: {  // 图列内容样式
+      //         color: '#000',  // 字体颜色
+      //       },
+      //       x: 'left',//图例位置，设置right发现图例和文字位置反了，设置一个数值就好了
+      //       y: 'top',//延Y轴居中
+      //       marginBottom: '5px',
+      //     },
+      //     xAxis: [
+      //       {
+      //         type: 'value',
+      //         //zlevel: 0,
+      //         gridIndex: 0,  //使用第一个区域
+      //         interval: 25,
+      //         splitLine: {
+      //           show: false,  //不显示网格线
+      //         },
+      //       },
+      //       {
+      //         type: 'value',
+      //         position: 'bottom',
+      //         // min: 0,
+      //         //zlevel: 1,
+      //         gridIndex: 1,  //使用第二个区域
+      //         interval: 25,
+      //         axisLine: {
+      //           show: true,  //显示轴线
+      //           color: 'red'
+      //         },
+      //         show: true,  //显示X轴
+      //         splitLine: {
+      //           show: false,
+      //         },
+      //       },
+      //       {
+      //         type: 'value',
+      //         //zlevel: 0,
+      //         position: 'bottom',
+      //         min: 0,
+      //         //zlevel: 1,
+      //         gridIndex: 2,  //使用第二个区域
+      //         interval: 25,
+      //         axisLine: {
+      //           show: true,  //显示轴线
+      //           color: 'red'
+      //         },
+      //         show: true,  //显示X轴
+      //         splitLine: {
+      //           show: false,
+      //         },
+      //       },
+      //       {
+      //         type: 'value',
+      //         //zlevel: 0,
+      //         position: 'bottom',
+      //         min: 0,
+      //         //zlevel: 1,
+      //         gridIndex: 3,  //使用第二个区域
+      //         interval: 25,
+      //         axisLine: {
+      //           show: true,  //显示轴线
+      //           color: 'red'
+      //         },
+      //         show: true,  //显示X轴
+      //         splitLine: {
+      //           show: false,
+      //         },
+      //       },
+      //       {
+      //         type: 'value',
+      //         //zlevel: 0,
+      //         position: 'bottom',
+      //         min: 0,
+      //         //zlevel: 1,
+      //         gridIndex: 4,  //使用第二个区域
+      //         interval: 25,
+      //         axisLine: {
+      //           show: true,  //显示轴线
+      //           color: 'red'
+      //         },
+      //         show: true,  //显示X轴
+      //         splitLine: {
+      //           show: false,
+      //         },
+      //       },
+      //     ],
+      //     yAxis: [
+      //       {
+      //         type: 'value',
+      //         //zlevel: 0,
+      //         max: 1,
+      //         gridIndex: 0,
+      //         interval: 20,
+      //         splitLine: {
+      //           show: false
+      //         },
+      //         show:false
+      //       },
+      //       {
+      //         type: 'value',
+      //         zlevel: 1,
+      //         gridIndex: 1,
+      //         min: 0,
+      //         max: 100,
+      //         interval: 100,
+      //         axisLabel: {
+      //           show: true
+      //         },
+      //         axisLine: {
+      //           show: false
+      //         },
+      //         splitLine: {
+      //           show: false
+      //         },
+      //         show: false  //第二条Y轴不显示
+      //       },
+      //       {
+      //         type: 'value',
+      //         //zlevel: 1,
+      //         gridIndex: 2,
+      //         min: 0,
+      //         max: 100,
+      //         interval: 500,
+      //         axisLabel: {
+      //           show: false
+      //         },
+      //         axisLine: {
+      //           show: false
+      //         },
+      //         splitLine: {
+      //           show: false
+      //         },
+      //         show: false  //第二条Y轴不显示
+      //       },
+      //       {
+      //         type: 'value',
+      //         //zlevel: 1,
+      //         gridIndex: 3,
+      //         min: 0,
+      //         max: 100,
+      //         interval: 500,
+      //         axisLabel: {
+      //           show: false
+      //         },
+      //         axisLine: {
+      //           show: false
+      //         },
+      //         splitLine: {
+      //           show: false
+      //         },
+      //         show: false  //第二条Y轴不显示
+      //       },
+      //       {
+      //         type: 'value',
+      //         //zlevel: 1,
+      //         gridIndex: 4,
+      //         min: 0,
+      //         max: 1,
+      //         interval: 500,
+      //         axisLabel: {
+      //           show: false
+      //         },
+      //         axisLine: {
+      //           show: false
+      //         },
+      //         splitLine: {
+      //           show: false
+      //         },
+      //         show: false  //第二条Y轴不显示
+      //       },
+      //     ],
+      //     series: this.series_Data.data,
+      //   };
+      //   myChart.setOption(option);
+      //
+      // },
+      // type_name:当前展示的类型，bubbledata:气泡图的数据
       draw_constellation(type_name, bubbledata) {
-        console.log("this is type_name" + type_name)
-        console.log("this is bubble_data"+ bubbledata)
+
+
         d3.select('#barchart').selectAll('svg').remove();
 
         var width = $('#barchart').width(),
@@ -393,6 +504,90 @@
           .append("g")
           .attr("id", "all_g")
           .call(zoom)
+
+        //设置示意标识
+        svg.append("rect")
+          .attr("x",10)
+          .attr("y",10)
+          .attr("width",30)
+          .attr("height",15)
+          .attr("fill","#cbdcdf" )
+
+        svg.append("text")
+          .attr("x", 45)
+          .attr("y", 20 )
+          .text("positive")
+          .attr("font-family","20")
+          .style('font-size',11)
+
+        svg.append("rect")
+          .attr("x",10)
+          .attr("y",35)
+          .attr("width",30)
+          .attr("height",15)
+          .attr("fill","#a5bbbf")
+
+        svg.append("text")
+          .attr("x",45)
+          .attr("y",45)
+          .text("negative")
+          .style('font-size',11)
+
+        svg.append("circle")
+          .attr("r",10)
+          .attr("cx",23)
+          .attr("cy",function(){
+            return $('#barchart').height()*0.8
+          })
+          .attr("fill","white")
+          .attr("stroke","#b8776c")
+          .attr("stroke-dasharray", "3")
+          .attr("stroke-width",2)
+
+        svg.append("text")
+          .attr("x",45)
+          .attr("y",function(){
+            return $('#barchart').height()*0.8 -5
+          })
+          .text("feature")
+          .style('font-size',11)
+
+        svg.append("text")
+          .attr("x",45)
+          .attr("y",function(){
+            return $('#barchart').height()*0.8 + 10
+          })
+          .text("important")  //important
+          .style('font-size',11)
+
+
+        svg.append("circle")
+          .attr("r",10)
+          .attr("cx",23)
+          .attr("cy",function(){
+            return $('#barchart').height()*0.92
+          })
+          .attr("fill","white")
+          .attr("stroke","steelblue")
+          .attr("stroke-dasharray", "3")
+          .attr("stroke-width",2)
+
+        svg.append("text")
+          .attr("x",45)
+          .attr("y",function(){
+            return $('#barchart').height()*0.92 -5
+          })
+          .text("performance")  //distribution
+          .style('font-size',11)
+
+        svg.append("text")
+          .attr("x",45)
+          .attr("y",function(){
+            return $('#barchart').height()*0.92 + 10
+          })
+          .text("distribution")  //distribution
+          .style('font-size',11)
+
 
 
         const len = Object.keys(type_name).length
@@ -460,9 +655,9 @@
             gr_inner.append("circle")
               .attr("r", radius)
               .attr("fill", "none")
-              .attr("stroke", "steelblue")
+              .attr("stroke", "#b8776c")
               .attr("stroke-dasharray", "4")
-             // .style("opacity", style["secondary_node"][1])
+              // .style("opacity", style["secondary_node"][1])
               .attr("transform", "translate(" + x_transform / 2 + "," + y_transform / 2 + ")")
 
             //外半径坐标轴
@@ -475,18 +670,20 @@
               .attr("fill", "none")
               .attr("stroke", "steelblue")
               .attr("stroke-dasharray", "4")
-             // .style("opacity", style["secondary_node"][1])
+              // .style("opacity", style["secondary_node"][1])
               .attr("transform", "translate(" + x_transform / 2 + "," + y_transform / 2 + ")");
 
             var temp1 = x_transform - radius / 2
             var temp2 = y_transform + radius * 1.4
 
+            //添加当前气泡环形图下放文字
             svg.append("text")
               .text(name)
-              .style("font-size", 18)
+              .style("font-size", 40)
+              .style('font-family','微软雅黑')
               .style("fill", '#000000')
               .attr("text-align", "center")
-              .attr("transform", "translate(" + temp1 + "," + temp2 + ")");
+              .attr("transform", "translate(" + temp1*0.9 + "," + temp2 + ")");
 
             //角度坐标轴
             // var ga = svg.append("g")
@@ -518,7 +715,7 @@
               .on("mouseover", function (d, i) {
                 // d3.select(this).select("path")
                 //     .attr("d",path0);
-                console.log(d,'ddddddd')
+
                 d4.select(this).select("path").attr("fill", "#ad4646")
                 var x = event.pageX;
                 var y = event.pageY;
@@ -554,7 +751,7 @@
               .attr("fill", function (d, i) {
                 return color[i];
               })
-      //        .style("opacity", style["secondary_node"][1])
+            //        .style("opacity", style["secondary_node"][1])
 
             svg.selectAll("point")
               .data(data_outer)
@@ -600,7 +797,7 @@
               .attr("fill", function (d, i) {
                 return color[i];
               })
-             // .style("opacity", style["secondary_node"][1])
+            // .style("opacity", style["secondary_node"][1])
           }
 
           //绘制中心气泡饼图
@@ -724,9 +921,9 @@
                 arc.on("mouseover", function (d, i) {
                   // d3.select(this).select("path")
                   //     .attr("d",path0);
-                 d4.select(this)
-                   .select("path")
-                   .attr("d",path0)
+                  d4.select(this)
+                    .select("path")
+                    .attr("d",path0)
 
                   var x = event.pageX;
                   var y = event.pageY;
@@ -802,226 +999,95 @@
           draw_charts(name[5], type_name, width * 0.7, height * 0.25, width * 0.09, bubbledata)
         }
       },
-
     },
     mounted() {
-      // Readcsv.Read_dataset_show('1');
-      Readcsv.Read_samplebar_data()
-
-      // this.button_type_select()
-    },
-    computed: {
-      sample_bar() {
-        return this.$store.getters.get_sample_bar
-      },
-      control2() {
-        return this.$store.getters.get_control2;
-      },
-      control1() {
-        return this.$store.getters.get_control1
-      },
-
-      // dataShow() {
-      //   return this.$store.getters.get_dataShow;
-      // }
+      // Readcsv.Read_barData()
     },
     watch: {
       control2: function (newV, oldV) {
         axios({
           url: "http://127.0.0.1:5000/get_data/bubble_chart",
         }).then(() => {
+          console.log("this is test2")
           this.draw_constellation(this.type_name,this.bubble_data);
 
         });
       },
-      // dataShow: function () {
-      //   this.dataset_show = this.dataShow.tags;
-      //   console.log(this.dataset_show,'shoiw')
-      //   this.draw_charts()
-      //
+      // control2: function () {
+      //   // console.log(this.control2.Parameter, 'this')
+      //   // console.log(this.series_Data, 'this');
+      //   Readcsv.Read_scatter_right();
+      //   // console.log(this.click_num, 'ssss')
       // },
-      control1: function () {
-        let now_data = this.control1
-        this.eta_ = now_data[0];
-        this.maxdepth = now_data[1];
-        this.minchildweight = now_data[2];
-        this.gamma_ = now_data[3];
-        this.subsample_ = now_data[4];
-        // console.log(now_data)
-        // console.log(this.eta_)
+      // sca_right: function () {
+      //   this.data_right = [];
+      //   for (let i = 0; i < this.sca_right.length; i++) {
+      //     let right = [];
+      //     right.push(parseFloat(this.sca_right[i]) * 100);
+      //     right.push(parseFloat(this.control2.Parameter[i]));
+      //     right.push(this.click_num)
+      //     this.data_right.push(right)
+      //   }
+      //   // console.log(this.data_right,'this')
+      //   this.series_Data.data[0].data.push(this.data_right[0]);
+      //   this.series_Data.data[1].data.push(this.data_right[1]);
+      //   this.series_Data.data[2].data.push(this.data_right[2]);
+      //   this.series_Data.data[3].data.push(this.data_right[3]);
+      //   this.series_Data.data[4].data.push(this.data_right[4]);
+      //   // console.log(this.series_Data.data,'this')
+      //   this.draw_scatter();
+      // }
+    },
+    computed: {
+      control2() {
+        return this.$store.getters.get_control2;
       },
-      // sample_bar: function () {
-      //   this.samplebar = this.$store.getters.get_sample_bar;
-      //   // console.log(this.samplebar, 'ssss')
-      //   // console.log(this.samplebar.tags, 'liter')
+      // sca_right() {
+      //   return this.$store.getters.get_sca_right;
       // },
-
+      // click_num() {
+      //   return this.$store.getters.get_click_num;
+      // },
+      // series_Data(){
+      //   return this.$store.getters.get_series_Data;
+      // }
     },
   }
 </script>
 
-<style scoped lang="scss">
-  #div_left {
-    width: 22.5vw;
-    /*margin: 0;*/
-    /*padding: 0.4%;*/
-    border-top: 3px solid rgb(255, 255, 255);
-    border-bottom: 3px solid rgb(255, 255, 255);
-    /*border-right: 10px solid rgb(255,255,255);*/
-    border-right: 8px solid rgb(255, 255, 255);
-    border-left: 5px solid rgb(255, 255, 255);
-    position: relative;
-    /*overflow-x: hidden;*/
-    /*overflow-y: scroll;*/
-  }
-
-  #controls{
-    height:50%;
-    width: 100%;
-  }
-
-  #control{
-    height: 95%;
-    width: 95%;
-    margin-left:5% ;
-  }
-
-  #sample {
-    width: 100%;
-    height: 50%;
+<style scoped>
+  .bottom_1 {
+    width: 21.3vw;
+    height: 100%;
     /*border: 3px;*/
     border-top: 7px solid rgb(255, 255, 255);
     /*border-bottom: 6px solid rgb(255,255,255);*/
     /*border-right: 3px solid rgb(255,255,255);*/
-    /*border-right: 8px solid rgb(255, 255, 255);*/
-    border-left: 2px solid rgb(255, 255, 255);
+    border-left: 5px solid rgb(255, 255, 255);
   }
+
+  #scatter_chart {
+    width: 100%;
+    height: 98%;
+    padding-right: 2%;
+    /*margin-right: 2%;*/
+    /*margin-top: 2%;*/
+  }
+
+  h4 {
+    font-family: 微软雅黑;
+    background-color: rgb(242, 242, 242);
+    padding: 3px 3px;
+    text-align: center;
+    border-bottom: 2px solid rgb(200, 200, 200);
+  }
+
 
   #barchart {
     width: 98%;
     height: 95%;
     position: center;
     /*margin-top: 2%;*/
-  }
-
-
-  input[type=range] {
-    -webkit-appearance: none;
-    /*width: 5vw;*/
-    height: 5px;
-    background-color: rgb(217, 217, 217);
-    /*background: -webkit-linear-gradient(#61bd12, #61bd12) no-repeat, #ddd;*/
-    border-radius: 10px;
-  }
-
-  input[type='range']::-webkit-slider-thumb { //拖动块的样式
-    -webkit-appearance: none;
-    border: 3px solid rgb(165, 187, 191);
-    height: 14px;
-    width: 14px;
-    border-radius: 8px;
-    background: #ffffff;
-    cursor: pointer;
-  }
-
-  input[type='range']::-moz-range-thumb {
-    border: 3px solid #fff;
-    height: 7px;
-    width: 7px;
-    border-radius: 8px;
-    background: rgb(165, 187, 191);
-    cursor: pointer;
-  }
-
-  input[type='color'] {
-    width: 5vw;
-    height: 2vh;
-    /*border-radius: 5px;*/
-  }
-
-  input[type='color']::-webkit-color-swatch-wrapper {
-    padding: 0;
-  }
-
-  input[type='color']::-webkit-color-swatch {
-    border: 0;
-  }
-
-  input[type='text'] {
-    width: 9vw;
-    height: 2vh;
-    border: 0;
-    /*background:linear-gradient(to right,#fff ,#00416A);*/
-    /*border-block-color:#baccd9;*/
-    background-color: #CCDDDF;
-  }
-
-  #test2 {
-    margin: 0;
-    font-family: 微软雅黑;
-    background-color: rgb(242, 242, 242);
-    padding: 3px 3px;
-    text-align: center;
-    border-bottom: 2px solid rgb(200, 200, 200);
-  }
-
-#title_controls{
-  font-family: 微软雅黑;
-    background-color: rgb(242, 242, 242);
-    padding: 3px 3px;
-    text-align: center;
-    border-bottom: 2px solid rgb(200, 200, 200);
-    margin: 0
-}
-  h3 {
-    background-color: rgb(242, 242, 242);
-  }
-
-  .button {
-    background-color: rgb(255, 255, 255);
-    /*border: 1px solid rgb(170, 170, 170);*/
-    /*border-radius: 5px;*/
-    color: #000000;
-    padding: 1px 2px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 13px;
-    margin-left: 2%;
-  }
-
-  .button:hover {
-    color: #3a8ee6;
-    background-color: rgb(242, 242, 242);
-  }
-
-  #Train {
-    margin-left: 19%;
-    /*border-top-left-radius: 5px;*/
-    /*border-bottom-left-radius: 5px;*/
-  }
-
-  button {
-    background-color: rgb(255, 255, 255);
-    border: none;
-    padding: 10px 10px;
-    font-size: 15px;
-    text-align: center;
-    font-family: 微软雅黑;
-  }
-
-  #sample_bar {
-    /*position: absolute;*/
-    /*height: 5px;*/
-    /*width: 40px;*/
-    height: 5vh;
-    width: 8vw;
-    position: absolute;
-    left: 45%;
-    top: 0px;
-    /*border: 3px solid rgb(43, 43, 43);*/
-    /*background-color: crimson;*/
-
   }
 
 </style>

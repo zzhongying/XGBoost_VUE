@@ -1,27 +1,21 @@
 <template>
-  <div id="right-panel-proj">
-    <h4> CONSTELLATION BASED ON ITERATION </h4>
-    <div id="proj-table"></div>
-  </div>
+  <div id="proj-table"></div>
 </template>
 
 <script>
 import * as d3 from "d5";
 import $ from "jquery";
-import axios from 'axios'
-
+import axios from "axios";
 export default {
   name: "div_center",
   methods: {
-
   },
   mounted() {
-    // console.log("mounted调用咯")
-    // console.log(this)
-    d3.json("./Data/feature_values.json").then(
+    console.log("mounted调用咯");
+    d3.json("./feature_values.json").then(
       (data) => {
-        let width = 1200;
-        let height = 700;
+        let width = 800;
+        let height = 500;
         let Y = d3
           .scaleBand()
           .domain(data.map((d) => d.Class))
@@ -37,7 +31,6 @@ export default {
           .append("g")
           .attr("id", "text")
           .attr("transform", "translate(" + 10 + "," + 10 + ")");
-
         text
           .selectAll("text")
           .data(data.map((d) => d.Class))
@@ -46,15 +39,12 @@ export default {
           .attr("x", 160)
           .attr("y", (d) => Y(d))
           .text((d) => d)
-          .attr("text-anchor", "end")
-
-
+          .attr("text-anchor", "end");
         // console.log(text.node().children[0].getBBox())
 
         let line = svg
           .append("g")
           .attr("transform", "translate(" + 10 + "," + 10 + ")");
-
         line
           .selectAll("line")
           .data(data.map((d) => d.Class))
@@ -100,8 +90,6 @@ export default {
             if (features.indexOf(item.feature) == -1)
               features.push(item.feature);
           }
-
-          //设置前15个重要特征的矩形
           rects
             .selectAll(`.rect_${data[i].Class}`)
             .data(use_data)
@@ -114,8 +102,8 @@ export default {
               return X(ind);
             })
             .attr("height", (d) => d.Max - d.Min)
-            .attr("width", 40)
-            .attr("fill", "#cbdcdf")
+            .attr("width", 20)
+            .attr("fill", "pink")
             .attr("class", (d) =>
               d.feature.split("(").join("_").split(")").join("_")
             )
@@ -141,9 +129,9 @@ export default {
               }
               d = d.join("");
               let tem = [];
-              while (d.length) {     //字符串切片，换行
-                tem.push(d.slice(0, 8));
-                d = d.slice(8, d.length);
+              while (d.length) {
+                tem.push(d.slice(0, 5));
+                d = d.slice(5, d.length);
               }
               return tem.map((dd) => (ind >= 10 ? 2 + dd + ind : 1 + dd + ind));
             })
@@ -152,7 +140,7 @@ export default {
             .text((d) => {
               return d.slice(1, d.length - d.slice(0, 1));
             })
-            .attr("font-size", 11)
+            .attr("font-size", 8)
             .attr("x", (d) => {
               return X(
                 parseInt(d.slice(d.length - parseInt(d.slice(0, 1)), d.length))
@@ -160,24 +148,22 @@ export default {
             })
             .attr("dy", "1em");
 
-
-          //设置融合特征的矩形
           for (let j = 0, k = data[i].fusion_features.length; j < k; j++) {
             rects
               .append("rect")
               .attr("y", (d) => {
-                return Y(data[i].Class) - 25;
+                return Y(data[i].Class) - 5 - 10;
               })
               .attr("x", X(15 + j))
-              .attr("height", 40)
-              .attr("width", 40)
-              .attr("fill", "#cbdcdf")
+              .attr("height", 20)
+              .attr("width", 20)
+              .attr("fill", "pink")
               .attr("class", data[i].Class + data[i].fusion_features[j].name);
 
             rects
               .append("text")
               // .text(data[i].fusion_features[j].name.slice(11, 15))
-              .attr("font-size", 10)
+              .attr("font-size", 8)
               .attr("x", X(15 + j))
               .attr("y", (d) => {
                 return Y(data[i].Class) + 25;
@@ -195,7 +181,6 @@ export default {
               .selectAll(`.${data[i].Class + data[i].fusion_features[j].name}`)
               .node()
               .getBBox();
-
             let nodes = pack(data[i].fusion_features[j]);
             rects
               .append("g")
@@ -243,7 +228,7 @@ export default {
             curve_line
               .append("path")
               .attr("d", curve(points))
-              .attr("stroke", "#cbdcdf")
+              .attr("stroke", "pink")
               .attr("fill", "none");
           }
         }
@@ -252,13 +237,14 @@ export default {
         console.log("报错：", err);
       }
     );
-   },
+  },
 };
 </script>
 
 <style scoped>
-
-
-
-@import url("../../dist/css/projection-style.css");
+#proj-table {
+  width: 768px;
+  height: 377px;
+  overflow: scroll;
+}
 </style>

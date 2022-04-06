@@ -15,11 +15,11 @@
 </template>
 <script>
 
-  import div_left from './components/controls_iteratione';
+  import div_left from './components/controls_dataanalysis';
   import div_center from './components/feature_analysis';
   import div_titles from './components/Title';
   import div_right from './components/performance_featurer';
-  import bottom_1 from './components/Parameter_distribution';
+  import bottom_1 from './components/iteration';
   import bottom_2 from './components/confusion_matrix&sunrain';
   import exchange from "./components/exchange";
   import * as d4 from '../public/d3'

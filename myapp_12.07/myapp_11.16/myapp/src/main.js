@@ -7,6 +7,8 @@ import 'element-ui/lib/theme-chalk/index.css'
 // import "../node_modules/_popper.js@1.14.7@popper.js/dist/popper.min"
 // import "../node_modules/_bootstrap@3.4.1@bootstrap/dist/js/bootstrap.min";
 // import "../node_modules/_bootstrap@3.4.1@bootstrap/dist/css/bootstrap.min.css";
+// import "bootstrap/dist/css/bootstrap.min.css"
+// import "bootstrap/dist/js/bootstrap.min"
 
 
 Vue.config.productionTip = false
