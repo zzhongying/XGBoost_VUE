@@ -1,6 +1,6 @@
 <template>
   <div id="right-panel-proj">
-    <h4> CONSTELLATION BASED ON ITERATION </h4>
+    <h4> FEATURE ANALYSIS </h4>
     <div id="proj-table"></div>
   </div>
 </template>
@@ -64,7 +64,7 @@ export default {
           .attr("y1", (d) => Y(d) - 5)
           .attr("x2", width - 10)
           .attr("y2", (d) => Y(d) - 5)
-          .attr("stroke", "#7570b3");
+          .attr("stroke", "#afc0c2");
 
         let X = d3
           .scaleLinear()

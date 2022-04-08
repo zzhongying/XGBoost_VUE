@@ -18,7 +18,7 @@
   import div_left from './components/controls_dataanalysis';
   import div_center from './components/feature_analysis';
   import div_titles from './components/Title';
-  import div_right from './components/performance_featurer';
+  import div_right from './components/featurer_comparison';
   import bottom_1 from './components/iteration';
   import bottom_2 from './components/confusion_matrix&sunrain';
   import exchange from "./components/exchange";

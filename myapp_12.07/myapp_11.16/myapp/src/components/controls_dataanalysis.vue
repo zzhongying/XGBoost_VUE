@@ -7,7 +7,8 @@
           style="width: 21vw;border-top:3px solid rgb(255,255,255);border-bottom:3px solid rgb(255,255,255);border-right: 6px solid rgb(255,255,255);border-left: 6px solid rgb(255,255,255);height:99%;">
           <!--            <vue-cell width="12of12" style="background-color: #fdfdfd;margin-top: 0.2%;font-size:  15px"> ☀ Parameter:-->
           <!--            </vue-cell>-->
-          <vue-cell width="5of12"><label style="font-size: smaller">Eta</label></vue-cell>
+
+          <vue-cell width="5of12"><label style="font-size: smaller">Eta:</label></vue-cell>
           <vue-cell width="7of12"><input type="range" min="0" max="1.0" step="0.1" class="input" v-model.number="eta_"/><label>{{eta_}}</label>
           </vue-cell>
           <vue-cell width="5of12"><label style="font-size: smaller">Max depth:</label></vue-cell>
@@ -72,7 +73,10 @@
         Correct_identification: null,
         samplebar: null,
         dataset_show: [],
-
+        feature_bar: {
+          "xAxis": ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],  //特征名
+          "yAxis":[120, 200, 150, 80, 70, 110, 130]            //特征对应的出现频次
+        }
       }
     },
     components: {
@@ -110,7 +114,6 @@
         });
       },
       button_data_select: function (event) {
-
         if (event) {
           Readcsv.Read_dataset_show(event.currentTarget.id);
           $('.data').css("background-color", "rgb(255,254,255)")
@@ -127,11 +130,59 @@
         }
       },
 
-      draw_data_analysis(){
 
+      draw_bar(data){
+        var chartDom = document.getElementById('data_analysis');
+        var myChart = echarts.init(chartDom);
+        var option;
 
+        option = {
+          color:['#CBDCDF','#F0BBC1', '#FAF3E2',  '#B3CBCF'],
+          grid:{
+            height:'50%',
+            width:'80%'
+          },
+          xAxis: {
+            type: 'category',
+            data: data["xAxis"]
+          },
+          yAxis: {
+            type: 'value'
+          },
+          dataZoom: [
+            {
+              type: 'slider',
+              show: true,
+              height: 10,
+              bottom: 30,
+              borderColor: 'transparent',
+              backgroundColor: '#e2e2e2',
+              // 拖拽手柄样式 svg 路径
+              handleIcon: 'M512 512m-208 0a6.5 6.5 0 1 0 416 0 6.5 6.5 0 1 0-416 0Z M512 192C335.264 192 192 335.264 192 512c0 176.736 143.264 320 320 320s320-143.264 320-320C832 335.264 688.736 192 512 192zM512 800c-159.072 0-288-128.928-288-288 0-159.072 128.928-288 288-288s288 128.928 288 288C800 671.072 671.072 800 512 800z',
+              handleColor: '#aab6c6',
+              handleSize: 30,
+              handleStyle: {
+                borderColor: '#aab6c6',
+                shadowBlur: 4,
+                shadowOffsetX: 1,
+                shadowOffsetY: 1,
+                shadowColor: '#e5e5e5'
+              },
+              start: 0,
+              end: 100
+            },
+          ],
+          series: [
+            {
+              data: data["yAxis"],
+              type: 'bar'
+            }
+          ]
+        };
 
+        option && myChart.setOption(option);
       }
+
 
     },
     mounted() {
@@ -156,13 +207,9 @@
       // }
     },
     watch: {
-      control2: function (newV, oldV) {
-        axios({
-          url: "http://127.0.0.1:5000/get_data/bubble_chart",
-        }).then(() => {
-          this.draw_data_analysis(this.bubble_data);
 
-        });
+      control2: function (newV, oldV) {
+        this.draw_bar(this.feature_bar)
       },
       // dataShow: function () {
       //   this.dataset_show = this.dataShow.tags;
@@ -185,7 +232,7 @@
       //   // console.log(this.samplebar, 'ssss')
       //   // console.log(this.samplebar.tags, 'liter')
       // },
-
+      deep: true //对象内部属性的监听，关键
     },
   }
 </script>
