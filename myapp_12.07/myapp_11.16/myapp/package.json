@@ -31,6 +31,7 @@
     "babel-eslint": "^10.1.0",
     "d3": "^3.5.17",
     "d5": "npm:d3@^5.7.0",
+    "element-ui": "^2.15.6",
     "eslint": "^6.7.2",
     "eslint-plugin-import": "^2.20.2",
     "eslint-plugin-node": "^11.1.0",

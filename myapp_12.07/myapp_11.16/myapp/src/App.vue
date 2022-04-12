@@ -2,9 +2,9 @@
     <div >
       <div_titles></div_titles>
       <div class="div1">
-      <div_left></div_left>
-      <div_center></div_center>
-      <div_right></div_right>
+        <div_left></div_left>
+        <div_center></div_center>
+        <div_right></div_right>
       </div>
       <div class="div2">
         <bottom_1></bottom_1>
@@ -37,7 +37,7 @@
     mounted() {
       console.log(d4,'sss')
     }
-
+    
   }
 </script>
 <style lang="scss">
