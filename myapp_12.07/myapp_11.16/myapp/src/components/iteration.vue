@@ -268,7 +268,7 @@
       test(){
         console.log("this is test")
       },
-      //#region 
+      //#region
       // draw_scatter() {
       //   echarts.dispose(document.getElementById('scatter_chart'))
       //   let myChart = echarts.init(document.getElementById('scatter_chart'));
@@ -480,7 +480,7 @@
       //
       // },
       // type_name:当前展示的类型，bubbledata:气泡图的数据
-      //#region 
+      //#region
       draw_constellation(type_name, bubbledata) {
         let that=this
         // console.log("this指向",this)
@@ -500,6 +500,18 @@
             "scale(" + zoom.scale() + ")"
           );
         }
+
+        let tooltip = d3
+          .select("#barchart")
+          .append("div")
+          .attr("id", "iteration_tooltip")
+          .style("position",'absolute')
+          .style("opacity", 0)
+          .style("width",200+'px')
+          .style('height','auto')
+          .style('font-size',14+'px')
+          .style('border',`${1}px solid rgb(214, 205, 205)`)
+          .style('background-color','rgb(214, 205, 205)')
 
         var svg = d3.select("#barchart").append("svg")
           .attr("width", width)
@@ -875,6 +887,25 @@
                   // console.log(d3.select(this).attr('id'))
                   that.$bus.$emit('getPieId',d3.select(this).attr('id'))
                 })
+                .on('mouseenter',(d,i)=>{
+                  console.log('hover生效。。。')
+                  // console.log(d,i)
+                  var x = event.offsetX;
+                  var y = event.offsetY;
+                  tooltip
+                    .html(()=>{
+                      let res=`${d.class} </br>`
+                      // console.log(d)
+                      return res
+                    })
+                    .style("left", x + "px")
+                    .style("top", y + 20 + "px")
+                    .style("opacity", 1);
+                })
+                .on("mouseleave", function (d, i) {
+                  tooltip.style('opacity',0);
+                });
+
 
               function DrawPie(data) {
                 // console.log(data)
@@ -921,10 +952,7 @@
                   .attr("fill", function (d, i) {
                     return color[i];
                   })
-                // .attr("transform", function(d) {
-                //     // console.log(this.id)
-                //     return "translate(" + d.x + "," + d.y + ")";
-                // })
+
 
                 arc.on("mouseover", function (d, i) {
                   // d3.select(this).select("path")
@@ -956,6 +984,7 @@
                     .select("path")
                     .attr("d",path)
                 });
+
 
                 // arc.append("text")
                 //   .attr("transform", d => {

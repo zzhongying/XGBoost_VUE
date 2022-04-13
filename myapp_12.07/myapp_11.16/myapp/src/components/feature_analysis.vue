@@ -23,12 +23,14 @@ export default {
         let width = $('#proj-table').width();
         let height = $('#proj-table').height();
 
+
         let svg = d3
           .select("#proj-table")
           .append("svg")
-          .attr("width", width + "px")
+          .attr("width", 1200 + "px")
           .attr("height", height + "px");
 
+        //悬浮框相关设置
         let tooltip = d3
           .select("#proj-table")
           .append("div")
@@ -40,6 +42,7 @@ export default {
           .style('font-size',14+'px')
           .style('border',`${1}px solid rgb(214, 205, 205)`)
           .style('background-color','rgb(214, 205, 205)')
+
 
         let Y = d3
           .scaleBand()
@@ -82,15 +85,18 @@ export default {
           .attr("offset", "100%")
           .style("stop-color", 'rgb(222, 195, 55)');
 
+        //左上角示意图标设置
         let legend=svg
           .append("g")
           .attr("id", "legend")
           .attr("transform", "translate(" + 10 + "," + 10 + ")");
+
         legend.append('path')
           .attr('d',x_axis([[10,10],[100,10]]))
           .attr("stroke-width", 2)
           .attr("fill", "none")
           .attr("stroke", `url(#${linearGradient1.attr("id")})`)
+
         legend.append('text')
           .attr('x',10)
           .attr('y',20)
@@ -119,8 +125,6 @@ export default {
 
         // console.log(text.node().children[0].getBBox())
 
-
-
         let axisPoints=[]
         for(let name of data.map((d) => d.Class)){
           axisPoints.push([
@@ -129,6 +133,8 @@ export default {
           ])
         }
 
+
+        //矩形下放的直线设置
         let line = svg
           .append("g")
           .attr("transform", "translate(" + 10 + "," + 10 + ")");
@@ -156,12 +162,13 @@ export default {
         //   .attr("stroke", "#afc0c2");
           // .attr('fill','url(#line_color)')
 
+
         let X = d3
           .scaleLinear()
           .domain([0, 14])
           .rangeRound([
-            line.node().getBBox().x + 10,
-            line.node().getBBox().width-60,
+            line.node().getBBox().x + 10,  //？？
+            line.node().getBBox().width-30,
           ]);
 
         let rects = svg
@@ -177,18 +184,19 @@ export default {
           );
 
         let features = [];
+        //修改矩形的高度
         for (let i = 0, n = data.length; i < n; i++) {
           let use_data = data[i].data.map(d => {
             let h=d.Max-d.Min
             if(h<10){
-              d['h']=h*4
+              d['h']=h*6
             }
             if(h>100){
               // console.log("Math.log(h)",Math.log(h),' h=',h)
-              d['h']=Math.log(h)*4
+              d['h']=Math.log(h)*10
             }
             if(h>=10&&h<=100){
-              d['h']=h
+              d['h']= h/2
             }
             return d
           });
@@ -230,7 +238,10 @@ export default {
               var y = event.offsetY;
               tooltip
                 .html(()=>{
-                  let res=`特征重要性：${d.featureImportance}`
+                  let res=`Feature: ${ d.feature }</br>
+                            Feature Importance：${d.featureImportance}</br>
+                           Value:[${d.Min },${d.Max}]`
+                  // console.log(d)
                   return res
                 })
                 .style("left", d3.event.pageX + "px")
@@ -370,11 +381,12 @@ export default {
               let svgrect = rect.getBBox();
               points.push({
                 name:d3.select(rect).attr('class').split(" ")[0],
-                x: svgrect.x + svgrect.width * 0.5,
-                y: svgrect.y + svgrect.height * 0.5,
+                x: svgrect.x + svgrect.width,
+                y: svgrect.y + svgrect.height ,
               });
             }
             // console.log(curve(points))
+
             curve_line
               .append("path")
               .data(points)

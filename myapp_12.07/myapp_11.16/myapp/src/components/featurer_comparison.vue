@@ -2,7 +2,7 @@
   <div class="top_right">
     <div id="bar" ref="chart1">
       <h4 id="test3">FEATURE COMPARISON</h4>
-      <div id="draw_bar"></div>
+      <div id="draw_bar" style="  height: 94%; width: 100%;"></div>
     </div>
     <div id="scatter" ref="chart2">
       <h4 id="test4">CONFUSION MATRIX</h4>
@@ -21,6 +21,7 @@
 <script>
 import * as echarts from "echarts";
 import * as d3 from "d3";
+import $ from 'jquery'
 import Readcsv from "../ToolJs/Readcsv";
 import selector from "./selector";
 import * as d4 from "../../public/d3";
@@ -37,356 +38,356 @@ export default {
     };
   },
   methods: {
-    draw_scatter_dataAnalysis() {
-      // 散点数据
-      let myChart = echarts.init(document.getElementById("draw_scatter"));
-      let marksData = [
-        {
-          name: "点1",
-          value: [13, 20],
-          category: "AUC",
-        },
-        {
-          name: "点2",
-          value: [15, 22],
-          category: "BUC",
-        },
-        {
-          name: "点3",
-          value: [34, 51],
-          category: "AUC",
-        },
-        {
-          name: "点4",
-          value: [25, 64],
-          category: "BUC",
-        },
-        {
-          name: "点5",
-          value: [42, 20],
-          category: "AUC",
-        },
-        {
-          name: "点6",
-          value: [32, 15],
-          category: "BUC",
-        },
-        {
-          name: "点7",
-          value: [68, 34],
-          category: "AUC",
-        },
-        {
-          name: "点8",
-          value: [25, 65],
-          category: "BUC",
-        },
-        {
-          name: "点9",
-          value: [45, 56],
-          category: "BUC",
-        },
-        {
-          name: "点10",
-          value: [35, 47],
-          category: "BUC",
-        },
-      ];
-      let colorList = [
-        "rgba(56, 180, 139, .1)",
-        "rgba(68, 97, 123, .1)",
-        "rgba(191, 120, 58, .1)",
-        "rgba(116, 83, 153, .1)",
-      ];
-      let option = {
-        tooltip: {
-          axisPointer: {
-            show: true,
-            type: "cross",
-            lineStyle: {
-              type: "dashed",
-              width: 1,
-            },
-            label: {
-              backgroundColor: "#555",
-            },
-          },
-        },
-        grid: {
-          height: "90%",
-          top: 0,
-          left: 0,
-          right: 0,
-          containLabel: true,
-        },
-
-        xAxis: {
-          show: false,
-          scale: true,
-          axisLine: {
-            lineStyle: {
-              color: "#ddd",
-            },
-          },
-          axisLabel: {
-            color: "#666",
-          },
-          splitLine: {
-            show: false,
-            lineStyle: {
-              color: "#eee",
-            },
-          },
-        },
-        yAxis: {
-          scale: true,
-          show: false,
-          axisLine: {
-            show: false,
-            lineStyle: {
-              color: "#ddd",
-            },
-          },
-          axisLabel: {
-            color: "#666",
-          },
-          splitLine: {
-            show: false,
-            lineStyle: {
-              color: "#eee",
-            },
-          },
-        },
-        series: [
-          {
-            type: "scatter",
-            symbolSize: 20,
-            data: marksData,
-            itemStyle: {
-              shadowBlur: 2,
-              shadowColor: "rgba(120, 36, 50, 0.5)",
-              shadowOffsetY: 1,
-              color: function (e) {
-                if (e.data.category == "AUC") {
-                  return "rgba(56, 180, 139, .5)";
-                } else {
-                  return "rgba(116, 83, 153, .5)";
-                }
-              },
-            },
-            // 各象限区域
-            markArea: {
-              silent: true,
-              data: [
-                // 第一象限
-                [
-                  {
-                    xAxis: 40, // x 轴开始位置
-                    yAxis: 70, // y 轴结束位置(直接取最大值)
-                    itemStyle: {
-                      color: "rgba(56, 180, 139, .1)",
-                    },
-                  },
-                  {
-                    yAxis: 40, // y轴开始位置
-                  },
-                ],
-                // 第二象限
-                [
-                  {
-                    yAxis: 70, // y 轴结束位置(直接取最大值)
-                    itemStyle: {
-                      color: "rgba(68, 97, 123, .1)",
-                    },
-                  },
-                  {
-                    xAxis: 40, // x 轴结束位置
-                    yAxis: 40, // y轴开始位置
-                  },
-                ],
-                // 第三象限
-                [
-                  {
-                    yAxis: 40, // y 轴结束位置
-                    itemStyle: {
-                      color: "rgba(191, 120, 58, .1)",
-                    },
-                  },
-                  {
-                    xAxis: 40, // x 轴结束位置
-                    yAxis: 10, // y轴开始位置
-                  },
-                ],
-                // 第四象限
-                [
-                  {
-                    xAxis: 40, // x 轴开始位置
-                    yAxis: 40, // y 轴结束位置
-                    itemStyle: {
-                      color: "rgba(116, 83, 153, .1)",
-                    },
-                  },
-                  {
-                    yAxis: 10, // y轴开始位置
-                  },
-                ],
-              ],
-            },
-          },
-        ],
-      };
-      myChart.setOption(option);
-      myChart.on("click", (p) => {
-        console.log(p);
-        option.series[0].symbolSize = 10;
-        myChart.setOption(option);
-      });
-      let size = [];
-      myChart.on("mousemove", (p) => {
-        size.push("1");
-      });
-      myChart.on("mouseout", (p) => {
-        // console.log(size,'s')
-      });
-    },
-    draw_bar() {
-      let myChart1 = echarts.init(document.getElementById("one_five"));
-      let myChart2 = echarts.init(document.getElementById("six_ten"));
-      let option1 = {
-        grid: {
-          left: "2%",
-          top: "0%",
-          bottom: "6%",
-          containLabel: true,
-        },
-        xAxis: {
-          type: "value",
-          splitLine: { show: false }, //去除网格线
-          axisTick: { show: false }, //去除坐标分格线
-          axisLine: {
-            lineStyle: {
-              type: "solid",
-              color: "#rgba(255,255,255,0)", //左边线的颜色
-              width: "0", //坐标线的宽度
-            },
-          },
-          axisLabel: {
-            textStyle: {
-              color: "rgba(255,255,255,0)", //坐标值得具体的颜色
-            },
-          },
-        },
-        yAxis: {
-          type: "category",
-          data: ["accuracy", "recall", "specificity", "precision"],
-          axisTick: { show: false }, //去除坐标分格线
-          axisLine: {
-            lineStyle: {
-              type: "solid",
-              color: "#rgba(255,255,255,0)", //左边线的颜色
-              width: "0", //坐标线的宽度
-            },
-          },
-        },
-        series: [
-          {
-            data: [120, 150, 80, 70],
-            barWidth: 25,
-            type: "bar",
-            itemStyle: {
-              normal: {
-                color: function (params) {
-                  var colorList = [
-                    "#cbdcdf",
-                    "#a5bbbf",
-                    "#cce8e2",
-                    "#ce848f",
-                    "#EFBAC0",
-                    "#F9F3E1",
-                    "#EDE9BF",
-                    "#F7E7E0",
-                    "#F7DDC0",
-                    "#F9BCB2",
-                    "#ea8991",
-                  ];
-                  return colorList[params.dataIndex];
-                },
-              },
-            },
-            showBackground: true,
-            backgroundStyle: {
-              color: "rgba(180,180,180,0.2)",
-            },
-          },
-        ],
-      };
-      let option2 = {
-        grid: {
-          left: "2%",
-          top: "0%",
-          bottom: "5%",
-          containLabel: true,
-        },
-        xAxis: {
-          type: "value",
-          splitLine: { show: false }, //去除网格线
-          axisTick: { show: false }, //去除坐标分格线
-          axisLine: {
-            lineStyle: {
-              type: "solid",
-              color: "#rgba(255,255,255,0)", //左边线的颜色
-              width: "0", //坐标线的宽度
-            },
-          },
-          axisLabel: {
-            textStyle: {
-              color: "rgba(255,255,255,0)", //坐标值得具体的颜色
-            },
-          },
-        },
-        yAxis: {
-          type: "category",
-          data: ["falseAlarm", "missRate", "f1", "AUC"],
-          axisTick: { show: false }, //去除坐标分格线
-          axisLine: {
-            lineStyle: {
-              type: "solid",
-              color: "#rgba(255,255,255,0)", //左边线的颜色
-              width: "0", //坐标线的宽度
-            },
-          },
-        },
-        series: [
-          {
-            data: [120, 200, 80, 70],
-            type: "bar",
-            barWidth: 25,
-            itemStyle: {
-              normal: {
-                //这里是重点
-                color: function (params) {
-                  //注意，如果颜色太少的话，后面颜色不会自动循环，最好多定义几个颜色
-                  var colorList = [
-                    "#F9F3E1",
-                    "#EDE9BF",
-                    "#F7E7E0",
-                    "#F7DDC0",
-                    "#F9BCB2",
-                  ];
-                  return colorList[params.dataIndex];
-                },
-              },
-            },
-            showBackground: true,
-            backgroundStyle: {
-              color: "rgba(180,180,180,0.2)",
-            },
-          },
-        ],
-      };
-      myChart1.setOption(option1);
-      myChart2.setOption(option2);
-    },
+    // draw_scatter_dataAnalysis() {
+    //   // 散点数据
+    //   let myChart = echarts.init(document.getElementById("draw_scatter"));
+    //   let marksData = [
+    //     {
+    //       name: "点1",
+    //       value: [13, 20],
+    //       category: "AUC",
+    //     },
+    //     {
+    //       name: "点2",
+    //       value: [15, 22],
+    //       category: "BUC",
+    //     },
+    //     {
+    //       name: "点3",
+    //       value: [34, 51],
+    //       category: "AUC",
+    //     },
+    //     {
+    //       name: "点4",
+    //       value: [25, 64],
+    //       category: "BUC",
+    //     },
+    //     {
+    //       name: "点5",
+    //       value: [42, 20],
+    //       category: "AUC",
+    //     },
+    //     {
+    //       name: "点6",
+    //       value: [32, 15],
+    //       category: "BUC",
+    //     },
+    //     {
+    //       name: "点7",
+    //       value: [68, 34],
+    //       category: "AUC",
+    //     },
+    //     {
+    //       name: "点8",
+    //       value: [25, 65],
+    //       category: "BUC",
+    //     },
+    //     {
+    //       name: "点9",
+    //       value: [45, 56],
+    //       category: "BUC",
+    //     },
+    //     {
+    //       name: "点10",
+    //       value: [35, 47],
+    //       category: "BUC",
+    //     },
+    //   ];
+    //   let colorList = [
+    //     "rgba(56, 180, 139, .1)",
+    //     "rgba(68, 97, 123, .1)",
+    //     "rgba(191, 120, 58, .1)",
+    //     "rgba(116, 83, 153, .1)",
+    //   ];
+    //   let option = {
+    //     tooltip: {
+    //       axisPointer: {
+    //         show: true,
+    //         type: "cross",
+    //         lineStyle: {
+    //           type: "dashed",
+    //           width: 1,
+    //         },
+    //         label: {
+    //           backgroundColor: "#555",
+    //         },
+    //       },
+    //     },
+    //     grid: {
+    //       height: "90%",
+    //       top: 0,
+    //       left: 0,
+    //       right: 0,
+    //       containLabel: true,
+    //     },
+    //
+    //     xAxis: {
+    //       show: false,
+    //       scale: true,
+    //       axisLine: {
+    //         lineStyle: {
+    //           color: "#ddd",
+    //         },
+    //       },
+    //       axisLabel: {
+    //         color: "#666",
+    //       },
+    //       splitLine: {
+    //         show: false,
+    //         lineStyle: {
+    //           color: "#eee",
+    //         },
+    //       },
+    //     },
+    //     yAxis: {
+    //       scale: true,
+    //       show: false,
+    //       axisLine: {
+    //         show: false,
+    //         lineStyle: {
+    //           color: "#ddd",
+    //         },
+    //       },
+    //       axisLabel: {
+    //         color: "#666",
+    //       },
+    //       splitLine: {
+    //         show: false,
+    //         lineStyle: {
+    //           color: "#eee",
+    //         },
+    //       },
+    //     },
+    //     series: [
+    //       {
+    //         type: "scatter",
+    //         symbolSize: 20,
+    //         data: marksData,
+    //         itemStyle: {
+    //           shadowBlur: 2,
+    //           shadowColor: "rgba(120, 36, 50, 0.5)",
+    //           shadowOffsetY: 1,
+    //           color: function (e) {
+    //             if (e.data.category == "AUC") {
+    //               return "rgba(56, 180, 139, .5)";
+    //             } else {
+    //               return "rgba(116, 83, 153, .5)";
+    //             }
+    //           },
+    //         },
+    //         // 各象限区域
+    //         markArea: {
+    //           silent: true,
+    //           data: [
+    //             // 第一象限
+    //             [
+    //               {
+    //                 xAxis: 40, // x 轴开始位置
+    //                 yAxis: 70, // y 轴结束位置(直接取最大值)
+    //                 itemStyle: {
+    //                   color: "rgba(56, 180, 139, .1)",
+    //                 },
+    //               },
+    //               {
+    //                 yAxis: 40, // y轴开始位置
+    //               },
+    //             ],
+    //             // 第二象限
+    //             [
+    //               {
+    //                 yAxis: 70, // y 轴结束位置(直接取最大值)
+    //                 itemStyle: {
+    //                   color: "rgba(68, 97, 123, .1)",
+    //                 },
+    //               },
+    //               {
+    //                 xAxis: 40, // x 轴结束位置
+    //                 yAxis: 40, // y轴开始位置
+    //               },
+    //             ],
+    //             // 第三象限
+    //             [
+    //               {
+    //                 yAxis: 40, // y 轴结束位置
+    //                 itemStyle: {
+    //                   color: "rgba(191, 120, 58, .1)",
+    //                 },
+    //               },
+    //               {
+    //                 xAxis: 40, // x 轴结束位置
+    //                 yAxis: 10, // y轴开始位置
+    //               },
+    //             ],
+    //             // 第四象限
+    //             [
+    //               {
+    //                 xAxis: 40, // x 轴开始位置
+    //                 yAxis: 40, // y 轴结束位置
+    //                 itemStyle: {
+    //                   color: "rgba(116, 83, 153, .1)",
+    //                 },
+    //               },
+    //               {
+    //                 yAxis: 10, // y轴开始位置
+    //               },
+    //             ],
+    //           ],
+    //         },
+    //       },
+    //     ],
+    //   };
+    //   myChart.setOption(option);
+    //   myChart.on("click", (p) => {
+    //     console.log(p);
+    //     option.series[0].symbolSize = 10;
+    //     myChart.setOption(option);
+    //   });
+    //   let size = [];
+    //   myChart.on("mousemove", (p) => {
+    //     size.push("1");
+    //   });
+    //   myChart.on("mouseout", (p) => {
+    //     // console.log(size,'s')
+    //   });
+    // },
+    // draw_bar() {
+    //   let myChart1 = echarts.init(document.getElementById("one_five"));
+    //   let myChart2 = echarts.init(document.getElementById("six_ten"));
+    //   let option1 = {
+    //     grid: {
+    //       left: "2%",
+    //       top: "0%",
+    //       bottom: "6%",
+    //       containLabel: true,
+    //     },
+    //     xAxis: {
+    //       type: "value",
+    //       splitLine: { show: false }, //去除网格线
+    //       axisTick: { show: false }, //去除坐标分格线
+    //       axisLine: {
+    //         lineStyle: {
+    //           type: "solid",
+    //           color: "#rgba(255,255,255,0)", //左边线的颜色
+    //           width: "0", //坐标线的宽度
+    //         },
+    //       },
+    //       axisLabel: {
+    //         textStyle: {
+    //           color: "rgba(255,255,255,0)", //坐标值得具体的颜色
+    //         },
+    //       },
+    //     },
+    //     yAxis: {
+    //       type: "category",
+    //       data: ["accuracy", "recall", "specificity", "precision"],
+    //       axisTick: { show: false }, //去除坐标分格线
+    //       axisLine: {
+    //         lineStyle: {
+    //           type: "solid",
+    //           color: "#rgba(255,255,255,0)", //左边线的颜色
+    //           width: "0", //坐标线的宽度
+    //         },
+    //       },
+    //     },
+    //     series: [
+    //       {
+    //         data: [120, 150, 80, 70],
+    //         barWidth: 25,
+    //         type: "bar",
+    //         itemStyle: {
+    //           normal: {
+    //             color: function (params) {
+    //               var colorList = [
+    //                 "#cbdcdf",
+    //                 "#a5bbbf",
+    //                 "#cce8e2",
+    //                 "#ce848f",
+    //                 "#EFBAC0",
+    //                 "#F9F3E1",
+    //                 "#EDE9BF",
+    //                 "#F7E7E0",
+    //                 "#F7DDC0",
+    //                 "#F9BCB2",
+    //                 "#ea8991",
+    //               ];
+    //               return colorList[params.dataIndex];
+    //             },
+    //           },
+    //         },
+    //         showBackground: true,
+    //         backgroundStyle: {
+    //           color: "rgba(180,180,180,0.2)",
+    //         },
+    //       },
+    //     ],
+    //   };
+    //   let option2 = {
+    //     grid: {
+    //       left: "2%",
+    //       top: "0%",
+    //       bottom: "5%",
+    //       containLabel: true,
+    //     },
+    //     xAxis: {
+    //       type: "value",
+    //       splitLine: { show: false }, //去除网格线
+    //       axisTick: { show: false }, //去除坐标分格线
+    //       axisLine: {
+    //         lineStyle: {
+    //           type: "solid",
+    //           color: "#rgba(255,255,255,0)", //左边线的颜色
+    //           width: "0", //坐标线的宽度
+    //         },
+    //       },
+    //       axisLabel: {
+    //         textStyle: {
+    //           color: "rgba(255,255,255,0)", //坐标值得具体的颜色
+    //         },
+    //       },
+    //     },
+    //     yAxis: {
+    //       type: "category",
+    //       data: ["falseAlarm", "missRate", "f1", "AUC"],
+    //       axisTick: { show: false }, //去除坐标分格线
+    //       axisLine: {
+    //         lineStyle: {
+    //           type: "solid",
+    //           color: "#rgba(255,255,255,0)", //左边线的颜色
+    //           width: "0", //坐标线的宽度
+    //         },
+    //       },
+    //     },
+    //     series: [
+    //       {
+    //         data: [120, 200, 80, 70],
+    //         type: "bar",
+    //         barWidth: 25,
+    //         itemStyle: {
+    //           normal: {
+    //             //这里是重点
+    //             color: function (params) {
+    //               //注意，如果颜色太少的话，后面颜色不会自动循环，最好多定义几个颜色
+    //               var colorList = [
+    //                 "#F9F3E1",
+    //                 "#EDE9BF",
+    //                 "#F7E7E0",
+    //                 "#F7DDC0",
+    //                 "#F9BCB2",
+    //               ];
+    //               return colorList[params.dataIndex];
+    //             },
+    //           },
+    //         },
+    //         showBackground: true,
+    //         backgroundStyle: {
+    //           color: "rgba(180,180,180,0.2)",
+    //         },
+    //       },
+    //     ],
+    //   };
+    //   myChart1.setOption(option1);
+    //   myChart2.setOption(option2);
+    // },
     draw_hot() {
       let data = this.hotData;
       if (document.getElementById("draw_scatter") == null) {
@@ -406,10 +407,7 @@ export default {
         xAxis: {
           type: "category",
           data: data.xAxis_data,
-          axisLabel: {
-            interval: 0,
-            show: false,
-          },
+
         },
         yAxis: {
           type: "category",
@@ -450,6 +448,7 @@ export default {
       };
       myChart.setOption(option);
     },
+
     draw_kuntu() {
       var cities = {
         children: [
@@ -647,7 +646,7 @@ export default {
           },
         ],
       };
-      // 航班路线
+
       var railway = [
         { source: "train_init", target: "test_init" },
         { source: "train_digest", target: "test_digest" },
@@ -667,10 +666,9 @@ export default {
         { source: "train_Setting", target: "test_Setting" },
       ];
 
-      var width = 350;
-      var height = 250;
+      var width = $('#draw_bar').width();
+      var height = $('#draw_bar').height()
 
-      // 需要一个方法将航班路线数据跟城市列表数据对接起来
       var map = function (nodes, links) {
         //console.log(nodes,'mapnodes')
         //console.log(links,'maplink')
@@ -694,7 +692,7 @@ export default {
       };
 
       // 分别创建一个集群图布局和一个捆图布局，360表示角度，width/2 - 50 表示捆图圆半径
-      var cluster = d3.layout.cluster().size([360, width / 2 - 60]);
+      var cluster = d3.layout.cluster().size([360, width /3.5 ]);
       var bundle = d3.layout.bundle();
 
       var nodes = cluster.nodes(cities);
@@ -715,14 +713,27 @@ export default {
         .style('font-size',14+'px')
         .style('border',`${1}px solid rgb(214, 205, 205)`)
         .style('background-color','rgb(214, 205, 205)')
-        
+
+      //缩放功能
+      var zoom = d3.behavior.zoom().scaleExtent([1, 8]).on("zoom", zoomed);
+
+      function zoomed() {
+        svg.attr("transform",
+          "translate(" + zoom.translate() + ")" +
+          "scale(" + zoom.scale() + ")"
+        );
+      }
+
       var svg = d3
         .select("#draw_bar")
         .append("svg")
-        // .attr('width', width)
-        // .attr('height', height)
-        .attr("preserveAspectRatio", "xMidYMid meet")
-        .attr("viewBox", "0 0 400 400");
+        .attr('width', width)
+        .attr('height', height*0.96)
+        .append("g")
+        .attr("id", "kuntu_g")
+        // .attr("preserveAspectRatio", "xMidYMid meet")
+        // .attr("viewBox", "0 0 400 400")
+        .call(zoom)
 
       var line = d3.svg.line
         .radial()
@@ -732,7 +743,7 @@ export default {
           return d.y;
         })
         .angle(function (d) {
-          return (d.x / 360) * 2 * Math.PI;
+          return (d.x / 360) * 3 * Math.PI;
         });
 
       var gBundle = svg
@@ -804,7 +815,8 @@ export default {
           var y = event.offsetY;
           tooltip
             .html(()=>{
-              let res=`正影响：${d.value[0]}</br>
+              let res=` feature:${d.name} </br>
+                        正影响：${d.value[0]}</br>
                         负影响：${d.value[1]}</br>`
               if(d.advice[0]){
                 if (d.advice[0] < 0 && d.advice[0] - (d.advice[0] % 1) == 0) {
@@ -824,7 +836,7 @@ export default {
             .style("top", y + 20 + "px")
             .style("opacity", 1);
 
-            
+
         })
         .on("mouseleave", function (d, i) {
           tooltip.style('opacity',0);
@@ -849,14 +861,14 @@ export default {
 
         var pie = d3.layout.pie();
 
-        var outRadius = 5;
+        var outRadius = 7;  //设置饼图的半径
         var innerRadius = 10;
 
         var path0 = d3.svg
           .arc()
           // .innerRadius(innerRadius)
           .outerRadius(outRadius);
-        
+
         var path1 = d3.svg.arc().outerRadius(outRadius * 1.2);
          var arcs1 = g
           .selectAll(".arc") //生成和dataset对应的g ,class是arc,数据集有多少个，类有多少个
@@ -864,21 +876,38 @@ export default {
           .enter()
           .append("g")
           .attr("class", "arc")
-          // .on("mouseover", function (d, i) {
-          //   var x = event.offsetX;
-          //   var y = event.offsetY;
-          //   tooltip
-          //     .html(
-          //       `正影响：${d[0]}</br>
-          //       负影响：${d[1]}`
-          //     )
-          //     .style("left", x + "px")
-          //     .style("top", y + 20 + "px")
-          //     .style("opacity", 1);
-          // })
-          // .on("mouseout", function (d, i) {
-          //   tooltip.style('opacity',0);
-          // });
+           .on('mouseenter',(d,i)=>{
+             // console.log(d,i)
+             var x = event.offsetX;
+             var y = event.offsetY;
+             tooltip
+               .html(()=>{
+                 let res=`feature:${d.name} </br>
+                          正影响：${d.value[0]}</br>
+                          负影响：${d.value[1]}</br>`
+                 if(d.advice[0]){
+                   if (d.advice[0] < 0 && d.advice[0] - (d.advice[0] % 1) == 0) {
+                     //建议下调权重 整数为0的负小数
+                     return res+"建议下调权重:" + d.advice[0];
+                   } else if (d.advice[0] > 0 && d.advice[0] - (d.advice[0]% 1) == 0) {
+                     //建议上调权重 整数为0的正小数
+                     return res+"建议上调权重:" + d.advice[0];
+                   } else if (d.advice[0] - (d.advice[0] % 1) != 0) {
+                     //建议删除该特征 整数不为0
+                     return res+`建议删除该特征:${d.name}`;
+                   }
+                 }
+                 return res
+               })
+               .style("left", x + "px")
+               .style("top", y + 20 + "px")
+               .style("opacity", 1);
+
+
+           })
+           .on("mouseleave", function (d, i) {
+             tooltip.style('opacity',0);
+           });
 
         arcs1.selectAll("path")
           .data(pie(data.value))
@@ -888,7 +917,7 @@ export default {
           .attr("fill", function (d, i) {
             return color[i];
           });
-        //#region 
+        //#region
         //----------------------内侧特征影响饼图----------------------
         // var arcs1 = g
         //   .selectAll(".arc") //生成和dataset对应的g ,class是arc,数据集有多少个，类有多少个
@@ -989,7 +1018,8 @@ export default {
               //建议删除该特征 橙色
               return "#d27777";
             }
-          });
+          })
+
         // arcs2.on("mouseover", function (d, i) {
         //   var x = event.offsetX;
         //   var y = event.offsety;
