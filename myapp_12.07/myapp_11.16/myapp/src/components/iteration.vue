@@ -882,14 +882,15 @@
                   var y = d.y + y_transform - radius * 0.8
                   return "translate(" + x + "," + y + ")";
                 })
-                .on('click',function(){
+                .on('click',function(d){
                   console.log('气泡图点击咯。。。')
+                  console.log(d)
                   // console.log(d3.select(this).attr('id'))
                   that.$bus.$emit('getPieId',d3.select(this).attr('id'))
                 })
                 .on('mouseenter',(d,i)=>{
-                  console.log('hover生效。。。')
-                  // console.log(d,i)
+                  // console.log('hover生效。。。')
+                  //
                   var x = event.offsetX;
                   var y = event.offsetY;
                   tooltip

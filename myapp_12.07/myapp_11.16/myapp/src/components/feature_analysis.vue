@@ -23,11 +23,11 @@ export default {
         let width = $('#proj-table').width();
         let height = $('#proj-table').height();
 
-
+        // console.log("as",width,height)
         let svg = d3
           .select("#proj-table")
           .append("svg")
-          .attr("width", 1200 + "px")
+          .attr("width", width + "px")
           .attr("height", height + "px");
 
         //悬浮框相关设置
@@ -381,8 +381,8 @@ export default {
               let svgrect = rect.getBBox();
               points.push({
                 name:d3.select(rect).attr('class').split(" ")[0],
-                x: svgrect.x + svgrect.width,
-                y: svgrect.y + svgrect.height ,
+                x: svgrect.x + svgrect.width*0.5,
+                y: svgrect.y + svgrect.height*0.5 ,
               });
             }
             // console.log(curve(points))

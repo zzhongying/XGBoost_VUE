@@ -443,6 +443,7 @@ export default {
         //将鼠标移到高亮不透明度较高的区域
         //这将突出显示所有具有相同叶子名的子节点
         svg.selectAll(".link").on("mouseover", function (d) {
+          console.log(d)
           d3.select(this).style("opacity", 1);
           // console.log("d->", d)
           tooltip
