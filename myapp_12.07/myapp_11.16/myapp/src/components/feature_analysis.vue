@@ -381,8 +381,8 @@ export default {
               let svgrect = rect.getBBox();
               points.push({
                 name:d3.select(rect).attr('class').split(" ")[0],
-                x: svgrect.x + svgrect.width*0.5,
-                y: svgrect.y + svgrect.height*0.5 ,
+                x: svgrect.x + svgrect.width * 0.5,
+                y: svgrect.y + svgrect.height * 0.5,
               });
             }
             // console.log(curve(points))
