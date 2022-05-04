@@ -1,0 +1,144 @@
+<!--
+  THIS EXAMPLE WAS DOWNLOADED FROM https://echarts.apache.org/examples/zh/editor.html?c=boxplot-light-velocity
+-->
+<!DOCTYPE html>
+<html lang="zh-CN" style="height: 100%">
+<head>
+  <meta charset="utf-8">
+</head>
+<body style="height: 100%; margin: 0">
+  <div id="container" style="height: 100%"></div>
+
+  
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@5.3.2/dist/echarts.min.js"></script>
+  <!-- Uncomment this line if you want to dataTool extension
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@5.3.2/dist/extension/dataTool.min.js"></script>
+  -->
+  <!-- Uncomment this line if you want to use gl extension
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts-gl@2/dist/echarts-gl.min.js"></script>
+  -->
+  <!-- Uncomment this line if you want to echarts-stat extension
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts-stat@latest/dist/ecStat.min.js"></script>
+  -->
+  <!-- Uncomment this line if you want to use map
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@4.9.0/map/js/china.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@4.9.0/map/js/world.js"></script>
+  -->
+  <!-- Uncomment these two lines if you want to use bmap extension
+  <script type="text/javascript" src="https://api.map.baidu.com/api?v=3.0&ak=YOUR_API_KEY"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@5.3.2/dist/extension/bmap.min.js"></script>
+  -->
+
+  <script type="text/javascript">
+    var dom = document.getElementById('container');
+    var myChart = echarts.init(dom, null, {
+      renderer: 'canvas',
+      useDirtyRect: false
+    });
+    var app = {};
+    
+    var option;
+
+    option = {
+  color:'black',
+  // title: [
+  //   {
+  //     text: 'upper: Q3 + 1.5 * IQR \nlower: Q1 - 1.5 * IQR',
+  //     borderColor: '#999',
+  //     borderWidth: 1,
+  //     textStyle: {
+  //       fontWeight: 'normal',
+  //       fontSize: 14,
+  //       lineHeight: 20
+  //     },
+  //     left: '10%',
+  //     top: '90%'
+  //   }
+  // ],
+  // legend: {
+  //   top: '0%'
+  // },
+  dataset: [
+    {
+      // prettier-ignore
+      source: [
+                [8,7,6,7,6,9,9,9,7,8,7,6,6,7,8],
+                [7,7,6,7,8,8,9,8,8,6,6,5,7,8,6],
+                [7,7,6,8,8,8,9,7,7,6,8,7,6,6,5],
+                [6,6,4,5,3,6,5,4,4,6,4,4,5,7,6],
+                [8,9,9,8,7,7,8,6,9,6,8,7,8,8,8],
+                [9,9,8,8,7,8,8,10,7,7,8,8,7,7,8],
+            ]
+    },
+    {
+      transform: {
+        type: 'boxplot',
+        config: { itemNameFormatter: 'Question {value}' }
+      }
+    },
+    {
+      fromDatasetIndex: 1,
+      fromTransformResult: 1
+    }
+  ],
+  tooltip: {
+    trigger: 'item',
+    axisPointer: {
+      type: 'shadow'
+    }
+  },
+  grid: {
+    left: '10%',
+    right: '10%',
+    bottom: '15%'
+  },
+  xAxis: {
+    type: 'category',
+    axisLabel: {
+            textStyle: {
+                color: '#000',
+                fontSize:20,
+                
+            }
+    },
+    boundaryGap: true,
+    nameGap: 50,
+    splitArea: {
+      show: false
+    },
+    splitLine: {
+      show: false
+    }
+  },
+  yAxis: {
+    type: 'value',
+     axisLabel: {
+            textStyle: {
+                color: '#000',
+                fontSize:20,
+                
+            }
+    },
+    // name: 'Score',
+    splitArea: {
+      show: true
+    }
+  },
+  series: [
+    {
+      // name: 'boxplot',
+      type: 'boxplot',
+      datasetIndex: 1
+    },
+   
+  ]
+};
+
+    if (option && typeof option === 'object') {
+      myChart.setOption(option);
+    }
+
+    window.addEventListener('resize', myChart.resize);
+  </script>
+</body>
+</html>

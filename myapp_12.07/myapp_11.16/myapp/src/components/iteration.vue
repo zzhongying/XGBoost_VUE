@@ -20,6 +20,7 @@
     // components: {select},
     data() {
       return {
+        data:[],  //储存后台返回的数据
         data_right: [],
         type_name:{
           "Benign_application": [
@@ -48,6 +49,7 @@
               "p_j": 12
             },   //性能
           ],
+          //#region
           // "Bank_malware": [
           //   {
           //     "attr_a": 10,
@@ -100,6 +102,7 @@
           //     "p_j": 12
           //   },   //性能
           // ]
+          //#endregion
         },
         bubble_data:{
           "Benign_application": [
@@ -267,6 +270,13 @@
     methods: {
       test(){
         console.log("this is test")
+      },
+      get_type(name){
+        console.log("气泡图获取到类型名啦：",name)
+        // 根据name获取完整的类型名
+        let Keys=Object.keys(this.data[0])
+        Keys=Keys.filter(k=>k.split('_')[0]===name)
+        this.draw_constellation({[`${Keys[0]}`]:this.data[1][Keys[0]]},{[`${Keys[0]}`]:this.data[0][Keys[0]]})
       },
       //#region
       // draw_scatter() {
@@ -480,7 +490,7 @@
       //
       // },
       // type_name:当前展示的类型，bubbledata:气泡图的数据
-      //#region
+      //#endregion
       draw_constellation(type_name, bubbledata) {
         let that=this
         // console.log("this指向",this)
@@ -500,18 +510,6 @@
             "scale(" + zoom.scale() + ")"
           );
         }
-
-        let tooltip = d3
-          .select("#barchart")
-          .append("div")
-          .attr("id", "iteration_tooltip")
-          .style("position",'absolute')
-          .style("opacity", 0)
-          .style("width",200+'px')
-          .style('height','auto')
-          .style('font-size',14+'px')
-          .style('border',`${1}px solid rgb(214, 205, 205)`)
-          .style('background-color','rgb(214, 205, 205)')
 
         var svg = d3.select("#barchart").append("svg")
           .attr("width", width)
@@ -882,31 +880,11 @@
                   var y = d.y + y_transform - radius * 0.8
                   return "translate(" + x + "," + y + ")";
                 })
-                .on('click',function(d){
+                .on('click',function(){
                   console.log('气泡图点击咯。。。')
-                  console.log(d)
                   // console.log(d3.select(this).attr('id'))
                   that.$bus.$emit('getPieId',d3.select(this).attr('id'))
                 })
-                .on('mouseenter',(d,i)=>{
-                  // console.log('hover生效。。。')
-                  //
-                  var x = event.offsetX;
-                  var y = event.offsetY;
-                  tooltip
-                    .html(()=>{
-                      let res=`${d.class} </br>`
-                      // console.log(d)
-                      return res
-                    })
-                    .style("left", x + "px")
-                    .style("top", y + 20 + "px")
-                    .style("opacity", 1);
-                })
-                .on("mouseleave", function (d, i) {
-                  tooltip.style('opacity',0);
-                });
-
 
               function DrawPie(data) {
                 // console.log(data)
@@ -953,7 +931,10 @@
                   .attr("fill", function (d, i) {
                     return color[i];
                   })
-
+                // .attr("transform", function(d) {
+                //     // console.log(this.id)
+                //     return "translate(" + d.x + "," + d.y + ")";
+                // })
 
                 arc.on("mouseover", function (d, i) {
                   // d3.select(this).select("path")
@@ -985,7 +966,6 @@
                     .select("path")
                     .attr("d",path)
                 });
-
 
                 // arc.append("text")
                 //   .attr("transform", d => {
@@ -1039,17 +1019,49 @@
       },
     },
     mounted() {
+      this.$bus.$on('get_type',this.get_type)
       // Readcsv.Read_barData()
+      let getData=(url)=>{
+        return new Promise((resolve,reject)=>{
+          axios({
+            url
+          }).then((res)=>{
+            resolve(res.data)
+          }).catch((err)=>{
+            reject(err)
+          })
+        })
+      }
+      const Data = async (params) => {
+        //promiseArr中为两个Promise
+        const promiseArr = params.map(item => {
+          return getData(item);
+        });
+        try {
+          // 同时发送两个请求，结果res为一个Array [res1, res2]
+          const res = await Promise.all(promiseArr);
+          // 根据自己的需求用res
+          // console.log('res',res)
+          this.data=res
+          // console.log(res[1].Advertising_software,res[0].Advertising_software)
+
+        } catch (error) {
+          console.log(error)
+        }
+      }
+      Data(['http://127.0.0.1:5000/get_data/bubble_chart','http://127.0.0.1:5000/center-top/starMap'])
     },
     watch: {
       control2: function (newV, oldV) {
-        axios({
-          url: "http://127.0.0.1:5000/get_data/bubble_chart",
-        }).then(() => {
-          console.log("this is test2")
-          this.draw_constellation(this.type_name,this.bubble_data);
+        // axios({
+        //   url: "http://127.0.0.1:5000/get_data/bubble_chart",
+        // }).then(() => {
+        //   console.log("this is test2")
+        //   this.draw_constellation(this.type_name,this.bubble_data);
 
-        });
+        // });
+        this.draw_constellation({"Advertising_software":this.data[1].Advertising_software},{"Advertising_software":this.data[0].Advertising_software})
+
       },
       // control2: function () {
       //   // console.log(this.control2.Parameter, 'this')

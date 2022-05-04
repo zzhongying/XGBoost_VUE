@@ -96,10 +96,10 @@
           <div style="font-size: smaller; width: 100%">
             <div class="text">data_distribution:</div>
             <div id="data_distribution" class="graph"></div>
-            <br/>
+            <br />
             <div class="text">accuracy:</div>
-            <div id="accuracy" class="graph" style="text-align: center;">
-              {{training_set_accuracy}}|{{test_set_accuracy}}
+            <div id="accuracy" class="graph" style="text-align: center">
+              {{ training_set_accuracy }}|{{ test_set_accuracy }}
             </div>
           </div>
           <key_button @sub="submit"></key_button>
@@ -109,12 +109,18 @@
     <div id="sample">
       <h4 id="title_controls">SAMPLE DATA ANALYSIS</h4>
       <div id="data_analysis">
-        <select name="trees" id="delete_select" v-model="value">
-          <option value="delete" selected="selected">delete</option>
-          <option v-for="(tree) in trees" :key='tree' :value="tree">
-            {{tree}}
+        <select
+          name="trees"
+          @change="remove"
+          id="delete_select"
+          v-model="value"
+        >
+          <option value="delete" id="remove" selected="selected">delete</option>
+          <option v-for="tree in trees" :key="tree" :value="tree">
+            {{ tree }}
           </option>
         </select>
+        <div id="bar"></div>
       </div>
     </div>
   </div>
@@ -122,14 +128,14 @@
 
 <script>
   import * as echarts from "echarts";
-  import {VueGrid, VueCell} from "vue-grd";
+  import { VueGrid, VueCell } from "vue-grd";
   import Readcsv from "../ToolJs/Readcsv";
   import * as d3 from "d5";
   import $ from "jquery";
   import key_button from "./key_button";
   import axios from "axios";
   import * as d4 from "../../public/d3";
-
+  import cloud from '../../node_modules/d3-cloud/build/d3.layout.cloud'
   export default {
     name: "div_left",
     data() {
@@ -141,10 +147,10 @@
         gamma_: "0",
         subsample_: "1",
         num_rank: "2",
-        training_set_accuracy: null,  //训练集正确率
+        training_set_accuracy: null, //训练集正确率
         test_set_accuracy: null, //测试集正确率
-        trees: ['tree1', 'tree2'],  // 下拉框要删除数的名字
-        value: 'delete',
+        trees: ["tree1", "tree2", "tree3", "tree4", "tree5"], // 下拉框要删除数的名字
+        value: "delete",
         timer: null,
         barData: null,
         dataset1: null,
@@ -161,6 +167,94 @@
           xAxis: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"], //特征名
           yAxis: [120, 200, 150, 80, 70, 110, 130], //特征对应的出现频次
         },
+        tree_datas: [
+          {
+            name: "tree1",
+            influence: "positive",
+            dataSize: 14,
+            ratio: [100, 20],
+          },
+          {
+            name: "tree2",
+            influence: "negative",
+            dataSize: 18,
+            ratio: [100, 30],
+          },
+          {
+            name: "tree3",
+            influence: "positive",
+            dataSize: 10,
+            ratio: [100, 10],
+          },
+          {
+            name: "tree4",
+            influence: "negative",
+            dataSize: 15,
+            ratio: [100, 50],
+          },
+          {
+            name: "tree5",
+            influence: "positive",
+            dataSize: 20,
+            ratio: [100, 20],
+          },
+        ],
+        wordCloudDatas: [
+          { text: "get", size: 8 },
+          { text: "display", size: 4 },
+          { text: "info", size: 5 },
+          { text: "open", size: 1 },
+          { text: "write", size: 1 },
+          { text: "vfu", size: 1 },
+          { text: "tex", size: 1 },
+          { text: "mun", size: 1 },
+          { text: "map", size: 1 },
+          { text: "uid32", size: 1 },
+          { text: "pidgcnecti", size: 1 },
+          { text: "starts", size: 1 },
+          { text: "can", size: 1 },
+          { text: "read", size: 1 },
+          { text: "brk", size: 1 },
+          { text: "pipe", size: 1 },
+          { text: "gcnecti", size: 1 },
+          { text: "terminate", size: 1 },
+          { text: "thread", size: 2 },
+          { text: "dupe", size: 1 },
+          { text: "poll", size: 1 },
+          { text: "ctlm", size: 1 },
+          { text: "protect", size: 1 },
+          { text: "device", size: 2 },
+          { text: "id", size: 2 },
+          { text: "create", size: 3 },
+          { text: "perform", size: 1 },
+          { text: "deferred", size: 1 },
+          { text: "destroy", size: 1 },
+          { text: "access", size: 2 },
+          { text: "send", size: 1 },
+          { text: "msggicc", size: 1 },
+          { text: "serial", size: 1 },
+          { text: "number", size: 1 },
+          { text: "unlink", size: 1 },
+          { text: "folder", size: 2 },
+          { text: "in", size: 1 },
+          { text: "fog", size: 1 },
+          { text: "installer", size: 1 },
+          { text: "package", size: 1 },
+          { text: "name", size: 1 },
+          { text: "mk", size: 1 },
+          { text: "dir", size: 1 },
+          { text: "personal", size: 1 },
+          { text: "inf", size: 1 },
+          { text: "on", size: 1 },
+          { text: "a", size: 1 },
+          { text: "no", size: 1 },
+          { text: "sleep", size: 1 },
+          { text: "g", size: 1 },
+          { text: "last", size: 1 },
+          { text: "location", size: 1 },
+          { text: "interact", size: 1 },
+          { text: "icnecti", size: 1 },
+        ],
       };
     },
     components: {
@@ -169,7 +263,39 @@
       key_button,
     },
     methods: {
-      //draw_charts() {},
+      add() {
+        let ran = Math.random() > 0.5 ? 1 : 0; //0为积极 1为消极
+        this.tree_datas.push({
+          name: "tree" + (parseInt(this.tree_datas[this.tree_datas.length-1].name.slice(4)) + 1),
+          influence: ran ? "negative" : "positive",
+          dataSize: parseInt(Math.random() * 19+1),
+          ratio: [200, parseInt(Math.max(Math.random() * 100, 10))],
+        });
+        this.trees.push("tree" + (parseInt(this.tree_datas[this.tree_datas.length-1].name.slice(4))));
+        // this.packdatas[ran].children.push(
+        //   {name:'s',value:parseInt(Math.max(Math.random()*10,1))}
+        // )
+      },
+      remove() {
+        // console.log(this.value);
+        if (this.value !== "delete") {
+          // 删除打包图里部分数据
+          // 积极还是消极树
+          // let state = this.tree_datas.filter((d) => d.name === this.value)[0].influence;
+          // this.packdatas.forEach((d) => {
+          //   if (d.name === state) {
+          //     let ind = parseInt(Math.random() * d.children.length);
+          //     d.children = d.children.filter((d, i) => {
+          //       return ind !== i;
+          //     });
+          //   }
+          // });
+
+          this.tree_datas = this.tree_datas.filter((d) => d.name !== this.value);
+          this.trees = this.trees.filter((d) => d !== this.value);
+          this.value = "delete";
+        }
+      },
       submit() {
         let num = this.$store.getters.get_click_num + 1;
         this.$store.commit("set_click_num", num);
@@ -235,273 +361,135 @@
           );
         }
       },
-      draw_bar(data) {
-        data = [
-          {
-            name: 'tree1',
-            influence: 'positive',
-            dataSize: 1024,
-            right: [100, 20],
-            wrong: [100, 10]
-          },
-          {
-            name: 'tree2',
-            influence: 'negative',
-            dataSize: 996,
-            right: [200, 100],
-            wrong: [100, 30]
-          },
-          {
-            name: 'tree3',
-            influence: 'positive',
-            dataSize: 784,
-            right: [200, 100],
-            wrong: [100, 30]
-          },
-          {
-            name: 'tree4',
-            influence: 'negative',
-            dataSize: 1069,
-            right: [200, 100],
-            wrong: [100, 30]
-          },
-          {
-            name: 'tree5',
-            influence: 'positive',
-            dataSize: 526,
-            right: [200, 100],
-            wrong: [100, 30]
-          }
-        ]
-        let packdata = [
-          {
-            name: "positive", children: [
-              {name: 'a', value: 5},
-              {name: 'b', value: 8},
-              {name: 'c', value: 10},
-              {name: 'd', value: 3}
-            ]
-          },
-          {
-            name: "negative", children: [
-              {name: 'a', value: 6},
-              {name: 'b', value: 4},
-              {name: 'c', value: 12},
-              {name: 'd', value: 7},
-              {name: 'e', value: 5}
-            ]
-          }
-        ]
-        let width = $('#data_analysis').width();  //338px
-        let height = $('#data_analysis').height();  //216px
+      //词云图和饼图
+      draw_bar(tree_datas, wordCloudDatas) {
+        // console.log(tree_datas, wordCloudDatas);
+        wordCloudDatas=JSON.parse(JSON.stringify(wordCloudDatas)) //深拷贝一下，后面会修改该对象
+        let tree_num = tree_datas.length; //树的数量
+        // let width = $('#data_analysis').width();  //338px
+        let width = tree_num * 66;
+        let height = $("#bar").height()/4+10;
+        // 超出的滚动
+        d3.select("#bar")
+          .style("overflow-x", "auto")
+          .style("overflow-y", "hidden")
 
-        let svg = d3.select("#data_analysis")
-          .append('svg')
-          .attr('width', width + 'px')
-          .attr('height', height + 'px')
 
+        d3.select("#bar_svg").remove();
+        d3.select("#cloud_svg").remove();
+        let svg = d3
+          .select("#bar")
+          .append("svg")
+          .attr("id", "bar_svg")
+          .attr("width", width + "px")
+          .attr("height", height + "px");
+        // .style('display','inline')
         let X = d3
           .scaleBand()
-          .domain(data.map((d, i) => i))
+          .domain(tree_datas.map((d, i) => i))
           .rangeRound([0, width]);
 
-        let mid = parseInt(width / data.length * 0.5)  //每块的中线
-        let g = svg.selectAll('g')
-          .data(data)
-          .enter()
-          .append("g")
-
+        let mid = parseInt((width / tree_num) * 0.5); //每块的中线
+        let g = svg.selectAll("g").data(tree_datas).enter().append("g");
         // 绘制带颜色的矩形
-        let rect = g.append('rect')
-          .attr('x', (d, i) => X(i))
-          .attr('y', 0)
-          .attr('width', mid * 2)
-          .attr('height', height - 30 - 16)
-          // .attr('fill', 'rgba(177,178,179,0.3)')
-          .attr("fill", d => d.influence === "positive" ? 'rgba(227,225,225,0.3)' : 'rgba(177,178,179,0)')
-
-        // 绘制虚线
-        let dotted_line = g.append('line')
-          .attr('x1', (d, i) => X(i) + mid)
-          .attr('y1', 0)
-          .attr('x2', (d, i) => X(i) + mid)
-          .attr('y2', height - 30 - 16)  //多减16的原因是下拉框高16 将svg向下挤了16 （下拉框的浮动脱标没有作用）
-          .attr("width", 3)
-          .attr('opacity', 1)
-          .attr("stroke-width", 0.5)
-          .attr("stroke", "black")
-          .style("stroke-dasharray", ("5, 5"))
+        let rect = g
+          .append("rect")
+          .attr("x", (d, i) => X(i))
+          .attr("y", 10)
+          .attr("width", mid * 2)
+          .attr("height", height-10) //共四个模块 一个模块在上面
+          .attr("fill", "rgb(193,193,193)")
+          .attr("fill-opacity", (d) =>
+            d.influence === "positive" ? "0.4" : "0.2"
+          );
 
         // 树的名字
-        let text = g.append('text')
-          .attr('x', (d, i) => X(i) + mid - 15)
-          .attr('y', height - 35)
-          .text(d => d.name)
-          .attr('font-size', 14)
-
-        // 数据流大小
-        let circle_dataSize = g.append('ellipse')
-          .attr('cx', (d, i) => X(i) + mid)
-          .attr('cy', (height - 30 - 16) / 8)
-          .attr('ry', 15)
-          .attr('rx', d => d.dataSize ** 0.45)
-          .attr('fill', '#e5f5f1')
+        let text = g
+          .append("text")
+          .attr("x", (d, i) => X(i) + mid - 15)
+          .attr("y", 10)
+          .text((d) => d.name)
+          .attr("font-size", 12);
 
         // 为画pie做准备
-        var pie = d3.pie()
+        var pie = d3.pie();
         var outRadius = 20;
         var innerRadius = 0;
-        var path0 = d3.arc()
+        var path0 = d3
+          .arc()
           .innerRadius(innerRadius)
-          .outerRadius(outRadius);
-        let pie_rihgt = g
-          .append('g')
+          .outerRadius((d) => {
+            return tree_datas.filter((dd) => dd.name === d.name)[0].dataSize; //控制圆的半径
+          });
+        let pie_g = g
+          .append("g")
           .attr("transform", (d, i) => {
-            console.log('transform', d, i)
-            return `translate(${X(i) + mid},${(height - 30 - 16) / 8 * 3})`
+            return `translate(${X(i) + mid},${height / 2+5})`;
           })
-          .classed('pie_right', true)
-          .selectAll('path')
-          .data(d => pie(d.right))
+          .classed("pie_right", true)
+          .selectAll("path")
+          .data((d) => {
+            // console.log('pie->',pie(d.ratio))
+            let res = pie(d.ratio);
+            res[0].name = d.name;
+            res[1].name = d.name;
+            return res;
+          })
           .enter()
           .append("path")
           .attr("d", (d) => path0(d))
           .attr("fill", function (d, i) {
-            return i == 0 ? '#e5f5f1' : '#fdddd6';
-          });
-        let pie_wrong = g
-          .append('g')
-          .attr("transform", (d, i) => {
-            console.log('transform', d, i)
-            return `translate(${X(i) + mid},${(height - 30 - 16) / 8 * 5})`
-          })
-          .classed('pie_wrong', true)
-          .selectAll('path')
-          .data(d => pie(d.wrong))
-          .enter()
-          .append("path")
-          .attr("d", (d) => path0(d))
-          .attr("fill", function (d, i) {
-            return i == 0 ? '#e5f5f1' : '#fdddd6';
+            return i == 0 ? "rgb(203,220,223)" : "rgb(242,198,200)";
           });
 
+        // 绘制词云
+        let cloud_width = $("#bar").width();
+        let cloud_height = $("#bar").height()/4*3-10;
+        let cloud_svg=d3
+          .select("#bar")
+          .append("svg")
+          .attr("id", "cloud_svg")
+          .attr("width", cloud_width + "px")
+          .attr("height", cloud_height + "px")
+          .attr("transform",`translate(${0},${height / 4 -10})`)
+        let cloud_g=cloud_svg.append('g')
+        // .attr("transform",`translate(${0},${height / 4 + 10})`)
 
-        //打包图
-        const pack = (dataset) =>
-          d3.pack().size([40, 40]).padding(3)(
-            d3.hierarchy(dataset)
-              .sum((d) => d.value)
-              .sort((a, b) => b.value - a.value)
-          );
-        let pack_g = svg.selectAll('.pack')
-          .data(packdata)
-          .enter()
-          .append('g')
-        let pack_outside = pack_g.append('ellipse')
-          .attr('cx', (d, i) => i === 0 ? width / 4 : width / 4 * 3)
-          .attr('cy', (height - 30 - 16) / 8 * 7)
-          .attr('ry', 20)
-          .attr('rx', width / 4 * 0.8)
-          .attr('fill', 'rgba(255,255,255,0.5)')
-          .classed('pack_outside', true)
-        // let pack_outside=pack_g.append('rect')
-        //   .attr('x',(d,i)=>X(i)+mid-20)
-        //   .attr('y',(height-30-16)/8*6)
-        //   .attr('height',40)
-        //   .attr('width',40)
-        //   .attr('fill','#ababab')
-        //   .classed('pack_outside',true)
-        pack_g.append("g")
-          .attr("transform", (d, i) => {
-            // 如果下面的气泡没有在椭圆里，调下这里
-            let x = i === 0 ? width / 4 - 20 : width / 4 * 3 - 20
-            let y = (height - 30 - 16) / 8 * 7 - 20
-            return `translate(${x},${y})`
-          })
-          .selectAll("circle")
-          .data(d => pack(d).descendants().slice(1))
-          .enter()
-          .append("circle")
-          .attr("fill", "pink")
-          .attr("fill-opacity", "1")
-          .attr("cx", function (d) {
-            return d.x;
-          })
-          .attr("cy", function (d) {
-            return d.y;
-          })
-          .attr("r", function (d) {
-            return d.r;
-          });
-        // var arcs1 = g
-        //   .selectAll(".arc") //生成和dataset对应的g ,class是arc,数据集有多少个，类有多少个
-        //   .data(data) //pie(dataset)把数据本身进行改变
-        //   .enter()
-        //   .append("g")
-        //   .attr("class", "arc")
-        //   .attr("transform", (d,i)=>"translate(" + (i+1)*25 + "," + 20 + ")")
-        // arcs1.selectAll("path")
-        //   .data(d=>pie(d.right))
-        //   .enter()
-        //   .append("path")
-        //   .attr("d",(d)=>path0(d))
-        //   .attr("fill", function (d, i) {
-        //     return i==0?'red':'green';
-        //   });
-
-        //#region
-        // var chartDom = document.getElementById("data_analysis");
-        // var myChart = echarts.init(chartDom);
-        // var option;
-
-        // option = {
-        //   color: ["#CBDCDF", "#F0BBC1", "#FAF3E2", "#B3CBCF"],
-        //   grid: {
-        //     height: "50%",
-        //     width: "80%",
-        //   },
-        //   xAxis: {
-        //     type: "category",
-        //     data: data["xAxis"],
-        //   },
-        //   yAxis: {
-        //     type: "value",
-        //   },
-        //   dataZoom: [
-        //     {
-        //       type: "slider",
-        //       show: true,
-        //       height: 10,
-        //       bottom: 30,
-        //       borderColor: "transparent",
-        //       backgroundColor: "#e2e2e2",
-        //       // 拖拽手柄样式 svg 路径
-        //       handleIcon:
-        //         "M512 512m-208 0a6.5 6.5 0 1 0 416 0 6.5 6.5 0 1 0-416 0Z M512 192C335.264 192 192 335.264 192 512c0 176.736 143.264 320 320 320s320-143.264 320-320C832 335.264 688.736 192 512 192zM512 800c-159.072 0-288-128.928-288-288 0-159.072 128.928-288 288-288s288 128.928 288 288C800 671.072 671.072 800 512 800z",
-        //       handleColor: "#aab6c6",
-        //       handleSize: 30,
-        //       handleStyle: {
-        //         borderColor: "#aab6c6",
-        //         shadowBlur: 4,
-        //         shadowOffsetX: 1,
-        //         shadowOffsetY: 1,
-        //         shadowColor: "#e5e5e5",
-        //       },
-        //       start: 0,
-        //       end: 100,
-        //     },
-        //   ],
-        //   series: [
-        //     {
-        //       data: data["yAxis"],
-        //       type: "bar",
-        //     },
-        //   ],
-        // };
-
-        // option && myChart.setOption(option);
-        //#endregion
+        let layout = cloud()
+          //词云显示的大小 目前宽度为盒子宽度，不随树的增多变大(改为width,则随树多变大)
+          .size([cloud_width, cloud_height])
+          .words(wordCloudDatas)
+          .padding(1)
+          .rotate(function () { return ~~(Math.random() * 2) * 30; })
+          .font("Impact")
+          .fontSize(function (d) { return d.size*7 })
+          .on("end", drawCloud);
+        layout.start();
+        function drawCloud(words){
+          console.log('word',words)
+          cloud_g.append("g")
+            .attr("transform", "translate(" + layout.size()[0] / 2 + "," + layout.size()[1] / 2 + ")")
+            .selectAll("text")
+            .data(words)
+            .enter().append("text")
+            .style("font-size", function (d) { return d.size + "px"; })
+            .style("font-family", "Impact")
+            .style("fill", function (d, i) {
+              if(d.size>20)
+                return '#cbdcdf'; //积极消极都有
+              else{
+                return Math.random()>0.5?'#EFBAC0':'rgb(247,221,192)' //大于0.5积极，小于消极
+              }
+            })
+            .attr("text-anchor", "middle")
+            .attr("transform", function (d) {
+              return "translate(" + [d.x - 2, d.y] + ")rotate(" + d.rotate + ")";
+            })
+            .text(function (d) { return d.text; });
+        }
       },
+
+      //画控制台的堆叠图
       draw_stacked_figure(data) {
         // console.log("d3版本：",d3.version) // 5.x
         // 绘制堆叠图
@@ -512,56 +500,89 @@
         // })
 
         // 先绘制数据类型分布
-        let data_distribution_svg_width = parseFloat(getComputedStyle(document.getElementById('data_distribution')).width)
-        let data_distribution_svg_height = parseFloat(getComputedStyle(document.getElementById('data_distribution')).height)
+        let data_distribution_svg_width = parseFloat(
+          getComputedStyle(document.getElementById("data_distribution")).width
+        );
+        let data_distribution_svg_height = parseFloat(
+          getComputedStyle(document.getElementById("data_distribution")).height
+        );
+        let tooltip = d3
+          .select("body")
+          .append("div")
+          .attr("class", "stacked_tooltip")
+          .style("opacity", 0)
+          .style("position", "absolute")
+          .style("width", "200px")
+          .style("height", "auto")
+          .style("font-size", "14px")
+          .style("text-align", "center")
+          .style("background-color", "rgb(214, 205, 205)")
         // 数据分布的数据
-        let distributions = []
+        let distributions = [];
         data.forEach((d, i) => {
-          let num = d[Object.keys(d)[0]].num
-          let width = parseInt(num ** 0.45)
-          let height = data_distribution_svg_height
-          let x = i == 0 ? 0 : distributions[i - 1].x + distributions[i - 1].width
+          let num = d[Object.keys(d)[0]].num;
+          let width = parseInt(num ** 0.45);
+          let height = data_distribution_svg_height;
+          let x =
+            i == 0 ? 0 : distributions[i - 1].x + distributions[i - 1].width;
           distributions.push({
-            'family': Object.keys(d)[0],
-            'num': num,
-            'x': x,
-            'width': width,
-            'height': height,
-          })
-        })
-        let data_distribution_svg = d3.select('#data_distribution')
-          .append('svg')
-          .attr('width', data_distribution_svg_width)
-          .attr('height', data_distribution_svg_height)
-        data_distribution_svg.selectAll('rect')
+            family: Object.keys(d)[0],
+            num: num,
+            x: x,
+            width: width,
+            height: height,
+          });
+        });
+        let data_distribution_svg = d3
+          .select("#data_distribution")
+          .append("svg")
+          .attr("width", data_distribution_svg_width)
+          .attr("height", data_distribution_svg_height);
+        data_distribution_svg
+          .selectAll("rect")
           .data(distributions)
           .enter()
-          .append('rect')
-          .attr('x', d => d.x)
-          .attr('y', 0)
-          .attr('width', d => d.width)
-          .attr('height', d => d.height)
-          .attr('fill', '#cbdcdf')
-          .attr('stroke', 'black')
+          .append("rect")
+          .attr("x", (d) => d.x)
+          .attr("y", 0)
+          .attr("width", (d) => d.width)
+          .attr("height", (d) => {
+            // console.log("dddd->", d);
+            return d.height;
+          })
+          .attr("fill", "#cbdcdf")
+          .attr("stroke", "black")
+          .on("mouseenter", (d) => {
+            tooltip.html(`软件类型:${d.family}</br> 样本数量：${d.num} `)
+              .style("opacity", 1)
+              .style("left", d3.event.pageX + "px")
+              .style("top", d3.event.pageY + 20 + "px")
+          })
+          .on("mouseleave", (d) => {
+            tooltip.style("opacity", 0)
+          });
       },
     },
     mounted() {
       // Readcsv.Read_dataset_show('1');
       Readcsv.Read_samplebar_data();
       // 获取堆叠图数据
-      axios({url: "http://127.0.0.1:5000/getdata/data_info/data1"}).then(
+      axios({ url: "http://127.0.0.1:5000/getdata/data_info/data1" }).then(
         (res) => {
           // console.log("堆叠图数据：", res.data);
           this.draw_stacked_figure(res.data);
           // 正确率的数据
-          let accuracys = res.data.map(d => {
-            return d[Object.keys(d)[0]].accuracy
-          })
-          this.training_set_accuracy = parseFloat((d3.sum(accuracys) / accuracys.length).toFixed(4)) * 100 + '%'
-          this.test_set_accuracy = '95.12%'
+          let accuracys = res.data.map((d) => {
+            return d[Object.keys(d)[0]].accuracy;
+          });
+          this.training_set_accuracy =
+            parseFloat((d3.sum(accuracys) / accuracys.length).toFixed(4)) * 100 +
+            "%";
+          this.test_set_accuracy = "95.12%";
         }
       );
       // this.button_type_select()
+      this.$bus.$on("add", this.add);
     },
     computed: {
       sample_bar() {
@@ -579,8 +600,11 @@
       },
     },
     watch: {
+      tree_datas: function () {
+        this.draw_bar(this.tree_datas, this.wordCloudDatas);
+      },
       control2: function (newV, oldV) {
-        this.draw_bar(this.feature_bar);
+        this.draw_bar(this.tree_datas, this.wordCloudDatas);
       },
       dataShow: function () {
         this.dataset_show = this.dataShow.tags;
@@ -604,28 +628,37 @@
       // },
       deep: true, //对象内部属性的监听，关键
     },
+    beforeDestroy() {
+      this.$bus.$off("add");
+    },
   };
 </script>
 
 <style scoped lang="scss">
+  #bar {
+    width: 100%;
+    height: 85%;
+  }
   // 文字和堆叠图布局
   .graph {
     display: inline-block;
     width: calc(100% * 7 / 12);
     height: 20px;
   }
-
   .text {
     display: inline-block;
     width: calc(100% * 5 / 12);
     height: 20px;
   }
-
   // 下拉框
   #delete_select {
-    float: left;
+    // float:left;
+    // position: absolute;
+    display: inline;
+    position: relative;
+    left: 0;
+    top: 0;
   }
-
   #div_left {
     width: 22.5vw;
     /*margin: 0;*/
@@ -643,7 +676,7 @@
   #controls {
     height: 50%;
     width: 100%;
-    overflow: auto;
+    /*overflow: auto;*/
   }
 
   #control {
@@ -666,7 +699,8 @@
   #data_analysis {
     width: 98%;
     height: 95%;
-    position: center;
+    // position: center;
+    position: relative;
     /*margin-top: 2%;*/
   }
 
@@ -739,7 +773,6 @@
     border-bottom: 2px solid rgb(200, 200, 200);
     margin: 0;
   }
-
   h3 {
     background-color: rgb(242, 242, 242);
   }

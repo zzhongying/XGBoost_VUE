@@ -2,7 +2,7 @@
   <div id="sankey_main">
 
     <div id="chart">
-      <button id='add'>add</button>
+      <button id='add' @click='add'>add</button>
       <svg id="box"></svg>
     </div>
   </div>
@@ -26,6 +26,10 @@
       };
     },
     methods: {
+      add(){
+        //向树比较那里发送数据
+        this.$bus.$emit('add')
+      },
       Sankey(res) {
         //绘制之前先清空，否则会重复绘制
         $("#box").empty()
@@ -2124,11 +2128,9 @@
 <style scoped>
   #add{
     /* display: inline-block; */
-
     float: left;
 
   }
-
   #sankey_main {
     height: 95%;
     width:90%;

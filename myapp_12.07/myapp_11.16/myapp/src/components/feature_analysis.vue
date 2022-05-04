@@ -88,8 +88,8 @@
               d3.selectAll(`.${d.feature.split("(").join("_").split(")").join("_")}`)
                 .attr('fill',"pink")
               tooltip.html(()=>{
-                return `特征名：${d.feature}</br>
-                        出现次数：${d.num}`
+                return `Feature：${d.feature}</br>
+                        Frequence：${d.num}`
               })
                 .style("left", d3.event.pageX + "px")
                 .style("top", d3.event.pageY + 20 + "px")
@@ -303,7 +303,7 @@
                 var y = event.offsetY;
                 tooltip
                   .html(()=>{
-                    let res=`特征重要性：${d.featureImportance}`
+                    let res=`Feature Importance：${d.featureImportance}`
                     return res
                   })
                   .style("left", d3.event.pageX + "px")
