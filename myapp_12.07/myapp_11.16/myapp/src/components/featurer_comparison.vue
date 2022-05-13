@@ -810,18 +810,18 @@
             var y = event.offsetY;
             tooltip
               .html(()=>{
-                let res=`正影响：${d.value[0]}</br>
-                        负影响：${d.value[1]}</br>`
+                let res=`Positive influence:${d.value[0]}</br>
+                        Negative influence:${d.value[1]}</br>`
                 if(d.advice[0]){
                   if (d.advice[0] < 0 && d.advice[0] - (d.advice[0] % 1) == 0) {
                     //建议下调权重 整数为0的负小数
-                    return res+"建议下调权重:" + d.advice[0];
+                    return res+"Down weight:" + d.advice[0];
                   } else if (d.advice[0] > 0 && d.advice[0] - (d.advice[0]% 1) == 0) {
                     //建议上调权重 整数为0的正小数
-                    return res+"建议上调权重:" + d.advice[0];
+                    return res+"Increase weight:" + d.advice[0];
                   } else if (d.advice[0] - (d.advice[0] % 1) != 0) {
                     //建议删除该特征 整数不为0
-                    return res+`建议删除该特征:${d.name}`;
+                    return res+`Delete:${d.name}`;
                   }
                 }
                 return res

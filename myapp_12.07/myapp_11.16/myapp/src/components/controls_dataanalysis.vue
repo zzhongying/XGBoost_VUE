@@ -1,4 +1,4 @@
-<template>
+<template xmlns="http://www.w3.org/1999/html">
   <div id="div_left">
     <div id="controls">
       <h4 id="test2">CONTROLS</h4>
@@ -98,8 +98,10 @@
             <div id="data_distribution" class="graph"></div>
             <br />
             <div class="text">accuracy:</div>
-            <div id="accuracy" class="graph" style="text-align: center">
-              {{ training_set_accuracy }}|{{ test_set_accuracy }}
+            <div id="accuracy" class="graph" style="text-align: left">
+              Tarning Set: {{ training_set_accuracy }}
+                <br>
+              Test Set: {{ test_set_accuracy }}
             </div>
           </div>
           <key_button @sub="submit"></key_button>
@@ -107,7 +109,7 @@
       </div>
     </div>
     <div id="sample">
-      <h4 id="title_controls">SAMPLE DATA ANALYSIS</h4>
+      <h4 id="title_controls"> THEME ANALYSIS</h4>
       <div id="data_analysis">
         <select
           name="trees"

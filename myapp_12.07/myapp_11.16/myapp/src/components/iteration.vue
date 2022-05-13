@@ -1,6 +1,6 @@
 <template>
   <div class="bottom_1">
-    <h4>CONSTELLATION BASED ON ITERATION</h4>
+    <h4>DECISION TREE OVERVIEW</h4>
     <div id="barchart">
     </div>
   </div>
@@ -492,6 +492,8 @@
       // type_name:当前展示的类型，bubbledata:气泡图的数据
       //#endregion
       draw_constellation(type_name, bubbledata) {
+        console.log('type_name:',type_name)
+        console.log('bubbledata:',bubbledata)
         let that=this
         // console.log("this指向",this)
 
@@ -608,16 +610,16 @@
         function draw_charts(name, type_name, x_transform, y_transform, radius) {
 
           var data_inner = [
-            [radius * 0.9, radius * 0.16],
             [-radius * 0.9, radius * 0.16],
-            [radius * 0.9, -radius * 0.16],
-            [-radius * 0.9, -radius * 0.16],
-            [radius / 1.9, radius / 3.15],
             [-radius / 1.9, radius / 3.15],
-            [-radius / 1.9, -radius / 3.15],
-            [radius / 1.9, -radius / 3.15],
             [0, radius * 0.375],
-            [0, -radius * 0.375]
+            [radius / 1.9, radius / 3.15],
+            [radius * 0.9, radius * 0.16],
+            [radius * 0.9, -radius * 0.16],
+            [radius / 1.9, -radius / 3.15],
+            [0, -radius * 0.375],
+            [-radius / 1.9, -radius / 3.15],
+            [-radius * 0.9, -radius * 0.16]
           ]
 
           var data_outer = [
@@ -719,50 +721,65 @@
               '#F9BCB2', '#ea8991', '#cbdcdf', '#a5bbbf',
               '#cce8e2', '#ce848f', '#EFBAC0', '#F9F3E1',
               '#EDE9BF', '#F7E7E0', '#F7DDC0'];
-
+            console.log('data_inner',data_inner)
             svg.selectAll("point")
               .data(data_inner)
               .enter()
               .append("circle")
               .attr("class", "point")
-              .on("mouseover", function (d, i) {
+              .on("mouseenter", function (d, i) {
                 // d3.select(this).select("path")
                 //     .attr("d",path0);
-
+                // console.log("调试1：",d)
                 d4.select(this).select("path").attr("fill", "#ad4646")
                 var x = event.pageX;
                 var y = event.pageY;
                 svg.append("text")
                   .attr("id", "tooltip")
-                  .attr("x", x-400)
-                  .attr("y", y-100)
+                  .attr("x", x-20)
+                  .attr("y", y-575)
                   .attr("text-anchor", "middle")
                   .attr("font-family", "sans-setif")
                   .attr("font-size", "15px")
                   .attr("font-weight", "bold")
                   .attr("fill", "black")
-                  .text(( Math.round(d[2] * 1000 ) / 100 ).toString());
+                  .text(`Displays the first ${(i+1)*3} iterations`);//( Math.round(d[2] * 1000 ) / 100 ).toString()
               })
-              .on("mouseout", function (d, i) {
+              .on("mouseleave", function (d, i) {
                 d3.select("#tooltip").remove();
               })
               .attr("id", function (d) {
                 return d[3]
               })
               .attr("transform", function (d) {
+
                 var an = d[0],
                   ra = r_inner(d[1]),
                   x = ra + x_transform + d[1] * 1.55,
                   y = an + y_transform;
                 return "translate(" + [x, y] + ")";
               })
-              .attr("r", function (d) {
+              .attr("r", function (d,i) {
                 // console.log((style["secondary_node"][0] / 2), 'rrr')
-                return Math.round(Math.random()*5+5);
-                // return 30
+                // return Math.round(Math.random()*5+5);
+                // return 10
+                return i+5
               })
               .attr("fill", function (d, i) {
                 return color[i];
+              })
+              .on('click',(d,i)=>{
+                // d3.select('#pie_g').remove()
+                let key = Object.keys(bubbledata)
+                bubbledata[key].sort((a,b)=>{
+                  return a.count - b.count
+                })
+                center_tree({[key]:bubbledata[key].filter((d,ii)=>{
+                    return ii<(i+1)*3
+                  })})
+                // console.log({[key]:bubbledata[key].filter((d,ii)=>{
+                //   return ii>=i*3&&ii<=i*3+2
+                // })},i)
               })
             //        .style("opacity", style["secondary_node"][1])
 
@@ -774,24 +791,26 @@
               .attr("id", function (d) {
                 return d[3]
               })
-              .on("mouseover", function (d, i) {
+              .on("mouseenter", function (d, i) {
                 // d3.select(this).select("path")
                 //     .attr("d",path0);
+                // console.log("调试2：",d)
                 d4.select(this).select("path").attr("fill", "#ad4646")
-                var x = event.pageX;
-                var y = event.pageY;
-                svg.append("text")
+                var x = d3.event.pageX;
+                var y = d3.event.pageY;
+                // 有undefine的数据
+                d[3]&&svg.append("text")
                   .attr("id", "tooltip")
-                  .attr("x", x-400)
-                  .attr("y", y-100)
+                  .attr("x", x-20)
+                  .attr("y", y-575)
                   .attr("text-anchor", "middle")
                   .attr("font-family", "sans-setif")
                   .attr("font-size", "15px")
                   .attr("font-weight", "bold")
                   .attr("fill", "black")
-                  .text(d[2]);
+                  .text(`${d[3]}:${d[2]}`);
               })
-              .on("mouseout", function (d, i) {
+              .on("mouseleave", function (d, i) {
                 d3.select("#tooltip").remove();
               })
               .attr("transform", function (d) {
@@ -815,8 +834,8 @@
 
           //绘制中心气泡饼图
           function center_tree(bubbledata) {
-
-
+            d3.select('#pie_g').remove()
+            d3.select('#circle').remove()
             var color = ['#cbdcdf', '#a5bbbf', '#cce8e2', '#ce848f', '#EFBAC0',
               '#F9F3E1', '#EDE9BF', '#F7E7E0', '#F7DDC0',
               '#F9BCB2', '#ea8991', '#cbdcdf', '#a5bbbf',
@@ -983,7 +1002,6 @@
           }
           center_tree(bubbledata)
           polar_plot()
-
         }
 
         let name = []
