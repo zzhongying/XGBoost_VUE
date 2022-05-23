@@ -736,8 +736,8 @@
                 var y = event.pageY;
                 svg.append("text")
                   .attr("id", "tooltip")
-                  .attr("x", x-20)
-                  .attr("y", y-575)
+                  .attr("x", 230)
+                  .attr("y", 20)
                   .attr("text-anchor", "middle")
                   .attr("font-family", "sans-setif")
                   .attr("font-size", "15px")
@@ -801,8 +801,8 @@
                 // 有undefine的数据
                 d[3]&&svg.append("text")
                   .attr("id", "tooltip")
-                  .attr("x", x-20)
-                  .attr("y", y-575)
+                  .attr("x", 230)
+                  .attr("y", 20)
                   .attr("text-anchor", "middle")
                   .attr("font-family", "sans-setif")
                   .attr("font-size", "15px")

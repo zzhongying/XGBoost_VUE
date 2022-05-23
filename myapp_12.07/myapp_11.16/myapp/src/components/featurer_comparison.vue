@@ -92,12 +92,7 @@
             category: "BUC",
           },
         ];
-        let colorList = [
-          "rgba(56, 180, 139, .1)",
-          "rgba(68, 97, 123, .1)",
-          "rgba(191, 120, 58, .1)",
-          "rgba(116, 83, 153, .1)",
-        ];
+
         let option = {
           tooltip: {
             axisPointer: {
@@ -437,7 +432,7 @@
           },
           series: [
             {
-              name: "Punch Card",
+              name: "Predicted Results ",
               type: "heatmap",
               data: data.series_data,
               emphasis: {
@@ -743,7 +738,7 @@
 
         var gBundle = svg
           .append("g")
-          .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")")
+          .attr("transform", "translate(" + width / 2 + "," + height / 1.7 + ")")
           .attr("id", "all_g");
 
         var color = [

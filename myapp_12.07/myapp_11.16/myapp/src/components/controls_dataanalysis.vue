@@ -111,12 +111,7 @@
     <div id="sample">
       <h4 id="title_controls"> THEME ANALYSIS</h4>
       <div id="data_analysis">
-        <select
-          name="trees"
-          @change="remove"
-          id="delete_select"
-          v-model="value"
-        >
+        <select name="trees" @change="remove" id="delete_select" v-model="value">
           <option value="delete" id="remove" selected="selected">delete</option>
           <option v-for="tree in trees" :key="tree" :value="tree">
             {{ tree }}
@@ -555,7 +550,7 @@
           .attr("fill", "#cbdcdf")
           .attr("stroke", "black")
           .on("mouseenter", (d) => {
-            tooltip.html(`软件类型:${d.family}</br> 样本数量：${d.num} `)
+            tooltip.html(`Type: ${d.family}</br> Sample Type: ${d.num} `)
               .style("opacity", 1)
               .style("left", d3.event.pageX + "px")
               .style("top", d3.event.pageY + 20 + "px")

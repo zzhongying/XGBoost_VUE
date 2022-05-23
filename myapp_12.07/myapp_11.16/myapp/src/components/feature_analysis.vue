@@ -64,11 +64,12 @@
             .style('font-size',14+'px')
             .style('border',`${1}px solid rgb(214, 205, 205)`)
             .style('background-color','rgb(214, 205, 205)')
+
           // 特征柱状图
           let Feature_histogram=svg
             .append("g")
             .attr("id", "Feature_histogram")
-            .attr("transform", `translate(${165},${height-15})`);
+            .attr("transform", `translate(${30},${height-15})`);
           Feature_histogram.selectAll('rect')
             .data(Feature_histogram_data)
             .enter()

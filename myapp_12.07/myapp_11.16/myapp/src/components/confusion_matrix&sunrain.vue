@@ -458,7 +458,7 @@
   #hotmap_chart {
     height: 100%;
     width: 100%;
-    overflow-y: auto;
+    overflow-y: hidden;
     overflow-x: hidden;
   }
 
