@@ -4,5 +4,5 @@ With the increasing number of Android devices, labeling malicious apps which are
 ## A video demonstration of VISXGB. 
 <!-- ![system](https://github.com/zzhongying/XGBoost_VUE/blob/888937471eb368e4104e49b8394534e80cbaaca3/img/system.png) -->
 ```HTML
-<video src="movie.mp4.mp4" controls="controls" width="500" height="300"></video>
+<video src="https://github.com/zzhongying/XGBoost_VUE/blob/54fa3bd199f5f0c5bb1b1deb5e8503c68eb57a39/img/video_Investigating%20the%20evolution%20of%20XGBoost%20in%20the%20Decision-Making%20Process%20of%20Android%20Malware%20Classification_1.mp4" controls="controls" width="500" height="300"></video>
 ```
