@@ -1,7 +1,7 @@
 {
-  "name": "myapp",
+  "name": "expxgb",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
@@ -51,5 +51,9 @@
       "vue-cli-service lint",
       "git add"
     ]
-  }
+  },
+  "description": "```\r npm install\r ```",
+  "main": ".eslintrc.js",
+  "author": "zhongying",
+  "license": "ISC"
 }
