@@ -301,7 +301,6 @@ export default new Vuex.Store({
 
     },
 
-
     set_tooltip_data: function (state, data) {
       state.tooltip_data = data;
     },
@@ -358,7 +357,9 @@ export default new Vuex.Store({
     },
   },
 
-  actions: {},
+  actions: {
+
+  },
 
   getters: {
     get_exchange_state: state => {
