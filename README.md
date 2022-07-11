@@ -12,3 +12,6 @@ View;
 VISXGB consists of eight components (Fig.1). There are six core parameters in the parameter console panel (Fig.1(A)), including learning rate, max depth, min child weight, gamma and subsample. The growth state of decision tree, output and computational cost are controlled by these core parameters. In default rendering, the parameter console presents the optimal solution of parameters and supports users to adjust values in a small range. Feature matrix view (Fig.1(D)) presents
 the important features of all malware families. Bundle view (Fig.1(F)) compares the feature distribution between test set and train set. Historical record view (Fig.1(H)) reflect the relationship between parameters and performance indicators, the rectangle color in the view reflects the numerical changes of performance. The output results of the model are recorded in the confusion matrix view (Fig.1(G)) and the size of the values are mapped by color. By clicking the confusion matrix, the analysis target of the decision bubble view (Fig.1(C)) is changed to the selected malware. Data flow in the specified decision tree is presented in the sankey view (Fig.1(E)).
 ![pipeline](https://github.com/zzhongying/XGBoost_VUE/blob/b79f123099451f2d637fb5335a4b0610f2b8acf1/img/pipeline.png)
+
+### 4.使用方式
+运行后端的app文件后，在VUE项目的myapp文件夹下使用 npm run serve命令即可
