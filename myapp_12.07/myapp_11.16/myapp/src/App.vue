@@ -1,5 +1,5 @@
 <template>
-    <div >
+    <div v-resize:[arguments]='value'>
       <div_titles></div_titles>
       <div class="div1">
         <div_left></div_left>
@@ -36,8 +36,30 @@
     },
     mounted() {
       console.log(d4,'sss')
+    },
+    directives:{   //局部自定义指令
+      copy:{
+
+      },
+      fouces:{
+        bind:function (el) {
+
+        },
+        inserted:function (el) {
+          el.focus()
+        },
+        updated:function (el) {
+
+        },
+        componentUpdated(el){
+
+        },
+        unbind(el){
+
+        }
+      }
     }
-    
+
   }
 </script>
 <style lang="scss">
