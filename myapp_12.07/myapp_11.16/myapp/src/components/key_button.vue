@@ -1,5 +1,5 @@
 <template>
-  <button class="push_button red" href="#" @click="submit" id="but">SUBMISSION</button>
+  <button class="push_button red" href="#" @click="debonce(submit,2000)" id="but" ref="submitt" >SUBMISSION</button>
 </template>
 
 <script>
@@ -9,6 +9,20 @@
     methods: {
       submit() {
           this.$emit('sub')
+      },
+      debonce(fn,wait){   //防抖
+          let timer = null
+          return function () {
+            let arg = arguments
+            let context = this
+            if(timer){
+              clearTimeout(timer)
+              timer = null
+            }
+            timer = setTimeout(()=>{
+                fn.apply(context,arg)
+            },wait)
+          }
       }
     }
   }

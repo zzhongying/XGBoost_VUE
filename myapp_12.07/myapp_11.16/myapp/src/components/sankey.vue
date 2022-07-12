@@ -14,6 +14,8 @@
   import * as d3Sankey from "../../public/d3-sankey";
   import * as d3 from "d5";
   import Readcsv from "../ToolJs/Readcsv";
+  import eventBus from "../utils/eventBus";
+
   import axios from "axios";
   export default {
     name: "sankey",
@@ -23,7 +25,14 @@
         anti_links: null,
         positive_links: null,
         nodes1: null,
+        typename:null
       };
+    },
+    created() {
+      eventBus.$on('share_data',val =>{   //接收到数据后使用回调函数
+        this.typename = val
+        console.log(this.typename)
+      })
     },
     methods: {
       add(){
@@ -33,7 +42,6 @@
       Sankey(res) {
         //绘制之前先清空，否则会重复绘制
         $("#box").empty()
-
         res.path.unshift({ source: "", target: 0, yes: 0, no: 0 });
         let data = res.path;
         let name = res.nodeid_split;

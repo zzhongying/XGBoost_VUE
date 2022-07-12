@@ -24,6 +24,7 @@
   import Readcsv from "../ToolJs/Readcsv";
   import selector from "./selector";
   import * as d4 from "../../public/d3";
+  import bus from "../utils/eventBus"
 
   export default {
     name: "top_right",
@@ -34,7 +35,13 @@
         data: null,
         sca_data: null,
         hotData: null,
+        type:null
       };
+    },
+    created() {
+      bus.$on("share_data",val=>{
+        this.type = val
+      })
     },
     methods: {
       draw_scatter_dataAnalysis() {
@@ -452,6 +459,7 @@
         })
       },
       draw_kuntu() {
+        console.log(this.type)
         var cities = {
           children: [
             {
@@ -648,7 +656,7 @@
             },
           ],
         };
-        // 航班路线
+
         var railway = [
           { source: "train_init", target: "test_init" },
           { source: "train_digest", target: "test_digest" },

@@ -14,6 +14,7 @@
   import Selector from "./selector"
   import * as d4 from "../../public/d3";
   import axios from "axios";
+  import eventBus from "../utils/eventBus";
 
   export default {
     name: "bottom_1",
@@ -1035,6 +1036,10 @@
           draw_charts(name[5], type_name, width * 0.7, height * 0.25, width * 0.09, bubbledata)
         }
       },
+      sendMsg(){
+        eventBus.$emit('share_data',this.type_name)
+      }
+
     },
     mounted() {
       this.$bus.$on('get_type',this.get_type)
